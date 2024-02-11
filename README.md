@@ -6,7 +6,7 @@
 
 
 # ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/e2a7062c-c103-4702-8c00-c86e0f2b8035)Über das Projekt
-
+## Hinweis: Der Gesamte Code, die Webseite und der Gesamte Inhalt(falls vorhanden), folgt dem [Open-Source Code-of-Conduct von Microsoft](https://opensource.microsoft.com/codeofconduct/)
 # ![2](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/582d843a-987b-4f61-bfe3-9f8fbcf554a6)Artificial Intelligence Swiss
 
 [Artificial Intelligence Swiss](https://www.swissinotechno.net) ist ein innovatives Unterfangen, das sich der Erforschung und Entwicklung von KI-Technologien widmet. Unser Ziel ist es, die Grenzen der Künstlichen Intelligenz (KI) zu erweitern und kreative sowie ethisch verantwortungsvolle Lösungen zu entwickeln.
@@ -50,7 +50,6 @@ Wir laden KI-Enthusiasten, Entwickler, Forscher und alle Interessierten ein, sic
 - 🤝 Teilen Sie unser Projekt in Ihren Netzwerken, um die Reichweite und das Bewusstsein für verantwortungsvolle KI zu erhöhen.
 
 ## Mit Leidenschaft und Engagement gepflegt von dem Team bei [Artificial Intelligence Swiss](https://www.swissinotechno.net)
+## ![10](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/625e6117-eccb-44b6-9e15-57f33a9582de)[Audioreworkvisions.com](https://www.swissinotechno.net), [FlywithAI](https://www.swissinotechno.net)
 
 ---
-
-## ![10](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/625e6117-eccb-44b6-9e15-57f33a9582de)[Audioreworkvisions.com](https://www.swissinotechno.net), [FlywithAI](https://www.swissinotechno.net)
