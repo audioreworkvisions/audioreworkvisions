@@ -35,7 +35,7 @@ Im Hinblick auf unsere "Time-to-Market" Strategie suchen wir nach talentierten I
 
 ## Mitmachen
 
-Interessierte Kandidaten für die oben genannten Rollen oder andere Beiträge zum Projekt können sich unter [[(helloworld@audioreworkvisions.net)](mailto:helloworld@audioreworkvisions.net)] bewerben.
+Interessierte Kandidaten für die oben genannten Rollen oder andere Beiträge zum Projekt können sich unter [helloworld@audioreworkvisions.net](mailto:helloworld@audioreworkvisions.net) bewerben.
 
 ## Kontakt
 
