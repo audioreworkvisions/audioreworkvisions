@@ -1,0 +1,5 @@
+<form id="file-upload-form" method="post" enctype="multipart/form-data">
+  <label for="file-upload">Wählen Sie eine Datei zum Hochladen aus:</label>
+  <input id="file-upload" type="file" name="file"/>
+  <input type="submit" value="Hochladen"/>
+</form>
