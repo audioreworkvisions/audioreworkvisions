@@ -1,13 +1,13 @@
 
 # ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/79dc881d-965c-486b-8fb6-1a3203ba6b92)AUDIOREWORKVISIONS
-# ![1](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/7d3337bd-f156-4a5f-9442-6ce1cf702baf)FlywithAI.net
-# ![2](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/582d843a-987b-4f61-bfe3-9f8fbcf554a6)Artificial Intelligence Swiss
+# ![1](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/7d3337bd-f156-4a5f-9442-6ce1cf702baf)SWISSINOTECHNO
+# ![2](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/582d843a-987b-4f61-bfe3-9f8fbcf554a6)Fly-with-AI
 ## Willkommen im offiziellen Repository von Audioreworkvisions, einem Pionierprojekt im Bereich der generativen Künstlichen Intelligenz (KI).
 
 
 # ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/e2a7062c-c103-4702-8c00-c86e0f2b8035)Über das Projekt
 ## Hinweis: Der Gesamte Code, die Webseite und der Gesamte Inhalt(falls vorhanden), folgt dem [Open-Source Code-of-Conduct von Microsoft](https://opensource.microsoft.com/codeofconduct/)
-# ![2](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/582d843a-987b-4f61-bfe3-9f8fbcf554a6)Generative Artificial Intelligence
+# ![2](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/582d843a-987b-4f61-bfe3-9f8fbcf554a6)Generative AI
 
 [Audioreworkvisions](https://elysium.azurewebsites.net) ist ein innovatives Unterfangen, das sich der Erforschung und Entwicklung von KI-Technologien widmet. Mein Ziel ist es, die Grenzen der Künstlichen Intelligenz (KI) zu erweitern und kreative sowie ethisch verantwortungsvolle Lösungen zu entwickeln.
 
