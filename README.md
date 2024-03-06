@@ -2,14 +2,14 @@
 # ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/79dc881d-965c-486b-8fb6-1a3203ba6b92)AUDIOREWORKVISIONS
 # ![1](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/7d3337bd-f156-4a5f-9442-6ce1cf702baf)FlywithAI.net
 # ![2](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/582d843a-987b-4f61-bfe3-9f8fbcf554a6)Artificial Intelligence Swiss
-## Willkommen im offiziellen Repository von Artificial Intelligence Swiss, einem Pionierprojekt im Bereich der generativen Künstlichen Intelligenz (KI).
+## Willkommen im offiziellen Repository von Audioreworkvisions, einem Pionierprojekt im Bereich der generativen Künstlichen Intelligenz (KI).
 
 
 # ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/e2a7062c-c103-4702-8c00-c86e0f2b8035)Über das Projekt
 ## Hinweis: Der Gesamte Code, die Webseite und der Gesamte Inhalt(falls vorhanden), folgt dem [Open-Source Code-of-Conduct von Microsoft](https://opensource.microsoft.com/codeofconduct/)
-# ![2](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/582d843a-987b-4f61-bfe3-9f8fbcf554a6)Artificial Intelligence Swiss
+# ![2](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/582d843a-987b-4f61-bfe3-9f8fbcf554a6)Generative Artificial Intelligence
 
-[Artificial Intelligence Swiss](https://www.swissinotechno.net) ist ein innovatives Unterfangen, das sich der Erforschung und Entwicklung von KI-Technologien widmet. Unser Ziel ist es, die Grenzen der Künstlichen Intelligenz (KI) zu erweitern und kreative sowie ethisch verantwortungsvolle Lösungen zu entwickeln.
+[Audioreworkvisions](https://elysium.azurewebsites.net) ist ein innovatives Unterfangen, das sich der Erforschung und Entwicklung von KI-Technologien widmet. Mein Ziel ist es, die Grenzen der Künstlichen Intelligenz (KI) zu erweitern und kreative sowie ethisch verantwortungsvolle Lösungen zu entwickeln.
 
 # ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/e2a7062c-c103-4702-8c00-c86e0f2b8035)Projektschwerpunkte
 
@@ -25,9 +25,9 @@ Wir entwickeln fortschrittliche Webanwendungen, die die neuesten Errungenschafte
 - **MaaS (Model as a Service), SaaS (Software as a Service), IaaS (Infrastructure as a Service), PaaS (Platform as a Service):** Bereitstellung diverser Dienste in der Cloud.
 - **Belebung von Neuronalen Netzen:** Einsatz und Optimierung neuronaler Netzwerke für verschiedene KI-Anwendungen.
 
-# ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/e2a7062c-c103-4702-8c00-c86e0f2b8035)Time-to-Market Strategie
-Im Hinblick auf unsere "Time-to-Market" Strategie suchen wir nach talentierten Individuen, die unser Team verstärken können, insbesondere:
-
+# ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/e2a7062c-c103-4702-8c00-c86e0f2b8035)Business in Development
+Seit 2014 beteilige ich mich als Super-User/Insider an diversen Projekten. Als Citizen Developer 2018 erstes Open-Source Projekt lanciert. 2020 Gründung des Fusion Team und Cloud Development Environment Startup.
+Freelancer, Einhörner, Power-User und KI Künstler ins Boot holen.
 - **Full-Stack Open-Source Programmierer:** Mit Fähigkeiten in der Entwicklung von Front-End und Back-End Systemen.
 - **Talent für UI/UX Design:** Personen mit einem ausgeprägten Sinn für Benutzererfahrung und -schnittstellendesign.
 
@@ -36,9 +36,9 @@ Interessierte Kandidaten für die oben genannten Rollen oder andere Beiträge zu
 
 # ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/e2a7062c-c103-4702-8c00-c86e0f2b8035)Kontakt
 
-- 📫 Für weitere Informationen oder bei Interesse an einer Zusammenarbeit, kontaktieren Sie uns bitte unter [helloworld@swissinotechno.net](mailto:helloworld@swissinotechno.net).
-- 💬 Folgen Sie uns auch auf unseren Social-Media-Kanälen [Links zu Social-Media-Kanälen].
-- 💬 Besuchen Sie unsere Website: [Artificial Intelligence Swiss](https://www.swissinotechno.net).
+- 📫 Für weitere Informationen oder bei Interesse an einer Zusammenarbeit, kontaktieren Sie mich bitte unter [helloworld@swissinotechno.net](mailto:helloworld@swissinotechno.net).
+- 💬 Folgen Sie mir auch auf unseren Social-Media-Kanälen [Audioreworkvisions YouTube-Kannal](https://www.youtube.com/watch?v=O701a3nnDRs).
+- 💬 Besuchen Sie meine Website: [Fly-with-AI](https://elysium.azurewebsites.net/).
 
 Wir legen großen Wert auf die ethischen Aspekte der KI-Entwicklung. Unser Ansatz gewährleistet, dass unsere KI-Systeme verantwortungsvoll, transparent und im besten Interesse der Gesellschaft eingesetzt werden.
 Wir laden KI-Enthusiasten, Entwickler, Forscher und alle Interessierten ein, sich an diesem spannenden Projekt zu beteiligen. Egal, ob Sie in der Entwicklung, Forschung oder im ethischen Bereich der KI arbeiten möchten, Ihre Beiträge sind willkommen.
@@ -49,7 +49,7 @@ Wir laden KI-Enthusiasten, Entwickler, Forscher und alle Interessierten ein, sic
 - ⭐️ Wenn Ihnen unser Projekt gefällt, geben Sie uns einen Stern auf GitHub!
 - 🤝 Teilen Sie unser Projekt in Ihren Netzwerken, um die Reichweite und das Bewusstsein für verantwortungsvolle KI zu erhöhen.
 
-## Mit Leidenschaft und Engagement gepflegt von dem Team bei [Artificial Intelligence Swiss](https://www.swissinotechno.net)
-## ![10](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/625e6117-eccb-44b6-9e15-57f33a9582de)[Audioreworkvisions.com](https://www.swissinotechno.net), [FlywithAI](https://www.swissinotechno.net)
+## Mit Leidenschaft und Engagement gepflegt von [Audioreworkvisions](https://elysium.azurewebsites.net)
+## ![10](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/625e6117-eccb-44b6-9e15-57f33a9582de)[Audioreworkvisions.com](https://www.audioreworkvisions.com), [FlywithAI](https://www.flywithai.net)
 
 ---
