@@ -50,6 +50,6 @@ Wir laden KI-Enthusiasten, Entwickler, Forscher und alle Interessierten ein, sic
 - 🤝 Teilen Sie unser Projekt in Ihren Netzwerken, um die Reichweite und das Bewusstsein für verantwortungsvolle KI zu erhöhen.
 
 ## Mit Leidenschaft und Engagement gepflegt von [Audioreworkvisions](https://elysium.azurewebsites.net)
-## ![10](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/625e6117-eccb-44b6-9e15-57f33a9582de)[Audioreworkvisions.com](https://www.audioreworkvisions.com), [FlywithAI](https://www.flywithai.net)
+## ![10](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/625e6117-eccb-44b6-9e15-57f33a9582de)[Audioreworkvisions](https://www.audioreworkvisions.com), [FlywithAI](https://www.flywithai.net)
 
 ---
