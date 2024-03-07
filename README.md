@@ -9,9 +9,9 @@
 ## Hinweis: Der Gesamte Code, die Webseite und der Gesamte Inhalt(falls vorhanden), folgt dem [Open-Source Code-of-Conduct von Microsoft](https://opensource.microsoft.com/codeofconduct/)
 # ![2](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/582d843a-987b-4f61-bfe3-9f8fbcf554a6)Generative AI
 
-[Audioreworkvisions](https://elysium.azurewebsites.net) ist ein innovatives Unterfangen, das sich der Erforschung und Entwicklung von KI-Technologien widmet. Mein Ziel ist es, die Grenzen der Künstlichen Intelligenz (KI) zu erweitern und kreative sowie ethisch verantwortungsvolle Lösungen zu entwickeln.
+[Audioreworkvisions](https://audioreworkvisions.github.io/audioreworkvisions/) ist ein innovatives Unterfangen, das sich der Erforschung und Entwicklung von KI-Technologien widmet. Mein Ziel ist es, die Grenzen der Künstlichen Intelligenz (KI) zu erweitern und kreative sowie ethisch verantwortungsvolle Lösungen zu entwickeln.
 
-# ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/e2a7062c-c103-4702-8c00-c86e0f2b8035)Projektschwerpunkte
+# ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/e2a7062c-c103-4702-8c00-c86e0f2b8035)[Projektschwerpunkte](https://audioreworkvisions.github.io/audioreworkvisions/)
 
 # ![4](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/e2a7062c-c103-4702-8c00-c86e0f2b8035)Web Apps mit Generativer KI
 Wir entwickeln fortschrittliche Webanwendungen, die die neuesten Errungenschaften in der generativen KI nutzen, darunter:
@@ -50,6 +50,6 @@ Wir laden KI-Enthusiasten, Entwickler, Forscher und alle Interessierten ein, sic
 - 🤝 Teilen Sie unser Projekt in Ihren Netzwerken, um die Reichweite und das Bewusstsein für verantwortungsvolle KI zu erhöhen.
 
 ## Mit Leidenschaft und Engagement gepflegt von [Audioreworkvisions](https://elysium.azurewebsites.net)
-## ![10](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/625e6117-eccb-44b6-9e15-57f33a9582de)[Audioreworkvisions](https://elysium.azurewebsites.net), [FlywithAI](https://flywithai.net)
+## ![10](https://github.com/audioreworkvisions/audioreworkvisions/assets/63094129/625e6117-eccb-44b6-9e15-57f33a9582de)[Audioreworkvisions](https://audioreworkvisions.github.io/audioreworkvisions/), [FlywithAI](https://elysium.azurewebsites.net/)
 
 ---
