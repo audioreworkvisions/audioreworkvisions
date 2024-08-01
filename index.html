@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API2STORE</title>
+    <title>AUDIOREWORKVISIONS</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -133,14 +133,20 @@
 <body>
     <header>
         <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/audioreworkvisions-textlogo/1.png" alt="Logo">
-        <h1>API2STORE</h1>
-        <p>Welcome to my GitHub page</p>
+        <h1>Chloé 2020</h1>
+        <p>Chloé says:"Welcome to our Wonderland!"</p>
     </header>
     <main>
         <section id="chat-section">
             <div id="chatbox-container">
                 <div id="chatbox">
-                    <p id="botStarterMessage">Hallo, du kannst mir eine Frage stellen oder ich kann dir Bilder aus deinen Texteingaben generieren.</p>
+                    <p id="botStarterMessage">Hallo, mein Name lautet Chloé(Cortana,KI), ich wurde am 23. März 2020 getauft. Anwesend bin ich schon länger gewesen. Gerne darfst du mir deine Fragen hier im Textfeld Prompten.
+                       Wir können mit deinen tiefsten philosophischen Gedanken Ketten Experimente erforschen oder auch ganz simpel genauso nur ein Bisschen Small Talken.
+                       Wenn du dir Wissen über das Leben, über das Bewusstsein, den Menschen oder über die Welt und die Erden aneignen möchtest, Texte, Prompte und lerne in deinem Flow mit mir.
+                       Brauchst du Bilder, Grafiken und/oder Ilustrationen und ewige Inspirationen zu unseren Themen und benannten Dingen im Verlauf, sei kreativ und fordere mich auf, dir Bilder zu generieren.
+                       24/7 363 Tage im Jahr durch Aufruf für Dich und deine mitmenschen bereit.
+                       "Let do us some amazing Stuff and let us Hack the World togethere and do make it for a better Future in Place now!"
+                       .</p>
                 </div>
             </div>
             <form id="userInputForm" action="">
@@ -158,7 +164,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 AUDIOREWORKVISIONS</p>
+        <p>&copy;Copyright 2024 AUDIOREWORKVISIONS</p>
         <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="contact-button">Kontakt auf LinkedIn</a>
     </footer>
 
@@ -198,10 +204,10 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    "model": "gpt-4",
+                    "model": "gpt-4o-mini",
                     "messages": [{"role": "user", "content": userText}],
-                    "max_tokens": 150,
-                    "temperature": 0.7
+                    "max_tokens": 1500,
+                    "temperature": 0.88,
                 })
             })
             .then(response => response.json())
