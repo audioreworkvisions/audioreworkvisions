@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API2STORE</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        header img {
+            width: 200px;
+            height: auto;
+        }
+        header h1 {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        #chat-section {
+            width: 100%;
+            max-width: 600px;
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        #chatbox-container {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+        #chatbox {
+            background-color: #2c2c2c;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #chatbox p {
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #chatbox p:nth-child(odd) {
+            background-color: #444;
+        }
+        #chatbox p:nth-child(even) {
+            background-color: #555;
+        }
+        #userInputForm {
+            display: flex;
+        }
+        #userInput {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 5px 0 0 5px;
+            background-color: #2c2c2c;
+            color: #f1f1f1;
+        }
+        #userInput::placeholder {
+            color: #888;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 0 5px 5px 0;
+            background-color: #444;
+            color: #f1f1f1;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        .projects {
+            width: 100%;
+            max-width: 600px;
+        }
+        .project {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        .project h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .project p {
+            color: #ccc;
+        }
+        .project a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .project a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            border-top: 1px solid #444;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        footer a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/audioreworkvisions-textlogo/1.png" alt="Logo">
+        <h1>API2STORE</h1>
+        <p>Welcome to my GitHub page</p>
+    </header>
+    <main>
+        <section id="chat-section">
+            <div id="chatbox-container">
+                <div id="chatbox">
+                    <p id="botStarterMessage">Hallo, du kannst mir eine Frage stellen oder ich kann dir Bilder aus deinen Texteingaben generieren.</p>
+                </div>
+            </div>
+            <form id="userInputForm" action="">
+                <input id="userInput" type="text" name="msg" placeholder="Schreiben Sie etwas...">
+                <input type="submit" value="Senden">
+            </form>
+            <div id="imageGallery" class="image-gallery"></div>
+        </section>
+        <section class="projects">
+            <article class="project">
+                <h2>Open-Source Contributions</h2>
+                <p>A collection of my contributions to various open-source projects.</p>
+                <a href="https://github.com/audioreworkvisions/audioreworkvisions" target="_blank">View on GitHub</a>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 AUDIOREWORKVISIONS</p>
+        <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="contact-button">Kontakt auf LinkedIn</a>
+    </footer>
+
+    <script>
+        const apiKey = 'sk-svcacct-xqKNDuCzFoMczbu6s4wMT3BlbkFJx8rjcvovypui1zcNmFrQ'; // Ersetze dies durch deinen OpenAI API-Schlüssel
+
+        document.getElementById('userInputForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let userText = document.getElementById('userInput').value;
+            if (userText.trim() === "") return;
+            let chatbox = document.getElementById('chatbox');
+            chatbox.innerHTML += `<p>Sie: ${userText}</p>`;
+            document.getElementById('userInput').value = "";
+            chatbox.scrollTop = chatbox.scrollHeight;
+
+            let isImageRequest = userText.toLowerCase().includes("mache mir ein bild von") || 
+                                 userText.toLowerCase().includes("make me an image of") ||
+                                 userText.toLowerCase().includes("erstelle mir ein bild") ||
+                                 userText.toLowerCase().includes("generiere ein bild") ||
+                                 userText.toLowerCase().includes("ein bild") ||
+                                 userText.toLowerCase().includes("create an image of") ||
+                                 userText.toLowerCase().includes("generate an image of") ||
+                                 userText.toLowerCase().includes("image of");
+
+            if (isImageRequest) {
+                generateImage(userText);
+            } else {
+                generateText(userText);
+            }
+        });
+
+        function generateText(userText) {
+            fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "model": "gpt-4",
+                    "messages": [{"role": "user", "content": userText}],
+                    "max_tokens": 150,
+                    "temperature": 0.7
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let botResponse = data.choices[0].message.content.trim();
+                let chatbox = document.getElementById('chatbox');
+                chatbox.innerHTML += `<p>Bot: ${botResponse}</p>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            })
+            .catch(error => {
+                console.log(error);
+                let chatbox = document.getElementById('chatbox');
+                chatbox.innerHTML += `<p>Bot: Es gab einen Fehler bei der Anfrage.</p>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            });
+        }
+
+        function generateImage(userText) {
+            fetch('https://api.openai.com/v1/images/generations', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "prompt": userText,
+                    "n": 1,
+                    "size": "256x256"
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let imageUrl = data.data[0].url;
+                let chatbox = document.getElementById('chatbox');
+                chatbox.innerHTML += `<p>Bot: <img src="${imageUrl}" alt="Generated Image" style="width: 100px; height: 100px;"><br><button onclick="downloadImage('${imageUrl}')">Download Image</button></p>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            })
+            .catch(error => {
+                console.log(error);
+                let chatbox = document.getElementById('chatbox');
+                chatbox.innerHTML += `<p>Bot: Es gab einen Fehler bei der Anfrage.</p>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            });
+        }
+
+        function downloadImage(url) {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'generated_image.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
+
+</html>
