@@ -1,5 +1,5 @@
 ![Logo](https://stflywithai026072919948.blob.core.windows.net/datencloud/mix/4.png) ![Logo](https://stflywithai026072919948.blob.core.windows.net/datencloud/icons/Copilot-App-Icon.png)
-# Hi Mentors, Friens and Freaks out here!👋
+# Hi Mentors, Friends and Freaks out here!👋
 # Welcome to my GitHub profile! I'm passionate about technology, coding, and AI. Here's a bit more about me:
 ## 🔭I’m currently working on: 
   - Developing AI applications using Azure and OpenAI.
