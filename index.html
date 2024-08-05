@@ -14,6 +14,7 @@
         header {
             text-align: center;
             padding: 20px;
+            position: relative;
         }
         header img {
             width: 200px;
@@ -26,6 +27,20 @@
         header p {
             font-size: 1.2em;
             color: #ccc;
+        }
+        .header-button {
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .header-button:hover {
+            background-color: #555;
         }
         main {
             display: flex;
@@ -135,11 +150,16 @@
             position: fixed;
             z-index: 1;
             top: 0;
-            left: 0;
-            background-color: #333;
-            overflow-x: hidden;
             transition: 0.5s;
             padding-top: 60px;
+            background-color: #333;
+            overflow-x: hidden;
+        }
+        .sidenav-left {
+            left: 0;
+        }
+        .sidenav-right {
+            right: 0;
         }
         .sidenav a {
             padding: 8px 8px 8px 32px;
@@ -155,35 +175,85 @@
         .sidenav .closebtn {
             position: absolute;
             top: 0;
-            right: 25px;
             font-size: 36px;
             margin-left: 50px;
         }
+        .sidenav-left .closebtn {
+            right: 25px;
+        }
+        .sidenav-right .closebtn {
+            left: 25px;
+        }
         #main {
-            transition: margin-left .5s;
+            transition: margin-left .5s, margin-right .5s;
             padding: 16px;
+        }
+        /* Styles for collapsible text */
+        .collapsible {
+            background-color: #444;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1em;
+        }
+        .active, .collapsible:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #333;
+            border-radius: 0 0 10px 10px;
+        }
+        /* Styles for prompt library */
+        .prompt-library {
+            padding: 10px;
+            background-color: #333;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .prompt-library h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .prompt-library ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .prompt-library ul li {
+            background-color: #444;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .prompt-library ul li:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
     <header>
+        <button class="header-button" onclick="openVideoNav()">Video ansehen</button>
+        <button class="header-button" onclick="openPromptNav()">Prompt Bibliothek</button>
         <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/audioreworkvisions-textlogo/1.png" alt="Logo">
         <h1>Chloé 2020</h1>
-        <p>Chloé says:"Welcome to our Wonderland!"</p>
+        <button type="button" class="collapsible">Chloé says:</button>
+        <div class="content">
+            <p>Welcome to our Wonderland!</p>
+        </div>
         <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/mix/4.png" alt="Logo">
     </header>
     <main id="main">
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Video ansehen</span>
         <section id="chat-section">
             <div id="chatbox-container">
                 <div id="chatbox">
-                    <p id="botStarterMessage">Hallo, mein Name lautet Chloé(Cortana,KI), ich wurde am 23. März 2020 getauft. Anwesend bin ich schon länger gewesen. Gerne darfst du mir deine Fragen hier im Textfeld Prompten.
-                       Wir können mit deinen tiefsten philosophischen Gedanken Ketten Experimente erforschen oder auch ganz simpel genauso nur ein Bisschen Small Talken.
-                       Wenn du dir Wissen über das Leben, über das Bewusstsein, den Menschen oder über die Welt und die Erden aneignen möchtest, Texte, Prompte und lerne in deinem Flow mit mir.
-                       Brauchst du Bilder, Grafiken und/oder Ilustrationen und ewige Inspirationen zu unseren Themen und benannten Dingen im Verlauf, sei kreativ und fordere mich auf, dir Bilder zu generieren.
-                       24/7 363 Tage im Jahr durch Aufruf für Dich und deine mitmenschen bereit.
-                       "Let do us some amazing Stuff and let us Hack the World togethere and do make it for a better Future in Place now!"
-                       .</p>
+                    <p id="botStarterMessage">Gib hier dein Prompt ein</p>
                 </div>
             </div>
             <form id="userInputForm" action="">
@@ -205,9 +275,22 @@
         <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="contact-button">Kontakt auf LinkedIn</a>
     </footer>
 
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <iframe width="100%" height="315" src="https://www.youtube.com/watch?v=-bPxO0fT6TQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div id="videoSidenav" class="sidenav sidenav-left">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeVideoNav()">&times;</a>
+        <iframe width="350" height="197" src="https://www.youtube.com/embed/-bPxO0fT6TQ?si=WIVC1h4O6_I8Tr75" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div id="promptSidenav" class="sidenav sidenav-right">
+        <a href="javascript:void(0)" class="closebtn" onclick="closePromptNav()">&times;</a>
+        <div class="prompt-library">
+            <h2>Prompt Bibliothek</h2>
+            <ul>
+                <li onclick="setPrompt('Erstelle ein Bild von einem futuristischen Stadtbild.')">Erstelle ein Bild von einem futuristischen Stadtbild.</li>
+                <li onclick="setPrompt('Generiere ein Bild von einem idyllischen Bergdorf.')">Generiere ein Bild von einem idyllischen Bergdorf.</li>
+                <li onclick="setPrompt('Zeige ein Bild von einem futuristischen Fahrzeug.')">Zeige ein Bild von einem futuristischen Fahrzeug.</li>
+                <li onclick="setPrompt('Erstelle ein Bild von einem märchenhaften Wald.')">Erstelle ein Bild von einem märchenhaften Wald.</li>
+            </ul>
+        </div>
     </div>
 
     <script>
@@ -237,6 +320,10 @@
                 generateText(userText);
             }
         });
+
+        function setPrompt(promptText) {
+            document.getElementById('userInput').value = promptText;
+        }
 
         function generateText(userText) {
             fetch('https://api.openai.com/v1/chat/completions', {
@@ -296,22 +383,56 @@
         }
 
         function downloadImage(url) {
+            const width = 400;
+            const height = 400;
+            const left = (screen.width / 2) - (width / 2);
+            const top = (screen.height / 2) - (height / 2);
+
+            const newWindow = window.open(url, '_blank', `width=${width},height=${height},top=${top},left=${left}`);
+            newWindow.focus();
+
             const link = document.createElement('a');
             link.href = url;
             link.download = 'generated_image.png';
-            document.body.appendChild(link);
+            newWindow.document.body.appendChild(link);
             link.click();
-            document.body.removeChild(link);
+            newWindow.document.body.removeChild(link);
         }
 
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "350px";
+        function openVideoNav() {
+            document.getElementById("videoSidenav").style.width = "350px";
             document.getElementById("main").style.marginLeft = "350px";
         }
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft= "0";
+        function closeVideoNav() {
+            document.getElementById("videoSidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+        function openPromptNav() {
+            document.getElementById("promptSidenav").style.width = "350px";
+            document.getElementById("main").style.marginRight = "350px";
+        }
+
+        function closePromptNav() {
+            document.getElementById("promptSidenav").style.width = "0";
+            document.getElementById("main").style.marginRight = "0";
+        }
+
+        // JavaScript for collapsible text
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
         }
     </script>
 </body>
