@@ -3,146 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUDIOREWORKVISIONS</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Audioreworkvisions Chloé GPT</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            background-color: #1c1c1c;
-            color: #f1f1f1;
-            font-family: Arial, sans-serif;
+        :root {
+            --dark-blue: #001f3f;
+            --mint-green: #40e0d0;
+            --magenta: #ff00ff;
+            --light-text: #f0f0f0;
+            --dark-text: #333333;
         }
+
+        body {
+            background-color: var(--dark-blue);
+            color: var(--light-text);
+            font-family: Arial, sans-serif;
+            animation: fadeIn 1s ease-out;
+        }
+
         header {
             text-align: center;
             padding: 20px;
             position: relative;
+            animation: slideInFromTop 0.5s ease-out;
         }
+
         header img {
             width: 200px;
             height: auto;
+            animation: fadeIn 1s ease-out 0.5s both, pulse 2s infinite;
         }
+
         header h1 {
             font-size: 2em;
             margin: 10px 0;
+            color: var(--mint-green);
+            animation: slideInFromLeft 0.5s ease-out 0.2s both;
         }
+
         header p {
             font-size: 1.2em;
-            color: #ccc;
+            color: var(--light-text);
+            animation: slideInFromRight 0.5s ease-out 0.4s both;
         }
+
         .header-button {
             font-size: 1em;
             cursor: pointer;
-            background-color: #444;
-            color: white;
+            background-color: var(--mint-green);
+            color: var(--dark-text);
             padding: 10px;
             border: none;
             border-radius: 5px;
             margin: 10px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out 0.6s both;
         }
+
         .header-button:hover {
-            background-color: #555;
+            background-color: var(--magenta);
+            color: var(--light-text);
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
+
         main {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 20px;
+            animation: slideInFromBottom 1s ease-out 0.5s both;
         }
+
         #chat-section {
             width: 100%;
             max-width: 600px;
-            background-color: #333;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
+            animation: slideInFromLeft 0.5s ease-out;
+            transition: all 0.3s ease;
         }
+
+        #chat-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
         #chatbox-container {
             max-height: 400px;
             overflow-y: auto;
             margin-bottom: 10px;
         }
+
         #chatbox {
-            background-color: #2c2c2c;
+            background-color: rgba(255, 255, 255, 0.05);
             padding: 10px;
             border-radius: 10px;
         }
+
         #chatbox p {
             padding: 5px;
             border-radius: 5px;
+            animation: fadeIn 0.3s ease-out;
         }
+
         #chatbox p:nth-child(odd) {
-            background-color: #444;
+            background-color: rgba(64, 224, 208, 0.1);
         }
+
         #chatbox p:nth-child(even) {
-            background-color: #555;
+            background-color: rgba(255, 0, 255, 0.1);
         }
+
         #userInputForm {
             display: flex;
+            animation: slideInFromBottom 0.5s ease-out;
         }
+
         #userInput {
             flex: 1;
             padding: 10px;
-            border: 1px solid #555;
+            border: 1px solid var(--mint-green);
             border-radius: 5px 0 0 5px;
-            background-color: #2c2c2c;
-            color: #f1f1f1;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            transition: all 0.3s ease;
         }
+
+        #userInput:focus {
+            outline: none;
+            box-shadow: 0 0 10px var(--mint-green);
+        }
+
         #userInput::placeholder {
-            color: #888;
+            color: rgba(255, 255, 255, 0.5);
         }
+
         input[type="submit"] {
             padding: 10px;
-            border: 1px solid #555;
+            border: 1px solid var(--magenta);
             border-radius: 0 5px 5px 0;
-            background-color: #444;
-            color: #f1f1f1;
+            background-color: var(--magenta);
+            color: var(--light-text);
             cursor: pointer;
+            transition: all 0.3s ease;
         }
+
         input[type="submit"]:hover {
-            background-color: #555;
+            background-color: var(--mint-green);
+            color: var(--dark-text);
+            transform: scale(1.1);
         }
+
         .projects {
             width: 100%;
             max-width: 600px;
         }
+
         .project {
-            background-color: #333;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
+            animation: slideInFromRight 0.5s ease-out;
+            transition: all 0.3s ease;
         }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
         .project h2 {
             font-size: 1.5em;
             margin-bottom: 10px;
+            color: var(--mint-green);
         }
+
         .project p {
-            color: #ccc;
+            color: var(--light-text);
         }
+
         .project a {
-            color: #1e90ff;
+            color: var(--magenta);
             text-decoration: none;
+            transition: all 0.3s ease;
         }
+
         .project a:hover {
             text-decoration: underline;
+            color: var(--mint-green);
+            transform: translateX(5px);
         }
+
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #222;
-            border-top: 1px solid #444;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid var(--mint-green);
+            animation: slideInFromBottom 0.5s ease-out;
         }
+
         footer p {
             margin: 5px 0;
         }
+
         footer a {
-            color: #1e90ff;
+            color: var(--magenta);
             text-decoration: none;
+            transition: all 0.3s ease;
         }
+
         footer a:hover {
             text-decoration: underline;
+            color: var(--mint-green);
+            transform: scale(1.1);
         }
+
         /* Styles for the side menu */
         .sidenav {
             height: 100%;
@@ -152,46 +233,56 @@
             top: 0;
             transition: 0.5s;
             padding-top: 60px;
-            background-color: #333;
+            background-color: rgba(0, 31, 63, 0.9);
             overflow-x: hidden;
         }
+
         .sidenav-left {
             left: 0;
         }
+
         .sidenav-right {
             right: 0;
         }
+
         .sidenav a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 25px;
-            color: #f1f1f1;
+            color: var(--light-text);
             display: block;
             transition: 0.3s;
         }
+
         .sidenav a:hover {
-            color: #1e90ff;
+            color: var(--mint-green);
+            transform: translateX(5px);
         }
+
         .sidenav .closebtn {
             position: absolute;
             top: 0;
             font-size: 36px;
             margin-left: 50px;
         }
+
         .sidenav-left .closebtn {
             right: 25px;
         }
+
         .sidenav-right .closebtn {
             left: 25px;
         }
+
         #main {
-            transition: margin-left .5s, margin-right .5s;
+            transition: margin-left 0.5s, margin-right 0.5s;
             padding: 16px;
         }
+
         /* Styles for collapsible text */
         .collapsible {
-            background-color: #444;
-            color: white;
+            background-color: var(--mint-green);
+            color: var(--dark-text);
             cursor: pointer;
             padding: 10px;
             width: 100%;
@@ -199,70 +290,175 @@
             text-align: left;
             outline: none;
             font-size: 1em;
+            transition: all 0.3s ease;
         }
-        .active, .collapsible:hover {
-            background-color: #555;
+
+        .active,
+        .collapsible:hover {
+            background-color: var(--magenta);
+            color: var(--light-text);
         }
+
         .content {
             padding: 0 18px;
             display: none;
             overflow: hidden;
-            background-color: #333;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 0 0 10px 10px;
+            animation: fadeIn 0.5s ease-out;
         }
+
         /* Styles for prompt library */
         .prompt-library {
             padding: 10px;
-            background-color: #333;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             margin-top: 20px;
+            animation: slideInFromBottom 0.5s ease-out;
         }
+
         .prompt-library h2 {
             font-size: 1.5em;
             margin-bottom: 10px;
+            cursor: pointer;
+            user-select: none;
+            color: var(--mint-green);
+            transition: all 0.3s ease;
         }
+
+        .prompt-library h2::after {
+            content: '\25BC';
+            float: right;
+            transition: transform 0.3s;
+        }
+
+        .prompt-library h2.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
         .prompt-library ul {
             list-style-type: none;
             padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
         }
+
+        .prompt-library ul.expanded {
+            max-height: 1000px;
+            transition: max-height 0.3s ease-in;
+        }
+
         .prompt-library ul li {
-            background-color: #444;
+            background-color: rgba(64, 224, 208, 0.1);
             padding: 10px;
             margin: 5px 0;
             border-radius: 5px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
+
         .prompt-library ul li:hover {
-            background-color: #555;
+            background-color: rgba(255, 0, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
-        <button class="header-button" onclick="openVideoNav()">Video ansehen</button>
-        <button class="header-button" onclick="openPromptNav()">Prompt Bibliothek</button>
-        <a href="documentation.html" class="header-button">Dokumentation ansehen</a> <!-- New button added here -->
-        <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/audioreworkvisions-textlogo/1.png" alt="Logo">
-        <h1>Chloé 2020</h1>
-        <button type="button" class="collapsible">Chloé says:</button>
+        <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/audioreworkvisions-textlogo/1.png" alt="Logo" class="main-logo">
+        <h1>Chloé says:</h1>
+        <button type="button" class="collapsible">Chloe:</button>
         <div class="content">
             <p>Welcome to our Wonderland!</p>
         </div>
-        <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/mix/4.png" alt="Logo">
     </header>
+
     <main id="main">
         <section id="chat-section">
             <div id="chatbox-container">
                 <div id="chatbox">
-                    <p id="botStarterMessage">Gib hier dein Prompt ein</p>
+                    <p class="ai-message"><strong>Chloe:</strong> Hallo! Wie kann ich Ihnen heute helfen?</p>
                 </div>
             </div>
             <form id="userInputForm" action="">
-                <input id="userInput" type="text" name="msg" placeholder="Schreiben Sie etwas...">
-                <input type="submit" value="Senden">
+                <input id="userInput" type="text" name="msg" placeholder="Schreiben Sie eine Nachricht...">
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="send-icon">
+                        <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                    </svg>
+                </button>
             </form>
             <div id="imageGallery" class="image-gallery"></div>
         </section>
+
         <section class="projects">
             <article class="project">
                 <h2>Open-Source Contributions</h2>
@@ -271,26 +467,70 @@
             </article>
         </section>
     </main>
-    <footer>
-        <p>&copy;Copyright 2024 AUDIOREWORKVISIONS</p>
-        <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="contact-button">Kontakt auf LinkedIn</a>
-    </footer>
 
-    <div id="videoSidenav" class="sidenav sidenav-left">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeVideoNav()">&times;</a>
-        <iframe width="350" height="197" src="https://www.youtube.com/embed/-bPxO0fT6TQ?si=WIVC1h4O6_I8Tr75" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+    <footer>
+        <p>&copy;Copyright 2024 API2STORE</p>
+        <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="contact-button">Kontakt auf LinkedIn</a>
+        <nav class="footer-nav">
+            <a href="tools.html" class="footer-button">Tools</a>
+            <a href="tech-stack.html" class="footer-button">Tech-Stack</a>
+            <button class="footer-button" onclick="openPromptNav()">Prompt Bibliothek</button>
+        </nav>
+    </footer>
 
     <div id="promptSidenav" class="sidenav sidenav-right">
         <a href="javascript:void(0)" class="closebtn" onclick="closePromptNav()">&times;</a>
         <div class="prompt-library">
-            <h2>Prompt Bibliothek</h2>
-            <ul>
-                <li onclick="setPrompt('Erstelle ein Bild von einem futuristischen Stadtbild.')">Erstelle ein Bild von einem futuristischen Stadtbild.</li>
-                <li onclick="setPrompt('Generiere ein Bild von einem idyllischen Bergdorf.')">Generiere ein Bild von einem idyllischen Bergdorf.</li>
-                <li onclick="setPrompt('Zeige ein Bild von einem futuristischen Fahrzeug.')">Zeige ein Bild von einem futuristischen Fahrzeug.</li>
-                <li onclick="setPrompt('Erstelle ein Bild von einem märchenhaften Wald.')">Erstelle ein Bild von einem märchenhaften Wald.</li>
-            </ul>
+            <button class="collapsible" onclick="togglePromptLibrary('image-creation')">Bildgenerierung</button>
+            <div class="prompt-content" id="image-creation">
+                <ul>
+                    <li onclick="setPrompt('Erstelle ein Bild von einem futuristischen Stadtbild.')">Erstelle ein Bild von einem futuristischen Stadtbild.</li>
+                    <li onclick="setPrompt('Generiere ein Bild von einem idyllischen Bergdorf.')">Generiere ein Bild von einem idyllischen Bergdorf.</li>
+                    <li onclick="setPrompt('Zeige ein Bild von einem surrealen Unterwasser-Königreich.')">Zeige ein Bild von einem surrealen Unterwasser-Königreich.</li>
+                </ul>
+            </div>
+
+            <button class="collapsible" onclick="togglePromptLibrary('code-generation')">Code-Generierung</button>
+            <div class="prompt-content" id="code-generation">
+                <ul>
+                    <li onclick="setPrompt('Schreibe eine Python-Funktion zur Berechnung der Fibonacci-Folge.')">Schreibe eine Python-Funktion zur Berechnung der Fibonacci-Folge.</li>
+                    <li onclick="setPrompt('Erstelle ein HTML-Formular mit CSS-Styling für eine Kontaktseite.')">Erstelle ein HTML-Formular mit CSS-Styling für eine Kontaktseite.</li>
+                    <li onclick="setPrompt('Generiere ein JavaScript-Skript für ein einfaches Quizspiel.')">Generiere ein JavaScript-Skript für ein einfaches Quizspiel.</li>
+                </ul>
+            </div>
+
+            <button class="collapsible" onclick="togglePromptLibrary('eule-zh-artistic')">EULE ZH Artistic Prompts</button>
+            <div class="prompt-content" id="eule-zh-artistic">
+                <ul>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; displayed in elegant, flowing script on an abstract marble bust with golden veins.')">Erstelle ein Bild von "EULE ZH" displayed in elegant, flowing script on an abstract marble bust with golden veins.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; carved into metallic ribbons of a modern, abstract face sculpture, with iridescent reflections.')">Erstelle ein Bild von "EULE ZH" carved into metallic ribbons of a modern, abstract face sculpture, with iridescent reflections.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; suspended among floating geometric shapes of a fragmented stone bust, with gold accents.')">Erstelle ein Bild von "EULE ZH" suspended among floating geometric shapes of a fragmented stone bust, with gold accents.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; intricately woven into a large ornamental wall relief with abstract shapes and symbols.')">Erstelle ein Bild von "EULE ZH" intricately woven into a large ornamental wall relief with abstract shapes and symbols.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; spiraling around an abstract bust, obscured by a swirling vortex of glass and metal.')">Erstelle ein Bild von "EULE ZH" spiraling around an abstract bust, obscured by a swirling vortex of glass and metal.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; engraved into a minimalist, organic bust with branches and leaves emerging from the crown.')">Erstelle ein Bild von "EULE ZH" engraved into a minimalist, organic bust with branches and leaves emerging from the crown.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; embossed in bold, angular font on a sleek, metallic abstract face sculpture.')">Erstelle ein Bild von "EULE ZH" embossed in bold, angular font on a sleek, metallic abstract face sculpture.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; etched into the cracked surface of an abstract marble bust with gold veins.')">Erstelle ein Bild von "EULE ZH" etched into the cracked surface of an abstract marble bust with gold veins.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; artistically blended into swirling patterns of an abstract vortex made of glass and metal.')">Erstelle ein Bild von "EULE ZH" artistically blended into swirling patterns of an abstract vortex made of glass and metal.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; seamlessly integrated into an intricate wall relief with organic and geometric shapes.')">Erstelle ein Bild von "EULE ZH" seamlessly integrated into an intricate wall relief with organic and geometric shapes.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; as part of an abstract, fragmented stone bust with letters floating among geometric shapes.')">Erstelle ein Bild von "EULE ZH" as part of an abstract, fragmented stone bust with letters floating among geometric shapes.</li>
+               </ul>
+            </div>
+
+            <button class="collapsible" onclick="togglePromptLibrary('text-to-code')">Text-to-Code Templates</button>
+            <div class="prompt-content" id="text-to-code">
+                <ul>
+                    <li onclick="setPrompt('Generate a Python function to calculate the factorial of a number.')">Generate a Python function to calculate the factorial of a number.</li>
+                    <li onclick="setPrompt('Create an HTML form with validation for email input.')">Create an HTML form with validation for email input.</li>
+                    <li onclick="setPrompt('Write a JavaScript function to sort an array of numbers in ascending order.')">Write a JavaScript function to sort an array of numbers in ascending order.</li>
+                    <li onclick="setPrompt('Generate a CSS grid layout with three columns and two rows.')">Generate a CSS grid layout with three columns and two rows.</li>
+                    <li onclick="setPrompt('Create a SQL query to fetch all records where the age is greater than 30.')">Create a SQL query to fetch all records where the age is greater than 30.</li>
+                    <li onclick="setPrompt('Write a Python script to scrape data from a given website.')">Write a Python script to scrape data from a given website.</li>
+                    <li onclick="setPrompt('Generate a basic Express.js server in Node.js with a single GET route.')">Generate a basic Express.js server in Node.js with a single GET route.</li>
+                    <li onclick="setPrompt('Create a React component that renders a list of items passed as props.')">Create a React component that renders a list of items passed as props.</li>
+                    <li onclick="setPrompt('Generate a shell script to automate backup of a directory to a remote server.')">Generate a shell script to automate backup of a directory to a remote server.</li>
+                    <li onclick="setPrompt('Write a Java program that reads a text file and counts the frequency of each word.')">Write a Java program that reads a text file and counts the frequency of each word.</li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -342,15 +582,15 @@
             })
             .then(response => response.json())
             .then(data => {
-                let botResponse = data.choices[0].message.content.trim();
+                let chloeResponse = data.choices[0].message.content.trim();
                 let chatbox = document.getElementById('chatbox');
-                chatbox.innerHTML += `<p>Bot: ${botResponse}</p>`;
+                chatbox.innerHTML += `<p class="chloe-message"><strong>Chloe:</strong> ${chloeResponse}</p>`;
                 chatbox.scrollTop = chatbox.scrollHeight;
             })
             .catch(error => {
                 console.log(error);
                 let chatbox = document.getElementById('chatbox');
-                chatbox.innerHTML += `<p>Bot: Es gab einen Fehler bei der Anfrage.</p>`;
+                chatbox.innerHTML += `<p class="chloe-message"><strong>Chloe:</strong> Es tut mir leid, es gab einen Fehler bei der Anfrage.</p>`;
                 chatbox.scrollTop = chatbox.scrollHeight;
             });
         }
@@ -372,13 +612,13 @@
             .then(data => {
                 let imageUrl = data.data[0].url;
                 let chatbox = document.getElementById('chatbox');
-                chatbox.innerHTML += `<p>Bot: <img src="${imageUrl}" alt="Generated Image" style="width: 100px; height: 100px;"><br><button onclick="downloadImage('${imageUrl}')">Download Image</button></p>`;
+                chatbox.innerHTML += `<p class="bot-message"><strong>Chloe:</strong> Hier ist das Bild, das Sie angefordert haben:<br><img src="${imageUrl}" alt="Generated Image" style="width: 256px; height: 256px; border-radius: 10px;"><br><button onclick="downloadImage('${imageUrl}')" class="download-button">Download Image</button></p>`;
                 chatbox.scrollTop = chatbox.scrollHeight;
             })
             .catch(error => {
                 console.log(error);
                 let chatbox = document.getElementById('chatbox');
-                chatbox.innerHTML += `<p>Bot: Es gab einen Fehler bei der Anfrage.</p>`;
+                chatbox.innerHTML += `<p class="bot-message"><strong>Chloe:</strong> Es tut mir leid, es gab einen Fehler bei der Verarbeitung Ihrer Anfrage. Bitte versuchen Sie es später noch einmal.</p>`;
                 chatbox.scrollTop = chatbox.scrollHeight;
             });
         }
@@ -398,16 +638,6 @@
             newWindow.document.body.appendChild(link);
             link.click();
             newWindow.document.body.removeChild(link);
-        }
-
-        function openVideoNav() {
-            document.getElementById("videoSidenav").style.width = "350px";
-            document.getElementById("main").style.marginLeft = "350px";
-        }
-
-        function closeVideoNav() {
-            document.getElementById("videoSidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
         }
 
         function openPromptNav() {
@@ -434,6 +664,15 @@
                     content.style.display = "block";
                 }
             });
+        }
+
+        function togglePromptLibrary(category) {
+            const promptContent = document.getElementById(category);
+            const promptList = promptContent.querySelector('ul');
+            const toggleButton = promptContent.previousElementSibling;
+
+            toggleButton.classList.toggle('collapsed');
+            promptList.classList.toggle('expanded');
         }
     </script>
 </body>
