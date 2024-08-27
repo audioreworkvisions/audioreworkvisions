@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API2STORE - Tooling</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --dark-blue: #0e1f40;
+            --light-text: #e5e5e5;
+            --mint-green: #3eb489;
+            --dark-text: #1c1c1c;
+            --magenta: #ff007f;
+            --light-gray: #f1f1f1;
+            --medium-gray: #ccc;
+            --dark-gray: #444;
+            --hover-gray: #555;
+            --accent-color: #3eb489;
+        }
+
+        body {
+            background-color: var(--dark-blue);
+            color: var(--light-text);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            background-color: var(--dark-blue);
+        }
+
+        header img {
+            width: 200px;
+            height: auto;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 10px 0;
+            color: var(--mint-green);
+        }
+
+        .header-button {
+            font-size: 1em;
+            cursor: pointer;
+            background-color: var(--mint-green);
+            color: var(--dark-text);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .header-button:hover {
+            background-color: var(--magenta);
+            color: var(--light-text);
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .documentation {
+            width: 100%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .documentation h1,
+        .documentation h2 {
+            color: var(--light-text);
+        }
+
+        .documentation p,
+        .documentation ul,
+        .documentation ol {
+            color: var(--medium-gray);
+        }
+
+        .doc-section {
+            margin-bottom: 30px;
+        }
+
+        .doc-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .doc-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .doc-section ul li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--hover-gray);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--dark-blue);
+            color: var(--light-text);
+            border-top: 4px solid var(--accent-color);
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--hover-gray);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/audioreworkvisions-textlogo/1.png" alt="Logo">
+        <h1>Chloé 2020 Tools</h1>
+        <nav>
+            <a href="index.html" class="header-button">Chloe GPT</a>
+            <a href="tech-stack.html" class="header-button">Tech-Stack</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="documentation" id="documentation-content">
+            <h1>Dokumentationen</h1>
+
+            <div class="doc-section">
+                <h2>Raspberry Pi Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://www.raspberrypi.org/help/">Raspberry Pi Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Die offizielle Dokumentation für Raspberry Pi-Computer und Mikrocontroller bietet umfassende Anleitungen und technische Informationen. Sie umfasst Hardware- und Softwaredokumentation, Konfigurationsanleitungen, Tutorials und vieles mehr.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Einrichtung und Konfiguration:</strong> Anleitung zur Installation des Raspberry Pi OS, Konfiguration der Netzwerkeinstellungen und Verbindung von Peripheriegeräten.</li>
+                        <li><strong>Fernzugriff:</strong> Anleitungen zur Einrichtung von SSH und VNC für den Fernzugriff auf den Raspberry Pi.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://www.raspberrypi.org/help/">Raspberry Pi Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>Docker Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://docs.docker.com/">Docker Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Umfassende Dokumentation für Docker, die Installation, Konfiguration und Nutzung von Docker-Produkten abdeckt. Sie bietet Leitfäden, Handbücher und Referenzmaterialien zur Containerisierung von Anwendungen und Verwaltung von Docker-Umgebungen.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Docker Einrichtung:</strong> Anleitungen zur Installation von Docker auf verschiedenen Betriebssystemen und Konfiguration von Docker Desktop.</li>
+                        <li><strong>Verwendung der Docker CLI:</strong> Detaillierte Anleitungen zur Nutzung der Docker-Befehlszeilenschnittstelle zur Verwaltung von Containern, Images, Netzwerken und Volumes.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://docs.docker.com/">Docker Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>Docker Buildx Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://docs.docker.com/buildx/">Docker Buildx Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Docker Buildx erweitert die Funktionen des Docker `docker build` Befehls und bietet erweiterte Funktionen wie Multi-Architektur-Builds, Cache-Management und BuildKit-Integration.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Multi-Architektur-Builds:</strong> Vereinfachung der Erstellung von Docker-Images für mehrere CPU-Architekturen (z. B. ARM und x86) mit einem einzigen Build-Befehl.</li>
+                        <li><strong>Build-Cache-Export:</strong> Ermöglicht den Export und Import von Build-Caches, um nachfolgende Builds zu beschleunigen und Caches zwischen verschiedenen Umgebungen zu teilen.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://docs.docker.com/buildx/">Docker Buildx Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>FastAPI Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://fastapi.tiangolo.com/">FastAPI Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> FastAPI ist ein modernes, schnelles (hochleistungsfähiges) Webframework für den Aufbau von APIs mit Python, basierend auf Standard-Python-Typ-Hinweisen. Es bietet automatische interaktive Dokumentation, hohe Leistung und einfache Nutzung.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Schneller Aufbau von APIs:</strong> FastAPI ermöglicht es Entwicklern, schnell APIs mit automatischer Dokumentation unter Verwendung von OpenAPI und JSON-Schema-Standards zu erstellen.</li>
+                        <li><strong>Asynchrones Programmieren:</strong> FastAPI unterstützt asynchrones Programmieren, wodurch die Entwicklung leistungsfähiger Anwendungen ermöglicht wird.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://fastapi.tiangolo.com/">FastAPI Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>Ubuntu Server Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://ubuntu.com/server/docs">Ubuntu Server Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Die Ubuntu Server Dokumentation bietet umfassende Anleitungen zur Installation, Konfiguration und Verwaltung von Ubuntu Server. Sie deckt Themen wie Netzwerkkonfiguration, Paketverwaltung, Sicherheitspraktiken und Virtualisierung ab.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Server-Installation:</strong> Detaillierte Anleitungen zur Installation von Ubuntu Server, einschließlich der Erstellung von bootfähigen Medien und der Partitionierung von Festplatten.</li>
+                        <li><strong>Netzwerkkonfiguration:</strong> Leitfäden zur Konfiguration von Netzwerkeinstellungen mit Netplan, Einrichtung von DHCP und Integration in Active Directory.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://ubuntu.com/server/docs">Ubuntu Server Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>NGINX Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://nginx.org/en/docs/">NGINX Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Die offizielle Dokumentation für NGINX bietet umfassende Informationen zur Installation, Konfiguration und Bereitstellung von NGINX als Webserver, Reverse Proxy und Load Balancer. Sie enthält ausführliche Leitfäden und Referenzen zu verschiedenen NGINX-Funktionen und -Modulen.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Einrichtung eines einfachen HTTP-Servers:</strong> Detaillierte Anleitungen zur Konfiguration von NGINX zur Bereitstellung statischer Inhalte und zum Proxying von Anfragen an Backend-Server.</li>
+                        <li><strong>HTTPS-Konfiguration:</strong> Leitfäden zur Einrichtung sicherer HTTPS-Server mit SSL/TLS, einschließlich Zertifikatkonfiguration und SSL-Parametern.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://nginx.org/en/docs/">NGINX Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>React Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://react.dev/">React Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Die offizielle Dokumentation für React, eine JavaScript-Bibliothek zum Aufbau von Benutzeroberflächen. Sie bietet umfassende Leitfäden, Tutorials und Referenzen zu React-Komponenten, Hooks und APIs.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Erstellung interaktiver Benutzeroberflächen:</strong> React ermöglicht es Entwicklern, wiederverwendbare UI-Komponenten zu erstellen, was den Aufbau komplexer Schnittstellen aus einfachen, isolierten Teilen erleichtert.</li>
+                        <li><strong>Zustands- und Nebenwirkungsmanagement:</strong> React Hooks, wie `useState` und `useEffect`, bieten eine leistungsstarke Möglichkeit, den Zustand von Komponenten zu verwalten und Nebenwirkungen in funktionalen Komponenten zu behandeln.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://react.dev/">React Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>Node.js Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://nodejs.org/en/docs/">Node.js Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Die offizielle Dokumentation für Node.js, eine JavaScript-Laufzeitumgebung, die auf der V8-JavaScript-Engine von Chrome basiert. Sie bietet umfassende Leitfäden und Referenzen zu Node.js APIs, einschließlich Module, asynchroner Programmierung, Dateiverwaltung und mehr.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Erstellung von Webservern:</strong> Node.js ermöglicht es Entwicklern, leistungsfähige Webserver mit einfachem JavaScript-Code zu erstellen.</li>
+                        <li><strong>Asynchrone Programmierung:</strong> Node.js bietet eine Reihe von asynchronen I/O-Primitiven, was es ideal für Anwendungen macht, die nicht-blockierende Operationen erfordern.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://nodejs.org/en/docs/">Node.js Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>npm Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://docs.npmjs.com/">npm Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Die offizielle Dokumentation für npm, den Paketmanager für Node.js. Sie bietet umfassende Leitfäden und Referenzen zur Nutzung von npm zur Verwaltung von JavaScript-Paketen, einschließlich Installation, Konfiguration und Veröffentlichung.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Installation von Paketen:</strong> npm ermöglicht es Entwicklern, Pakete aus dem npm-Registry zu installieren und in ihren Projekten zu verwenden, einschließlich Optionen für lokale und globale Installationen.</li>
+                        <li><strong>Veröffentlichung von Paketen:</strong> npm bietet Werkzeuge, mit denen Entwickler ihre eigenen Pakete im npm-Registry veröffentlichen können, um sie anderen zur Verfügung zu stellen und Beiträge zu ermöglichen.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://docs.npmjs.com/">npm Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>GPIO Pinout Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://www.raspberrypi.org/documentation/usage/gpio/">GPIO Pinout Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Diese Dokumentation bietet detaillierte Informationen zu den General-Purpose Input/Output (GPIO) Pins der Raspberry Pi Boards. Sie umfasst die Funktionen der Pins, Spannungspegel und wie diese Pins in verschiedenen Projekten konfiguriert und verwendet werden können.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Steuerung von LEDs:</strong> Verwendung der GPIO-Pins zur Steuerung des Ein- und Ausschaltzustands von LEDs in verschiedenen Mustern.</li>
+                        <li><strong>Auslesen von Sensordaten:</strong> Anschluss von Sensoren wie Temperatur- oder Bewegungssensoren an die GPIO-Pins, um Daten auszulesen und in Anwendungen zu verwenden.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://www.raspberrypi.org/documentation/usage/gpio/">GPIO Pinout Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>Adafruit SSD1306 Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples">Adafruit SSD1306 Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Diese Dokumentation behandelt die Verwendung der monochromen OLED-Displays von Adafruit, die auf dem SSD1306-Controller basieren, mit Arduino, CircuitPython und MicroPython. Sie enthält Anleitungen zur Einrichtung, Code-Beispiele und Anleitungen zum Zeichnen von Grafiken und Texten auf den Displays.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Anzeige von Sensordaten:</strong> Verwendung des SSD1306 OLED zur Anzeige von Echtzeitdaten von verschiedenen Sensoren in einem klaren, lesbaren Format.</li>
+                        <li><strong>Erstellung einfacher GUIs:</strong> Aufbau grafischer Benutzeroberflächen für eingebettete Projekte, wie die Anzeige von Statusmeldungen oder Systeminformationen.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples">Adafruit SSD1306 Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>pyttsx3 Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://pyttsx3.readthedocs.io/">pyttsx3 Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Die pyttsx3-Bibliothek bietet Text-to-Speech-Funktionen in Python. Sie arbeitet offline und ist mit mehreren Sprachsynthesemotoren kompatibel, einschließlich SAPI5 auf Windows, NSSpeechSynthesizer auf macOS und espeak auf Linux. Die Bibliothek ermöglicht die Anpassung von Stimmeigenschaften, ereignisgesteuerte Benachrichtigungen und die Integration in verschiedene Anwendungen.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Sprachbenachrichtigungen:</strong> Implementierung von Text-to-Speech-Benachrichtigungen in Anwendungen, wie Alarmsystemen oder assistiven Technologien.</li>
+                        <li><strong>Erstellung von Hörbüchern:</strong> Konvertierung von Textdokumenten in Sprache, um Hörbücher oder gesprochene Inhalte für sehbehinderte Benutzer zu erstellen.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://pyttsx3.readthedocs.io/">pyttsx3 Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>I2C Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://learn.adafruit.com/working-with-i2c-devices">I2C Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Diese Dokumentation bietet einen Überblick über das Inter-Integrated Circuit (I2C) Protokoll, eine beliebte Methode zum Anschließen von Peripheriegeräten wie Sensoren an einen Host-Controller. Sie behandelt die Grundlagen der I2C-Kommunikation, einschließlich Datenübertragung, Geräteadressierung und häufig auftretender Probleme.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Anschluss von Sensoren an Mikrocontroller:</strong> Verwendung von I2C zur Verbindung mehrerer Sensoren mit einem einzigen Mikrocontroller, wodurch eine effiziente Datenerfassung mit minimaler Verkabelung ermöglicht wird.</li>
+                        <li><strong>Fehlerbehebung bei I2C-Geräten:</strong> Lernen, wie man I2C-Adressen scannt und erkennt, häufige Probleme behebt und eine ordnungsgemäße Kommunikation zwischen Geräten sicherstellt.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://learn.adafruit.com/working-with-i2c-devices">I2C Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>ALSA Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://www.alsa-project.org/main/index.php/Documentation">ALSA Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> Die Advanced Linux Sound Architecture (ALSA) bietet Audio- und MIDI-Funktionalität für das Linux-Betriebssystem. Sie umfasst Funktionen wie effiziente Unterstützung für alle Arten von Audio-Schnittstellen, modularisierte Soundtreiber und Kompatibilität mit der älteren Open Sound System (OSS) API. Die Dokumentation umfasst Benutzerinformationen, Systemadministrationshandbücher, Entwicklerinformationen und Hardwareunterstützung.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Entwicklung von Audiotreibern:</strong> Umfassende Leitfäden zur Entwicklung von Gerätetreibern für ALSA, einschließlich spezieller Fokus auf PCI-Soundkarten.</li>
+                        <li><strong>Anwendungsentwicklung:</strong> Nutzung der ALSA-Bibliotheks-API zur nativen ALSA-Unterstützung in Anwendungen, mit Referenzmaterialien und Tutorials.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://www.alsa-project.org/main/index.php/Documentation">ALSA Dokumentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2>PortAudio Dokumentation</h2>
+                <ul>
+                    <li><strong>Name:</strong> <a href="https://portaudio.com/docs/v19-doxydocs/">PortAudio Dokumentation</a></li>
+                    <li><strong>Beschreibung:</strong> PortAudio ist eine plattformübergreifende, Open-Source-C-Bibliothek für Echtzeit-Audio-Ein- und Ausgabe. Sie bietet Funktionen, mit denen Software Echtzeit-Audiostreams von den Hardware-Audioschnittstellen eines Computers aufnehmen und ausgeben kann. Die Bibliothek vereinfacht das Schreiben plattformübergreifender Audioanwendungen und das Entwickeln von Audiosoftware, indem sie die Komplexität der direkten Arbeit mit nativen Audio-APIs verbirgt.</li>
+                    <li><strong>Anwendungsfälle:</strong></li>
+                    <ul>
+                        <li><strong>Echtzeit-Audioprozessierung:</strong> Entwickeln von Anwendungen, die Echtzeit-Audio-Ein- und Ausgabe benötigen, wie digitale Audio-Workstations (DAWs) oder Live-Audio-Effektprozessoren.</li>
+                        <li><strong>Audiostreaming:</strong> Implementierung von Streaming-Diensten oder Anwendungen, die kontinuierliche Audio-Datenströme verarbeiten, wie Internettelefonie oder Musik-Streaming-Dienste.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://portaudio.com/docs/v19-doxydocs/">PortAudio Dokumentation</a></li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Copyright 2024 API2STORE</p>
+        <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="contact-button">Kontakt auf LinkedIn</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.0.3/dist/showdown.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
