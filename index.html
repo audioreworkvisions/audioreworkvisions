@@ -113,11 +113,11 @@
         }
 
         #chatbox p:nth-child(odd) {
-            background-color: rgba(64, 224, 208, 0.2); /* Sattere Farben für mehr Kontrast */
+            background-color: rgba(255, 255, 255, 0.1); /* Sattere Farben für mehr Kontrast */
         }
 
         #chatbox p:nth-child(even) {
-            background-color: rgba(255, 0, 255, 0.2); /* Sattere Farben für mehr Kontrast */
+            background-color: rgba(255, 255, 255, 0.1); /* Sattere Farben für mehr Kontrast */
         }
 
         #userInputForm {
@@ -146,16 +146,16 @@
 
         input[type="submit"] {
             padding: 10px;
-            border: 1px solid var(--magenta);
+            border: 1px solid var(--blue);
             border-radius: 0 5px 5px 0;
-            background-color: var(--magenta);
+            background-color: var(--blue);
             color: var(--light-text); /* Heller Text auf dunklem Hintergrund */
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: var(--mint-green);
+            background-color: var(--blue);
             color: var(--dark-text); /* Dunklerer Text auf hellerer Hintergrundfarbe beim Hover */
             transform: scale(1.1);
         }
@@ -423,7 +423,7 @@
     </main>
 
     <footer>
-        <p>&copy;Copyright 2024 API2STORE</p>
+        <p>&copy;Copyright 2024 AUDIOREWORKVISION</p>
         <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="contact-button">Kontakt auf LinkedIn</a>
         <nav class="footer-nav">
             <a href="tools.html" class="footer-button">Tools</a>
@@ -465,7 +465,7 @@
     </div>
 
     <script>
-        const apiKey = 'sk-svcacct-xqKNDuCzFoMczbu6s4wMT3BlbkFJx8rjcvovypui1zcNmFrQ'; // Ersetze dies durch deinen OpenAI API-Schlüssel
+        const apiKey = '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'; // Ersetze dies durch deinen OpenAI API-Schlüssel
 
         document.getElementById('userInputForm').addEventListener('submit', function (e) {
             e.preventDefault();
