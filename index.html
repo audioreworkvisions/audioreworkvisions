@@ -156,7 +156,7 @@
 
         input[type="submit"]:hover {
             background-color: var(--blue);
-            color: var(--dark-text); /* Dunklerer Text auf hellerer Hintergrundfarbe beim Hover */
+            color: var (--dark-text); /* Dunklerer Text auf hellerer Hintergrundfarbe beim Hover */
             transform: scale(1.1);
         }
 
@@ -465,8 +465,6 @@
     </div>
 
     <script>
-        const apiKey = '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'; // Ersetze dies durch deinen OpenAI API-Schlüssel
-
         document.getElementById('userInputForm').addEventListener('submit', function (e) {
             e.preventDefault();
             let userText = document.getElementById('userInput').value;
@@ -497,22 +495,18 @@
         }
 
         function generateText(userText) {
-            fetch('https://api.openai.com/v1/chat/completions', {
+            fetch('/api/generate-text', {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${apiKey}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    "model": "gpt-4o-mini",
-                    "messages": [{ "role": "user", "content": userText }],
-                    "max_tokens": 1500,
-                    "temperature": 0.88,
+                    "userText": userText
                 })
             })
                 .then(response => response.json())
                 .then(data => {
-                    let chloeResponse = data.choices[0].message.content.trim();
+                    let chloeResponse = data.response.trim();
                     let chatbox = document.getElementById('chatbox');
                     chatbox.innerHTML += `<p class="chloe-message"><strong>Chloe:</strong> ${chloeResponse}</p>`;
                     chatbox.scrollTop = chatbox.scrollHeight;
@@ -526,21 +520,18 @@
         }
 
         function generateImage(userText) {
-            fetch('https://api.openai.com/v1/images/generations', {
+            fetch('/api/generate-image', {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${apiKey}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    "prompt": userText,
-                    "n": 1,
-                    "size": "256x256"
+                    "userText": userText
                 })
             })
                 .then(response => response.json())
                 .then(data => {
-                    let imageUrl = data.data[0].url;
+                    let imageUrl = data.imageUrl;
                     let chatbox = document.getElementById('chatbox');
                     chatbox.innerHTML += `<p class="bot-message"><strong>Chloe:</strong> Hier ist das Bild, das Sie angefordert haben:<br><img src="${imageUrl}" alt="Generated Image" style="width: 256px; height: 256px; border-radius: 10px;"><br><button onclick="downloadImage('${imageUrl}')" class="download-button">Download Image</button></p>`;
                     chatbox.scrollTop = chatbox.scrollHeight;
@@ -608,4 +599,3 @@
 </body>
 
 </html>
-

@@ -3,7 +3,9 @@
   "version": "0.2.0",
   "description": "package.json",
   "dependencies": {
-    "@primer/css": "17.0.1"
+    "@primer/css": "17.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
   },
   "license": "MIT"
 }
