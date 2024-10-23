@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,16 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <style>
         :root {
-            --dark-blue: #001f3f;
+            --dark-blue: #3B3B3B;
             --mint-green: #40e0d0;
             --magenta: #ff00ff;
-            --light-text: #ffffff; /* Reineres Weiß für besseren Kontrast */
-            --dark-text: #111111; /* Satteres Dunkelgrau für besseren Kontrast */
+            --light-text: #222222;
+            --dark-text: #333333;
         }
 
         body {
             background-color: var(--dark-blue);
-            color: var(--light-text); /* Hellerer Text auf dunklem Hintergrund */
+            color: var(--light-text);
             font-family: Arial, sans-serif;
             animation: fadeIn 1s ease-out;
         }
@@ -38,13 +37,13 @@
         header h1 {
             font-size: 2em;
             margin: 10px 0;
-            color: var(--mint-green); /* Kontrast zwischen Text und Hintergrund */
+            color: var(--mint-green);
             animation: slideInFromLeft 0.5s ease-out 0.2s both;
         }
 
         header p {
             font-size: 1.2em;
-            color: var(--light-text); /* Heller Text für besseren Kontrast */
+            color: var(--light-text);
             animation: slideInFromRight 0.5s ease-out 0.4s both;
         }
 
@@ -52,7 +51,7 @@
             font-size: 1em;
             cursor: pointer;
             background-color: var(--mint-green);
-            color: var(--dark-text); /* Satteres Dunkelgrau für bessere Lesbarkeit */
+            color: var(--dark-text);
             padding: 10px;
             border: none;
             border-radius: 5px;
@@ -63,7 +62,7 @@
 
         .header-button:hover {
             background-color: var(--magenta);
-            color: var(--light-text); /* Hellerer Text auf Hover */
+            color: var(--light-text);
             transform: scale(1.1);
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
@@ -108,16 +107,15 @@
         #chatbox p {
             padding: 5px;
             border-radius: 5px;
-            color: var(--light-text); /* Heller Text für bessere Sichtbarkeit */
             animation: fadeIn 0.3s ease-out;
         }
 
         #chatbox p:nth-child(odd) {
-            background-color: rgba(255, 255, 255, 0.1); /* Sattere Farben für mehr Kontrast */
+            background-color: rgba(64, 224, 208, 0.1);
         }
 
         #chatbox p:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.1); /* Sattere Farben für mehr Kontrast */
+            background-color: rgba(255, 0, 255, 0.1);
         }
 
         #userInputForm {
@@ -131,7 +129,7 @@
             border: 1px solid var(--mint-green);
             border-radius: 5px 0 0 5px;
             background-color: rgba(255, 255, 255, 0.1);
-            color: var(--light-text); /* Heller Text für bessere Sichtbarkeit */
+            color: var(--light-text);
             transition: all 0.3s ease;
         }
 
@@ -146,17 +144,17 @@
 
         input[type="submit"] {
             padding: 10px;
-            border: 1px solid var(--blue);
+            border: 1px solid var(--magenta);
             border-radius: 0 5px 5px 0;
-            background-color: var(--blue);
-            color: var(--light-text); /* Heller Text auf dunklem Hintergrund */
+            background-color: var(--magenta);
+            color: var(--light-text);
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         input[type="submit"]:hover {
-            background-color: var(--blue);
-            color: var (--dark-text); /* Dunklerer Text auf hellerer Hintergrundfarbe beim Hover */
+            background-color: var(--mint-green);
+            color: var(--dark-text);
             transform: scale(1.1);
         }
 
@@ -215,14 +213,14 @@
         }
 
         footer a {
-            color: var(--light-text); /* Hellerer Text für bessere Lesbarkeit */
+            color: var(--magenta);
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         footer a:hover {
             text-decoration: underline;
-            color: var(--mint-green); /* Höherer Kontrast beim Hover */
+            color: var(--mint-green);
             transform: scale(1.1);
         }
 
@@ -251,7 +249,7 @@
             padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 25px;
-            color: var(--light-text); /* Heller Text für bessere Lesbarkeit */
+            color: var(--light-text);
             display: block;
             transition: 0.3s;
         }
@@ -284,7 +282,7 @@
         /* Styles for collapsible text */
         .collapsible {
             background-color: var(--mint-green);
-            color: var(--dark-text); /* Satterer Dunkler Text auf hellerem Hintergrund */
+            color: var(--dark-text);
             cursor: pointer;
             padding: 10px;
             width: 100%;
@@ -298,7 +296,7 @@
         .active,
         .collapsible:hover {
             background-color: var(--magenta);
-            color: var(--light-text); /* Hellerer Text auf Hover */
+            color: var(--light-text);
         }
 
         .content {
@@ -310,12 +308,66 @@
             animation: fadeIn 0.5s ease-out;
         }
 
+        /* Styles for prompt library */
+        .prompt-library {
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+            animation: slideInFromBottom 0.5s ease-out;
+        }
+
+        .prompt-library h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            cursor: pointer;
+            user-select: none;
+            color: var(--mint-green);
+            transition: all 0.3s ease;
+        }
+
+        .prompt-library h2::after {
+            content: '\25BC';
+            float: right;
+            transition: transform 0.3s;
+        }
+
+        .prompt-library h2.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
+        .prompt-library ul {
+            list-style-type: none;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .prompt-library ul.expanded {
+            max-height: 1000px;
+            transition: max-height 0.3s ease-in;
+        }
+
+        .prompt-library ul li {
+            background-color: rgba(64, 224, 208, 0.1);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .prompt-library ul li:hover {
+            background-color: rgba(255, 0, 255, 0.1);
+            transform: translateX(10px);
+        }
+
         /* Animation Keyframes */
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
@@ -326,7 +378,6 @@
                 transform: translateX(-50px);
                 opacity: 0;
             }
-
             to {
                 transform: translateX(0);
                 opacity: 1;
@@ -338,7 +389,6 @@
                 transform: translateX(50px);
                 opacity: 0;
             }
-
             to {
                 transform: translateX(0);
                 opacity: 1;
@@ -350,7 +400,6 @@
                 transform: translateY(-50px);
                 opacity: 0;
             }
-
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -362,7 +411,6 @@
                 transform: translateY(50px);
                 opacity: 0;
             }
-
             to {
                 transform: translateY(0);
                 opacity: 1;
@@ -373,11 +421,9 @@
             0% {
                 transform: scale(1);
             }
-
             50% {
                 transform: scale(1.05);
             }
-
             100% {
                 transform: scale(1);
             }
@@ -387,7 +433,7 @@
 
 <body>
     <header>
-        <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/audioreworkvisions-textlogo/1.png" alt="Logo" class="main-logo">
+        <img src="1.png" alt="Logo" class="main-logo">
         <h1>Chloé says:</h1>
         <button type="button" class="collapsible">Chloe:</button>
         <div class="content">
@@ -423,7 +469,7 @@
     </main>
 
     <footer>
-        <p>&copy;Copyright 2024 AUDIOREWORKVISION</p>
+        <p>&copy;Copyright 2024 API2STORE</p>
         <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="contact-button">Kontakt auf LinkedIn</a>
         <nav class="footer-nav">
             <a href="tools.html" class="footer-button">Tools</a>
@@ -456,16 +502,42 @@
             <button class="collapsible" onclick="togglePromptLibrary('eule-zh-artistic')">EULE ZH Artistic Prompts</button>
             <div class="prompt-content" id="eule-zh-artistic">
                 <ul>
-                    <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; displayed in elegant, flowing script on an abstract marble bust with golden veins.')">Erstelle ein Bild von "EULE ZH" displayed in elegant, flowing script on an abstract marble bust with golden veins.</li>
-                    <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; carved into metallic ribbons of a modern, abstract face sculpture, with iridescent reflections.')">Erstelle ein Bild von "EULE ZH" carved into metallic ribbons of a modern, abstract face sculpture, with iridescent reflections.</li>
-                    <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; suspended among floating geometric shapes of a fragmented stone bust, with gold accents.')">Erstelle ein Bild von "EULE ZH" suspended among floating geometric shapes of a fragmented stone bust, with gold accents.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; displayed in elegant, flowing script on an abstract marble bust with golden veins.')">Erstelle ein Bild von "EULE ZH" displayed in elegant, flowing script on an abstract marble bust with golden veins.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; carved into metallic ribbons of a modern, abstract face sculpture, with iridescent reflections.')">Erstelle ein Bild von "EULE ZH" carved into metallic ribbons of a modern, abstract face sculpture, with iridescent reflections.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; suspended among floating geometric shapes of a fragmented stone bust, with gold accents.')">Erstelle ein Bild von "EULE ZH" suspended among floating geometric shapes of a fragmented stone bust, with gold accents.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; intricately woven into a large ornamental wall relief with abstract shapes and symbols.')">Erstelle ein Bild von "EULE ZH" intricately woven into a large ornamental wall relief with abstract shapes and symbols.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; spiraling around an abstract bust, obscured by a swirling vortex of glass and metal.')">Erstelle ein Bild von "EULE ZH" spiraling around an abstract bust, obscured by a swirling vortex of glass and metal.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; engraved into a minimalist, organic bust with branches and leaves emerging from the crown.')">Erstelle ein Bild von "EULE ZH" engraved into a minimalist, organic bust with branches and leaves emerging from the crown.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; embossed in bold, angular font on a sleek, metallic abstract face sculpture.')">Erstelle ein Bild von "EULE ZH" embossed in bold, angular font on a sleek, metallic abstract face sculpture.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; etched into the cracked surface of an abstract marble bust with gold veins.')">Erstelle ein Bild von "EULE ZH" etched into the cracked surface of an abstract marble bust with gold veins.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; artistically blended into swirling patterns of an abstract vortex made of glass and metal.')">Erstelle ein Bild von "EULE ZH" artistically blended into swirling patterns of an abstract vortex made of glass and metal.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; seamlessly integrated into an intricate wall relief with organic and geometric shapes.')">Erstelle ein Bild von "EULE ZH" seamlessly integrated into an intricate wall relief with organic and geometric shapes.</li>
+                   <li onclick="setPrompt('Erstelle ein Bild von &quot;EULE ZH&quot; as part of an abstract, fragmented stone bust with letters floating among geometric shapes.')">Erstelle ein Bild von "EULE ZH" as part of an abstract, fragmented stone bust with letters floating among geometric shapes.</li>
+               </ul>
+            </div>
+
+            <button class="collapsible" onclick="togglePromptLibrary('text-to-code')">Text-to-Code Templates</button>
+            <div class="prompt-content" id="text-to-code">
+                <ul>
+                    <li onclick="setPrompt('Generate a Python function to calculate the factorial of a number.')">Generate a Python function to calculate the factorial of a number.</li>
+                    <li onclick="setPrompt('Create an HTML form with validation for email input.')">Create an HTML form with validation for email input.</li>
+                    <li onclick="setPrompt('Write a JavaScript function to sort an array of numbers in ascending order.')">Write a JavaScript function to sort an array of numbers in ascending order.</li>
+                    <li onclick="setPrompt('Generate a CSS grid layout with three columns and two rows.')">Generate a CSS grid layout with three columns and two rows.</li>
+                    <li onclick="setPrompt('Create a SQL query to fetch all records where the age is greater than 30.')">Create a SQL query to fetch all records where the age is greater than 30.</li>
+                    <li onclick="setPrompt('Write a Python script to scrape data from a given website.')">Write a Python script to scrape data from a given website.</li>
+                    <li onclick="setPrompt('Generate a basic Express.js server in Node.js with a single GET route.')">Generate a basic Express.js server in Node.js with a single GET route.</li>
+                    <li onclick="setPrompt('Create a React component that renders a list of items passed as props.')">Create a React component that renders a list of items passed as props.</li>
+                    <li onclick="setPrompt('Generate a shell script to automate backup of a directory to a remote server.')">Generate a shell script to automate backup of a directory to a remote server.</li>
+                    <li onclick="setPrompt('Write a Java program that reads a text file and counts the frequency of each word.')">Write a Java program that reads a text file and counts the frequency of each word.</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <script>
-        document.getElementById('userInputForm').addEventListener('submit', function (e) {
+        const apiKey = 'sk-svcacct-xqKNDuCzFoMczbu6s4wMT3BlbkFJx8rjcvovypui1zcNmFrQ'; // Ersetze dies durch deinen OpenAI API-Schlüssel
+
+        document.getElementById('userInputForm').addEventListener('submit', function(e) {
             e.preventDefault();
             let userText = document.getElementById('userInput').value;
             if (userText.trim() === "") return;
@@ -474,14 +546,14 @@
             document.getElementById('userInput').value = "";
             chatbox.scrollTop = chatbox.scrollHeight;
 
-            let isImageRequest = userText.toLowerCase().includes("mache mir ein bild von") ||
-                userText.toLowerCase().includes("make me an image of") ||
-                userText.toLowerCase().includes("erstelle mir ein bild") ||
-                userText.toLowerCase().includes("generiere ein bild") ||
-                userText.toLowerCase().includes("ein bild") ||
-                userText.toLowerCase().includes("create an image of") ||
-                userText.toLowerCase().includes("generate an image of") ||
-                userText.toLowerCase().includes("image of");
+            let isImageRequest = userText.toLowerCase().includes("mache mir ein bild von") || 
+                                 userText.toLowerCase().includes("make me an image of") ||
+                                 userText.toLowerCase().includes("erstelle mir ein bild") ||
+                                 userText.toLowerCase().includes("generiere ein bild") ||
+                                 userText.toLowerCase().includes("ein bild") ||
+                                 userText.toLowerCase().includes("create an image of") ||
+                                 userText.toLowerCase().includes("generate an image of") ||
+                                 userText.toLowerCase().includes("image of");
 
             if (isImageRequest) {
                 generateImage(userText);
@@ -495,53 +567,60 @@
         }
 
         function generateText(userText) {
-            fetch('/api/generate-text', {
+            fetch('https://api.openai.com/v1/chat/completions', {
                 method: 'POST',
                 headers: {
+                    'Authorization': `Bearer ${apiKey}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    "userText": userText
+                    "model": "gpt-4o-mini",
+                    "messages": [{"role": "user", "content": userText}],
+                    "max_tokens": 1500,
+                    "temperature": 0.88,
                 })
             })
-                .then(response => response.json())
-                .then(data => {
-                    let chloeResponse = data.response.trim();
-                    let chatbox = document.getElementById('chatbox');
-                    chatbox.innerHTML += `<p class="chloe-message"><strong>Chloe:</strong> ${chloeResponse}</p>`;
-                    chatbox.scrollTop = chatbox.scrollHeight;
-                })
-                .catch(error => {
-                    console.log(error);
-                    let chatbox = document.getElementById('chatbox');
-                    chatbox.innerHTML += `<p class="chloe-message"><strong>Chloe:</strong> Es tut mir leid, es gab einen Fehler bei der Anfrage.</p>`;
-                    chatbox.scrollTop = chatbox.scrollHeight;
-                });
+            .then(response => response.json())
+            .then(data => {
+                let chloeResponse = data.choices[0].message.content.trim();
+                let chatbox = document.getElementById('chatbox');
+                chatbox.innerHTML += `<p class="chloe-message"><strong>Chloe:</strong> ${chloeResponse}</p>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            })
+            .catch(error => {
+                console.log(error);
+                let chatbox = document.getElementById('chatbox');
+                chatbox.innerHTML += `<p class="chloe-message"><strong>Chloe:</strong> Es tut mir leid, es gab einen Fehler bei der Anfrage.</p>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            });
         }
 
         function generateImage(userText) {
-            fetch('/api/generate-image', {
+            fetch('https://api.openai.com/v1/images/generations', {
                 method: 'POST',
                 headers: {
+                    'Authorization': `Bearer ${apiKey}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    "userText": userText
+                    "prompt": userText,
+                    "n": 1,
+                    "size": "256x256"
                 })
             })
-                .then(response => response.json())
-                .then(data => {
-                    let imageUrl = data.imageUrl;
-                    let chatbox = document.getElementById('chatbox');
-                    chatbox.innerHTML += `<p class="bot-message"><strong>Chloe:</strong> Hier ist das Bild, das Sie angefordert haben:<br><img src="${imageUrl}" alt="Generated Image" style="width: 256px; height: 256px; border-radius: 10px;"><br><button onclick="downloadImage('${imageUrl}')" class="download-button">Download Image</button></p>`;
-                    chatbox.scrollTop = chatbox.scrollHeight;
-                })
-                .catch(error => {
-                    console.log(error);
-                    let chatbox = document.getElementById('chatbox');
-                    chatbox.innerHTML += `<p class="bot-message"><strong>Chloe:</strong> Es tut mir leid, es gab einen Fehler bei der Verarbeitung Ihrer Anfrage. Bitte versuchen Sie es später noch einmal.</p>`;
-                    chatbox.scrollTop = chatbox.scrollHeight;
-                });
+            .then(response => response.json())
+            .then(data => {
+                let imageUrl = data.data[0].url;
+                let chatbox = document.getElementById('chatbox');
+                chatbox.innerHTML += `<p class="bot-message"><strong>Chloe:</strong> Hier ist das Bild, das Sie angefordert haben:<br><img src="${imageUrl}" alt="Generated Image" style="width: 256px; height: 256px; border-radius: 10px;"><br><button onclick="downloadImage('${imageUrl}')" class="download-button">Download Image</button></p>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            })
+            .catch(error => {
+                console.log(error);
+                let chatbox = document.getElementById('chatbox');
+                chatbox.innerHTML += `<p class="bot-message"><strong>Chloe:</strong> Es tut mir leid, es gab einen Fehler bei der Verarbeitung Ihrer Anfrage. Bitte versuchen Sie es später noch einmal.</p>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            });
         }
 
         function downloadImage(url) {
@@ -571,12 +650,12 @@
             document.getElementById("main").style.marginRight = "0";
         }
 
-        // JavaScript für kollabierbaren Text
+        // JavaScript for collapsible text
         var coll = document.getElementsByClassName("collapsible");
         var i;
 
         for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
+            coll[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 var content = this.nextElementSibling;
                 if (content.style.display === "block") {
@@ -597,5 +676,4 @@
         }
     </script>
 </body>
-
 </html>
