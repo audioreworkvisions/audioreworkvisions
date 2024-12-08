@@ -563,7 +563,7 @@
     </div>
 
     <script>
-        const apiKey = 'sk-svcacct-xqKNDuCzFoMczbu6s4wMT3BlbkFJx8rjcvovypui1zcNmFrQ'; // Ersetze dies durch deinen OpenAI API-Schlüssel
+        const apiKey = process.env.OPENAI_API_KEY;
 
         document.getElementById('userInputForm').addEventListener('submit', function(e) {
             e.preventDefault();
