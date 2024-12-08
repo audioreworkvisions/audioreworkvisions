@@ -31,13 +31,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      # Load Secrets into Environment Variables
+      - name: Set API Key Environment Variable
+        run: echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+
+      - name: Install Node.js and dependencies (optional, for build tools)
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project (optional, if needed)
+        run: npm run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Upload build folder or repository content
+          path: './dist' # Passe dies an deine Build-Ausgabe an
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
