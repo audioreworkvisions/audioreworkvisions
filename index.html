@@ -296,7 +296,7 @@
         .active,
         .collapsible:hover {
             background-color: var(--magenta);
-            color: var(--light-text);
+            color: var (--light-text);
         }
 
         .content {
@@ -432,26 +432,13 @@
 </head>
 
 <body>
-    <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '836275876916669',
-      xfbml      : true,
-      version    : 'v21.0'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
     <header>
         <img src="1.png" alt="Logo" class="main-logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="tech-stack.html">Tech Stack</a>
+            <a href="tools.html">Tools</a>
+        </nav>
         <h1>Chloé says:</h1>
         <button type="button" class="collapsible">Chloe:</button>
         <div class="content">
