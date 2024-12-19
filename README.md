@@ -24,14 +24,10 @@ Dive into a world where technology meets creativity! From AI to Techno Music Cul
   <summary>Click to expand</summary>
 
 | Tool / Platform       | Icon                                                                                                            |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------|
-| **GitHub**            | ![GitHub](https://img.icons8.com/fluent/48/000000/github.png)                                                   |
-| **Open Source**       | ![Open Source](https://img.icons8.com/color/48/000000/open-source.png)                                          |
-| **Microsoft**         | ![Microsoft](https://img.icons8.com/color/48/000000/microsoft.png)                                              |
-| **OpenAI**            | ![OpenAI](https://img.icons8.com/ios/50/000000/artificial-intelligence.png)                                     |
+|----------------------------------------------------------------------------------------------------------------------------------------|
+| **GitHub**            | ![GitHub](https://img.icons8.com/fluent/48/000000/github.png)                                                   |            
+| **Microsoft**         | ![Microsoft](https://img.icons8.com/color/48/000000/microsoft.png)                                              |      
 | **Python**            | ![Python](https://img.icons8.com/color/48/000000/python.png)                                                    |
-| **PyTorch**           | ![PyTorch](https://img.icons8.com/material-outlined/48/000000/torch.png)                                        |
-
 </details>
 
 ---
