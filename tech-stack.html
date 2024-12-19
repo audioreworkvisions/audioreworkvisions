@@ -7,7 +7,7 @@
     <title>Sprachsynthese-Dokumentationen</title>
     <style>
         :root {
-                       --dark-blue: #0e1f40;
+            --dark-blue: #0e1f40;
             --light-text: #e5e5e5;
             --mint-green: #3eb489;
             --dark-text: #1c1c1c;
@@ -46,6 +46,24 @@
         header h1 {
             font-size: 2em;
             margin: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--mint-green);
         }
 
         h3, h4 {
@@ -92,12 +110,49 @@
             padding: 20px;
             background-color: var(--dark-blue);
             color: var(--light-gray);
-            border-top: 4px solid var(--accent-color);
+            border-top: 4px solid var (--accent-color);
             margin-top: 40px;
         }
 
         footer nav {
             margin-bottom: 20px;
+        }
+
+        .collapsible {
+            background-color: var(--mint-green);
+            color: var(--dark-text);
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: var(--magenta);
+            color: var (--light-text);
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0 0 10px 10px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -106,6 +161,11 @@
     <header>
         <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/audioreworkvisions-textlogo/1.png" alt="Logo">
         <h1>Chloé 2020 Tech-Stack</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="tech-stack.html">Tech Stack</a>
+            <a href="tools.html">Tools</a>
+        </nav>
     </header>
 
     <main>
@@ -114,96 +174,110 @@
 
         <h3>Sprachsynthese-Dokumentation</h3>
 
-        <h4>pyttsx3 Dokumentation</h4>
-        <p>
-            <strong>Name:</strong> <a href="https://pyttsx3.readthedocs.io/">pyttsx3 Dokumentation</a><br>
-            <strong>Beschreibung:</strong> pyttsx3 ist eine plattformübergreifende Text-zu-Sprache-Bibliothek für Python. Sie funktioniert offline und ist mit
-            verschiedenen Sprachsynthesemotoren kompatibel, einschließlich SAPI5 auf Windows, NSSpeechSynthesizer auf macOS und espeak auf Linux. Die Bibliothek
-            ermöglicht die Anpassung von Stimmeigenschaften, ereignisgesteuerte Benachrichtigungen und die Integration in verschiedene Anwendungen.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Sprachbenachrichtigungen:</strong> Implementierung von Text-zu-Sprache-Benachrichtigungen in Anwendungen, wie Alarmsystemen oder
-                assistiven Technologien.</li>
-            <li><strong>Erstellung von Hörbüchern:</strong> Konvertierung von Textdokumenten in gesprochene Inhalte, um Hörbücher oder Sprachinhalte für sehbehinderte Benutzer zu erstellen.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://pyttsx3.readthedocs.io/">pyttsx3 Dokumentation</a></p>
+        <button type="button" class="collapsible">pyttsx3 Dokumentation</button>
+        <div class="content">
+            <p>
+                <strong>Name:</strong> <a href="https://pyttsx3.readthedocs.io/">pyttsx3 Dokumentation</a><br>
+                <strong>Beschreibung:</strong> pyttsx3 ist eine plattformübergreifende Text-zu-Sprache-Bibliothek für Python. Sie funktioniert offline und ist mit
+                verschiedenen Sprachsynthesemotoren kompatibel, einschließlich SAPI5 auf Windows, NSSpeechSynthesizer auf macOS und espeak auf Linux. Die Bibliothek
+                ermöglicht die Anpassung von Stimmeigenschaften, ereignisgesteuerte Benachrichtigungen und die Integration in verschiedene Anwendungen.
+            </p>
+            <p><strong>Anwendungsfälle:</strong></p>
+            <ol>
+                <li><strong>Sprachbenachrichtigungen:</strong> Implementierung von Text-zu-Sprache-Benachrichtigungen in Anwendungen, wie Alarmsystemen oder
+                    assistiven Technologien.</li>
+                <li><strong>Erstellung von Hörbüchern:</strong> Konvertierung von Textdokumenten in gesprochene Inhalte, um Hörbücher oder Sprachinhalte für sehbehinderte Benutzer zu erstellen.</li>
+            </ol>
+            <p><strong>Link:</strong> <a href="https://pyttsx3.readthedocs.io/">pyttsx3 Dokumentation</a></p>
+        </div>
 
-        <h4>Coqui TTS Dokumentation</h4>
-        <p>
-            <strong>Name:</strong> <a href="https://coqui-tts.readthedocs.io/">Coqui TTS Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Coqui TTS ist ein Open-Source-Text-zu-Sprache-Toolkit, das eine CLI-Schnittstelle für die Sprachsynthese mit
-            vortrainierten Modellen bietet. Benutzer können entweder eigene Modelle oder bereitgestellte Modelle verwenden, um Sprache zu synthetisieren. Die
-            Bibliothek unterstützt verschiedene Modelle und Vocoder, einschließlich Multi-Speaker-Modelle und Voice-Conversion-Modelle.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Sprachsynthese:</strong> Erstellung von Audiodateien aus Text mit vortrainierten Modellen, ideal für die Entwicklung von
-                Sprachassistenzsystemen oder interaktiven Anwendungen.</li>
-            <li><strong>Stimmenkonvertierung:</strong> Konvertierung der Stimme eines Sprechers in die eines anderen, nützlich für Anwendungen wie personalisierte
-                Sprachassistenten oder stimmgesteuerte Geräte.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://coqui-tts.readthedocs.io/">Coqui TTS Dokumentation</a></p>
+        <button type="button" class="collapsible">Coqui TTS Dokumentation</button>
+        <div class="content">
+            <p>
+                <strong>Name:</strong> <a href="https://coqui-tts.readthedocs.io/">Coqui TTS Dokumentation</a><br>
+                <strong>Beschreibung:</strong> Coqui TTS ist ein Open-Source-Text-zu-Sprache-Toolkit, das eine CLI-Schnittstelle für die Sprachsynthese mit
+                vortrainierten Modellen bietet. Benutzer können entweder eigene Modelle oder bereitgestellte Modelle verwenden, um Sprache zu synthetisieren. Die
+                Bibliothek unterstützt verschiedene Modelle und Vocoder, einschließlich Multi-Speaker-Modelle und Voice-Conversion-Modelle.
+            </p>
+            <p><strong>Anwendungsfälle:</strong></p>
+            <ol>
+                <li><strong>Sprachsynthese:</strong> Erstellung von Audiodateien aus Text mit vortrainierten Modellen, ideal für die Entwicklung von
+                    Sprachassistenzsystemen oder interaktiven Anwendungen.</li>
+                <li><strong>Stimmenkonvertierung:</strong> Konvertierung der Stimme eines Sprechers in die eines anderen, nützlich für Anwendungen wie personalisierte
+                    Sprachassistenten oder stimmgesteuerte Geräte.</li>
+            </ol>
+            <p><strong>Link:</strong> <a href="https://coqui-tts.readthedocs.io/">Coqui TTS Dokumentation</a></p>
+        </div>
 
-        <h4>gTTS Dokumentation</h4>
-        <p>
-            <strong>Name:</strong> <a href="https://gtts.readthedocs.io/">gTTS Dokumentation</a><br>
-            <strong>Beschreibung:</strong> gTTS (Google Text-to-Speech) ist eine Python-Bibliothek und CLI-Tool zur Schnittstelle mit dem Google Text-to-Speech API. Sie ermöglicht die Konvertierung von Text in Sprache unter Verwendung verschiedener Sprach- und Dialektoptionen. gTTS kann Audiodateien direkt erstellen oder Audio in Echtzeit abspielen.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Echtzeit-Sprachausgabe:</strong> Entwicklung von Anwendungen, die Text-zu-Sprache-Funktionen in Echtzeit bieten, wie Chatbots oder interaktive Sprachsysteme.</li>
-            <li><strong>Erstellung von Sprachaufnahmen:</strong> Erstellen von Sprachaufnahmen für E-Learning, Podcasts oder andere Anwendungen, die Sprachinhalte erfordern.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://gtts.readthedocs.io/">gTTS Dokumentation</a></p>
+        <button type="button" class="collapsible">gTTS Dokumentation</button>
+        <div class="content">
+            <p>
+                <strong>Name:</strong> <a href="https://gtts.readthedocs.io/">gTTS Dokumentation</a><br>
+                <strong>Beschreibung:</strong> gTTS (Google Text-to-Speech) ist eine Python-Bibliothek und CLI-Tool zur Schnittstelle mit dem Google Text-to-Speech API. Sie ermöglicht die Konvertierung von Text in Sprache unter Verwendung verschiedener Sprach- und Dialektoptionen. gTTS kann Audiodateien direkt erstellen oder Audio in Echtzeit abspielen.
+            </p>
+            <p><strong>Anwendungsfälle:</strong></p>
+            <ol>
+                <li><strong>Echtzeit-Sprachausgabe:</strong> Entwicklung von Anwendungen, die Text-zu-Sprache-Funktionen in Echtzeit bieten, wie Chatbots oder interaktive Sprachsysteme.</li>
+                <li><strong>Erstellung von Sprachaufnahmen:</strong> Erstellen von Sprachaufnahmen für E-Learning, Podcasts oder andere Anwendungen, die Sprachinhalte erfordern.</li>
+            </ol>
+            <p><strong>Link:</strong> <a href="https://gtts.readthedocs.io/">gTTS Dokumentation</a></p>
+        </div>
 
-        <h4>SpeechRecognition Dokumentation</h4>
-        <p>
-            <strong>Name:</strong> <a href="https://pypi.org/project/SpeechRecognition/">SpeechRecognition Dokumentation</a><br>
-            <strong>Beschreibung:</strong> SpeechRecognition ist eine Python-Bibliothek, die eine einfache API für die Sprach-zu-Text-Umwandlung bietet. Sie unterstützt mehrere Spracherkennungssysteme wie Google Web Speech API, CMU Sphinx, Microsoft Bing Voice Recognition, Houndify API, IBM Speech to Text und andere.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Sprachgesteuerte Anwendungen:</strong> Entwickeln von Anwendungen, die durch Sprachbefehle gesteuert werden, wie persönliche Assistenten oder Smart-Home-Geräte.</li>
-            <li><strong>Transkription von Audiodaten:</strong> Automatisches Transkribieren von Audiodateien in Text, ideal für die Erstellung von Meetingprotokollen oder Diktaten.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://pypi.org/project/SpeechRecognition/">SpeechRecognition Dokumentation</a></p>
+        <button type="button" class="collapsible">SpeechRecognition Dokumentation</button>
+        <div class="content">
+            <p>
+                <strong>Name:</strong> <a href="https://pypi.org/project/SpeechRecognition/">SpeechRecognition Dokumentation</a><br>
+                <strong>Beschreibung:</strong> SpeechRecognition ist eine Python-Bibliothek, die eine einfache API für die Sprach-zu-Text-Umwandlung bietet. Sie unterstützt mehrere Spracherkennungssysteme wie Google Web Speech API, CMU Sphinx, Microsoft Bing Voice Recognition, Houndify API, IBM Speech to Text und andere.
+            </p>
+            <p><strong>Anwendungsfälle:</strong></p>
+            <ol>
+                <li><strong>Sprachgesteuerte Anwendungen:</strong> Entwickeln von Anwendungen, die durch Sprachbefehle gesteuert werden, wie persönliche Assistenten oder Smart-Home-Geräte.</li>
+                <li><strong>Transkription von Audiodaten:</strong> Automatisches Transkribieren von Audiodateien in Text, ideal für die Erstellung von Meetingprotokollen oder Diktaten.</li>
+            </ol>
+            <p><strong>Link:</strong> <a href="https://pypi.org/project/SpeechRecognition/">SpeechRecognition Dokumentation</a></p>
+        </div>
 
-        <h4>Mozilla DeepSpeech Dokumentation</h4>
-        <p>
-            <strong>Name:</strong> <a href="https://deepspeech.readthedocs.io/">DeepSpeech Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Mozilla DeepSpeech ist eine Open-Source-Spracherkennungs-Engine, die auf neuronalen Netzwerken basiert. Sie ist darauf ausgelegt, effizient auf vielen Plattformen zu laufen und unterstützt verschiedene Programmiersprachen. DeepSpeech bietet eine einfache Möglichkeit, Sprache in Text umzuwandeln und kann sowohl offline als auch online genutzt werden.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Spracherkennung in Anwendungen:</strong> Integration von DeepSpeech in mobile oder Desktop-Anwendungen zur Sprach-zu-Text-Umwandlung.</li>
-            <li><strong>Transkription großer Audiodatenmengen:</strong> Verwendung von DeepSpeech zur Transkription großer Mengen von Audiodaten, wie Interviews oder Podcasts.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://deepspeech.readthedocs.io/">DeepSpeech Dokumentation</a></p>
+        <button type="button" class="collapsible">Mozilla DeepSpeech Dokumentation</button>
+        <div class="content">
+            <p>
+                <strong>Name:</strong> <a href="https://deepspeech.readthedocs.io/">DeepSpeech Dokumentation</a><br>
+                <strong>Beschreibung:</strong> Mozilla DeepSpeech ist eine Open-Source-Spracherkennungs-Engine, die auf neuronalen Netzwerken basiert. Sie ist darauf ausgelegt, effizient auf vielen Plattformen zu laufen und unterstützt verschiedene Programmiersprachen. DeepSpeech bietet eine einfache Möglichkeit, Sprache in Text umzuwandeln und kann sowohl offline als auch online genutzt werden.
+            </p>
+            <p><strong>Anwendungsfälle:</strong></p>
+            <ol>
+                <li><strong>Spracherkennung in Anwendungen:</strong> Integration von DeepSpeech in mobile oder Desktop-Anwendungen zur Sprach-zu-Text-Umwandlung.</li>
+                <li><strong>Transkription großer Audiodatenmengen:</strong> Verwendung von DeepSpeech zur Transkription großer Mengen von Audiodaten, wie Interviews oder Podcasts.</li>
+            </ol>
+            <p><strong>Link:</strong> <a href="https://deepspeech.readthedocs.io/">DeepSpeech Dokumentation</a></p>
+        </div>
 
-        <h4>SpeechBrain Dokumentation</h4>
-        <p>
-            <strong>Name:</strong> <a href="https://speechbrain.readthedocs.io/">SpeechBrain Dokumentation</a><br>
-            <strong>Beschreibung:</strong> SpeechBrain ist ein All-in-One-Toolkit für Sprachtechnologien, das auf PyTorch basiert. Es unterstützt die Entwicklung von Sprach-zu-Text-, Sprechererkennungs-, Sprachverbesserungs- und anderen Sprachverarbeitungssystemen. SpeechBrain bietet eine umfangreiche Sammlung vortrainierter Modelle und eine benutzerfreundliche API.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Automatische Spracherkennung (ASR):</strong> Entwicklung und Training von ASR-Modellen zur Umwandlung von gesprochener Sprache in Text.</li>
-            <li><strong>Sprechererkennung:</strong> Implementierung von Systemen zur Identifizierung oder Verifizierung von Sprechern basierend auf ihren Stimmmerkmalen.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://speechbrain.readthedocs.io/">SpeechBrain Dokumentation</a></p>
+        <button type="button" class="collapsible">SpeechBrain Dokumentation</button>
+        <div class="content">
+            <p>
+                <strong>Name:</strong> <a href="https://speechbrain.readthedocs.io/">SpeechBrain Dokumentation</a><br>
+                <strong>Beschreibung:</strong> SpeechBrain ist ein All-in-One-Toolkit für Sprachtechnologien, das auf PyTorch basiert. Es unterstützt die Entwicklung von Sprach-zu-Text-, Sprechererkennungs-, Sprachverbesserungs- und anderen Sprachverarbeitungssystemen. SpeechBrain bietet eine umfangreiche Sammlung vortrainierter Modelle und eine benutzerfreundliche API.
+            </p>
+            <p><strong>Anwendungsfälle:</strong></p>
+            <ol>
+                <li><strong>Automatische Spracherkennung (ASR):</strong> Entwicklung und Training von ASR-Modellen zur Umwandlung von gesprochener Sprache in Text.</li>
+                <li><strong>Sprechererkennung:</strong> Implementierung von Systemen zur Identifizierung oder Verifizierung von Sprechern basierend auf ihren Stimmmerkmalen.</li>
+            </ol>
+            <p><strong>Link:</strong> <a href="https://speechbrain.readthedocs.io/">SpeechBrain Dokumentation</a></p>
+        </div>
 
-        <h4>Flash SpeechRecognition Dokumentation</h4>
-        <p>
-            <strong>Name:</strong> <a href="https://lightning-flash.readthedocs.io/en/latest/tasks/speech_recognition.html">Flash SpeechRecognition Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Flash SpeechRecognition ist eine Erweiterung von PyTorch Lightning, die die Entwicklung und Bereitstellung von Sprach-zu-Text-Modellen erleichtert. Es integriert verschiedene vortrainierte Modelle wie Wav2Vec2, die für die Sprachumwandlung verwendet werden können. Die Bibliothek ermöglicht einfache Feinabstimmung, Vorhersage und Bereitstellung von Sprachmodellen.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Feinabstimmung von Modellen:</strong> Verwenden Sie Flash SpeechRecognition, um vortrainierte Sprachmodelle mit eigenen Daten zu verfeinern und die Genauigkeit für spezifische Anwendungsfälle zu verbessern.</li>
-            <li><strong>Echtzeit-Spracherkennung:</strong> Implementierung von Echtzeit-Spracherkennungssystemen in Anwendungen zur Transkription von Sprache in Text.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://lightning-flash.readthedocs.io/en/latest/tasks/speech_recognition.html">Flash SpeechRecognition Dokumentation</a></p>
+        <button type="button" class="collapsible">Flash SpeechRecognition Dokumentation</button>
+        <div class="content">
+            <p>
+                <strong>Name:</strong> <a href="https://lightning-flash.readthedocs.io/en/latest/tasks/speech_recognition.html">Flash SpeechRecognition Dokumentation</a><br>
+                <strong>Beschreibung:</strong> Flash SpeechRecognition ist eine Erweiterung von PyTorch Lightning, die die Entwicklung und Bereitstellung von Sprach-zu-Text-Modellen erleichtert. Es integriert verschiedene vortrainierte Modelle wie Wav2Vec2, die für die Sprachumwandlung verwendet werden können. Die Bibliothek ermöglicht einfache Feinabstimmung, Vorhersage und Bereitstellung von Sprachmodellen.
+            </p>
+            <p><strong>Anwendungsfälle:</strong></p>
+            <ol>
+                <li><strong>Feinabstimmung von Modellen:</strong> Verwenden Sie Flash SpeechRecognition, um vortrainierte Sprachmodelle mit eigenen Daten zu verfeinern und die Genauigkeit für spezifische Anwendungsfälle zu verbessern.</li>
+                <li><strong>Echtzeit-Spracherkennung:</strong> Implementierung von Echtzeit-Spracherkennungssystemen in Anwendungen zur Transkription von Sprache in Text.</li>
+            </ol>
+            <p><strong>Link:</strong> <a href="https://lightning-flash.readthedocs.io/en/latest/tasks/speech_recognition.html">Flash SpeechRecognition Dokumentation</a></p>
+        </div>
 
         <p>Diese Dokumentationen bieten umfassende Informationen und Beispiele zur Implementierung und Nutzung der jeweiligen Sprachsynthese- und Spracherkennungstechnologien in Python.</p>
 
@@ -353,41 +427,47 @@
 
         <h3>Python Crontab Dokumentation</h3>
 
-        <h4>Schedule Dokumentation</h4>
-        <p>
-            <strong>Name:</strong> <a href="https://schedule.readthedocs.io/">Schedule Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Schedule ist eine benutzerfreundliche Python-Bibliothek zur Aufgabenplanung, die es ermöglicht, Python-Funktionen (oder andere Callables) periodisch auszuführen. Sie ist leichtgewichtig und hat keine externen Abhängigkeiten, was sie ideal für einfache Automatisierungsaufgaben macht.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Automatisierung wiederkehrender Aufgaben:</strong> Verwendung von Schedule zur regelmäßigen Ausführung von Aufgaben wie Datensicherungen, Berichtserstellung oder Systemwartung ohne manuelles Eingreifen.</li>
-            <li><strong>Aufgabenplanung in Anwendungen:</strong> Integration von Schedule in Anwendungen zur Verwaltung periodischer Aufgaben wie das Senden von Benachrichtigungen oder das Aktualisieren von Daten.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://schedule.readthedocs.io/">Schedule Dokumentation</a></p>
+        <button type="button" class="collapsible">Schedule Dokumentation</button>
+        <div class="content">
+            <p>
+                <strong>Name:</strong> <a href="https://schedule.readthedocs.io/">Schedule Dokumentation</a><br>
+                <strong>Beschreibung:</strong> Schedule ist eine benutzerfreundliche Python-Bibliothek zur Aufgabenplanung, die es ermöglicht, Python-Funktionen (oder andere Callables) periodisch auszuführen. Sie ist leichtgewichtig und hat keine externen Abhängigkeiten, was sie ideal für einfache Automatisierungsaufgaben macht.
+            </p>
+            <p><strong>Anwendungsfälle:</strong></p>
+            <ol>
+                <li><strong>Automatisierung wiederkehrender Aufgaben:</strong> Verwendung von Schedule zur regelmäßigen Ausführung von Aufgaben wie Datensicherungen, Berichtserstellung oder Systemwartung ohne manuelles Eingreifen.</li>
+                <li><strong>Aufgabenplanung in Anwendungen:</strong> Integration von Schedule in Anwendungen zur Verwaltung periodischer Aufgaben wie das Senden von Benachrichtigungen oder das Aktualisieren von Daten.</li>
+            </ol>
+            <p><strong>Link:</strong> <a href="https://schedule.readthedocs.io/">Schedule Dokumentation</a></p>
+        </div>
 
-        <h4>APScheduler Dokumentation</h4>
-        <p>
-            <strong>Name:</strong> <a href="https://apscheduler.readthedocs.io/">APScheduler Dokumentation</a><br>
-            <strong>Beschreibung:</strong> APScheduler ist eine Python-Bibliothek, die es ermöglicht, Python-Code zu einem späteren Zeitpunkt auszuführen, entweder einmalig oder periodisch. Sie unterstützt verschiedene Trigger wie Cron-ähnliche Ausdrücke, Intervall- und Datumsauslöser, und bietet eine flexible und erweiterbare Architektur für komplexe Planungsanforderungen.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Komplexe Planungsanforderungen:</strong> APScheduler kann komplexe Zeitpläne verwalten, wie das Ausführen von Aufgaben zu bestimmten Zeiten oder Intervallen, mit Unterstützung für mehrere Trigger und Job-Stores.</li>
-            <li><strong>Verteiltes Job-Management:</strong> Verwendung von APScheduler zur Verwaltung und Verteilung von Jobs über mehrere Server, um hohe Verfügbarkeit und Skalierbarkeit zu gewährleisten.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://apscheduler.readthedocs.io/">APScheduler Dokumentation</a></p>
+        <button type="button" class="collapsible">APScheduler Dokumentation</button>
+        <div class="content">
+            <p>
+                <strong>Name:</strong> <a href="https://apscheduler.readthedocs.io/">APScheduler Dokumentation</a><br>
+                <strong>Beschreibung:</strong> APScheduler ist eine Python-Bibliothek, die es ermöglicht, Python-Code zu einem späteren Zeitpunkt auszuführen, entweder einmalig oder periodisch. Sie unterstützt verschiedene Trigger wie Cron-ähnliche Ausdrücke, Intervall- und Datumsauslöser, und bietet eine flexible und erweiterbare Architektur für komplexe Planungsanforderungen.
+            </p>
+            <p><strong>Anwendungsfälle:</strong></p>
+            <ol>
+                <li><strong>Komplexe Planungsanforderungen:</strong> APScheduler kann komplexe Zeitpläne verwalten, wie das Ausführen von Aufgaben zu bestimmten Zeiten oder Intervallen, mit Unterstützung für mehrere Trigger und Job-Stores.</li>
+                <li><strong>Verteiltes Job-Management:</strong> Verwendung von APScheduler zur Verwaltung und Verteilung von Jobs über mehrere Server, um hohe Verfügbarkeit und Skalierbarkeit zu gewährleisten.</li>
+            </ol>
+            <p><strong>Link:</strong> <a href="https://apscheduler.readthedocs.io/">APScheduler Dokumentation</a></p>
+        </div>
 
-        <h3>Fritzing Schaltpläne Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://fritzing.org/learning/full_reference">Fritzing Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Fritzing ist ein Open-Source-Tool zur elektronischen Designautomatisierung (EDA), das darauf abzielt, Designern, Künstlern und Bastlern zu helfen, Elektronikprojekte zu erstellen, zu dokumentieren und zu teilen. Es bietet eine umfassende Umgebung für die Erstellung von Breadboard-, Schaltplan- und PCB-Layouts.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Dokumentation von Elektronikprojekten:</strong> Verwenden Sie Fritzing, um Ihre Elektronikprototypen und -entwürfe visuell zu dokumentieren und zu teilen, mit detaillierten Breadboard-, Schaltplan- und PCB-Ansichten.</li>
-            <li><strong>PCB-Design und -Fertigung:</strong> Entwerfen Sie kundenspezifische Leiterplatten (PCBs) mit der benutzerfreundlichen Oberfläche von Fritzing und exportieren Sie Ihre Designs zur Fertigung mit Diensten wie Fritzing Fab.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://fritzing.org/learning/full_reference">Fritzing Dokumentation</a></p>
+        <button type="button" class="collapsible">Fritzing Schaltpläne Dokumentation</button>
+        <div class="content">
+            <p>
+                <strong>Name:</strong> <a href="https://fritzing.org/learning/full_reference">Fritzing Dokumentation</a><br>
+                <strong>Beschreibung:</strong> Fritzing ist ein Open-Source-Tool zur elektronischen Designautomatisierung (EDA), das darauf abzielt, Designern, Künstlern und Bastlern zu helfen, Elektronikprojekte zu erstellen, zu dokumentieren und zu teilen. Es bietet eine umfassende Umgebung für die Erstellung von Breadboard-, Schaltplan- und PCB-Layouts.
+            </p>
+            <p><strong>Anwendungsfälle:</strong></p>
+            <ol>
+                <li><strong>Dokumentation von Elektronikprojekten:</strong> Verwenden Sie Fritzing, um Ihre Elektronikprototypen und -entwürfe visuell zu dokumentieren und zu teilen, mit detaillierten Breadboard-, Schaltplan- und PCB-Ansichten.</li>
+                <li><strong>PCB-Design und -Fertigung:</strong> Entwerfen Sie kundenspezifische Leiterplatten (PCBs) mit der benutzerfreundlichen Oberfläche von Fritzing und exportieren Sie Ihre Designs zur Fertigung mit Diensten wie Fritzing Fab.</li>
+            </ol>
+            <p><strong>Link:</strong> <a href="https://fritzing.org/learning/full_reference">Fritzing Dokumentation</a></p>
+        </div>
 
         <h3>Nützliche Links</h3>
         <p>
@@ -440,6 +520,22 @@
         <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="footer-button">Kontakt auf LinkedIn</a>
     </footer>
 
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

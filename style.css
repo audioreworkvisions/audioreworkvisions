@@ -7,6 +7,41 @@
   --text-color: #333333;
   --border-color: #eaeaea;
   --hover-color: #0056b3;
+  --dark-blue: #3B3B3B;
+  --mint-green: #40e0d0;
+  --magenta: #ff00ff;
+  --light-text: #222222;
+  --dark-text: #333333;
+}
+
+/* Header and Navigation styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--dark-blue);
+}
+
+header img {
+  width: 150px;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--mint-green);
 }
 
 body {
@@ -97,6 +132,7 @@ input[type="submit"]:hover {
   text-align: left;
   outline: none;
   font-size: 15px;
+  transition: all 0.3s ease;
 }
 
 .active, .collapsible:hover {
@@ -174,5 +210,145 @@ footer img {
 
   .nav-manager button, .nav-manager a {
     margin-bottom: 10px;
+  }
+}
+
+/* Styles for collapsible sections */
+.collapsible {
+  background-color: var(--mint-green);
+  color: var(--dark-text);
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.active,
+.collapsible:hover {
+  background-color: var(--magenta);
+  color: var (--light-text);
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 10px 10px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Styles for animated icons and headers */
+header img {
+  width: 200px;
+  height: auto;
+  animation: fadeIn 1s ease-out 0.5s both, pulse 2s infinite;
+}
+
+header h1 {
+  font-size: 2em;
+  margin: 10px 0;
+  color: var(--mint-green);
+  animation: slideInFromLeft 0.5s ease-out 0.2s both;
+}
+
+header p {
+  font-size: 1.2em;
+  color: var(--light-text);
+  animation: slideInFromRight 0.5s ease-out 0.4s both;
+}
+
+/* Styles for animated progress bars or counters */
+.progress-bar {
+  width: 100%;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-inner {
+  height: 20px;
+  background-color: var(--primary-color);
+  width: 0;
+  animation: progressBar 2s ease-out forwards;
+}
+
+@keyframes progressBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }

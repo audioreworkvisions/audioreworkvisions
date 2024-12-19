@@ -61,8 +61,8 @@
         }
 
         .header-button:hover {
-            background-color: var(--magenta);
-            color: var(--light-text);
+            background-color: var (--magenta);
+            color: var (--light-text);
         }
 
         main {
@@ -139,6 +139,43 @@
 
         footer a:hover {
             color: var(--hover-gray);
+        }
+
+        .collapsible {
+            background-color: var(--mint-green);
+            color: var(--dark-text);
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: var(--magenta);
+            color: var (--light-text);
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0 0 10px 10px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -377,6 +414,22 @@
 
     <script src="https://cdn.jsdelivr.net/npm/showdown@2.0.3/dist/showdown.min.js"></script>
     <script src="scripts.js"></script>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
