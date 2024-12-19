@@ -23,8 +23,7 @@ Dive into a world where technology meets creativity! From AI to Techno Music Cul
 <details>
   <summary>Click to expand</summary>
 
-| Tool / Platform       | Icon                                                                                                            |
-|----------------------------------------------------------------------------------------------------------------------------------------|
+| Tool / Platform       | Icon                                                                                                           
 | **GitHub**            | ![GitHub](https://img.icons8.com/fluent/48/000000/github.png)                                                   |            
 | **Microsoft**         | ![Microsoft](https://img.icons8.com/color/48/000000/microsoft.png)                                              |      
 | **Python**            | ![Python](https://img.icons8.com/color/48/000000/python.png)                                                    |
