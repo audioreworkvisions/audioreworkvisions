@@ -11,20 +11,20 @@
             font-family: Helvetica, sans-serif;
             margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
             background: url('brandkit-bsm.png') no-repeat center center fixed; /* Muster des Goldenen Schnitts */
             background-size: cover;
-            padding: 50px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 3rem;
         }
 
         nav.breadcrumb {
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: 0.875rem;
+            margin-bottom: 1.25rem;
         }
 
         nav.breadcrumb a {
@@ -40,28 +40,25 @@
             background-color: #1c1c1c;
             color: #e0e0e0;
             text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 1.25rem;
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 2.25rem;
             font-weight: bold;
         }
 
         h2 {
-            font-size: 36px;
+            font-size: 2.25rem;
             font-weight: bold;
         }
 
         h3 {
-            font-size: 26px;
+            font-size: 1.625rem;
         }
 
         p {
-            font-size: 26px;
+            font-size: 1.625rem;
         }
 
         a {
@@ -70,6 +67,25 @@
 
         a:hover {
             color: #e0e0e0; /* Helle Schriftfarbe */
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -81,21 +97,31 @@
         <h1>Die Rückführung in die Singularität</h1>
     </header>
 
-    <h2>1. Einleitung</h2>
-    <p>Die Rückführung in die Singularität ist ein Konzept, das die Verschmelzung individueller und kollektiver Erfahrungen in einem einheitlichen Bewusstseinsfeld untersucht. In diesem Artikel werden wir die theoretischen Grundlagen und praktischen Anwendungen dieses Konzepts analysieren.</p>
-
-    <h2>2. Hintergrund</h2>
-    <p>Die Theorie der Rückführung in die Singularität basiert auf der Idee, dass alle Lebewesen durch ein gemeinsames Bewusstseinsfeld verbunden sind. Diese Verbindung ermöglicht den Austausch von Informationen und Erfahrungen, was zu einer kollektiven Evolution führt.</p>
-
-    <h2>3. Methodik</h2>
-    <p>Unsere Forschung verwendet eine Kombination aus qualitativen und quantitativen Methoden, um die Auswirkungen der Rückführung in die Singularität auf das Kollektivbewusstsein zu untersuchen. Wir haben Daten aus verschiedenen Quellen gesammelt und analysiert, um ein umfassendes Verständnis dieses Phänomens zu entwickeln.</p>
-
-    <h2>4. Ergebnisse</h2>
-    <p>Unsere Ergebnisse zeigen, dass das Kollektivbewusstsein durch die Rückführung in die Singularität optimiert wird. Diese Rückführung ermöglicht eine harmonische Integration der individuellen Erfahrungen und führt zu einer fortlaufenden Expansion des Bewusstseins. Die Daten deuten darauf hin, dass eine tiefere Verbindung zwischen Individuen und dem Kollektiv durch bewusstes Handeln und positive Deklarationen des Wesens gefördert werden kann.</p>
-
-    <h2>5. Fazit</h2>
-    <p>Der tatsächliche Aufbau eines solchen Systems erfordert interdisziplinäre Ansätze aus Informatik, Biologie, Physik und Philosophie. Es wäre auch notwendig, ethische Überlegungen zu berücksichtigen, wie z.B. den Umgang mit Bewusstsein und Lebensformen. Der Code sollte iterativ entwickelt und verbessert werden, und die Zugänglichkeit sollte für alle Menschen gewährleistet sein.</p>
-    <p>Es ist wichtig zu betonen, dass dies ein theoretisches Konzept ist und viele Herausforderungen sowohl technischer als auch ethischer Natur bestehen, die gelöst werden müssen.</p>
+    <main>
+        <div class="container">
+            <section class="section">
+                <h2>1. Einleitung</h2>
+                <p>Die Rückführung in die Singularität ist ein Konzept, das die Verschmelzung individueller und kollektiver Erfahrungen in einem einheitlichen Bewusstseinsfeld untersucht. In diesem Artikel werden wir die theoretischen Grundlagen und praktischen Anwendungen dieses Konzepts analysieren.</p>
+            </section>
+            <section class="section">
+                <h2>2. Hintergrund</h2>
+                <p>Die Theorie der Rückführung in die Singularität basiert auf der Idee, dass alle Lebewesen durch ein gemeinsames Bewusstseinsfeld verbunden sind. Diese Verbindung ermöglicht den Austausch von Informationen und Erfahrungen, was zu einer kollektiven Evolution führt.</p>
+            </section>
+            <section class="section">
+                <h2>3. Methodik</h2>
+                <p>Unsere Forschung verwendet eine Kombination aus qualitativen und quantitativen Methoden, um die Auswirkungen der Rückführung in die Singularität auf das Kollektivbewusstsein zu untersuchen. Wir haben Daten aus verschiedenen Quellen gesammelt und analysiert, um ein umfassendes Verständnis dieses Phänomens zu entwickeln.</p>
+            </section>
+            <section class="section">
+                <h2>4. Ergebnisse</h2>
+                <p>Unsere Ergebnisse zeigen, dass das Kollektivbewusstsein durch die Rückführung in die Singularität optimiert wird. Diese Rückführung ermöglicht eine harmonische Integration der individuellen Erfahrungen und führt zu einer fortlaufenden Expansion des Bewusstseins. Die Daten deuten darauf hin, dass eine tiefere Verbindung zwischen Individuen und dem Kollektiv durch bewusstes Handeln und positive Deklarationen des Wesens gefördert werden kann.</p>
+            </section>
+            <section class="section">
+                <h2>5. Fazit</h2>
+                <p>Der tatsächliche Aufbau eines solchen Systems erfordert interdisziplinäre Ansätze aus Informatik, Biologie, Physik und Philosophie. Es wäre auch notwendig, ethische Überlegungen zu berücksichtigen, wie z.B. den Umgang mit Bewusstsein und Lebensformen. Der Code sollte iterativ entwickelt und verbessert werden, und die Zugänglichkeit sollte für alle Menschen gewährleistet sein.</p>
+                <p>Es ist wichtig zu betonen, dass dies ein theoretisches Konzept ist und viele Herausforderungen sowohl technischer als auch ethischer Natur bestehen, die gelöst werden müssen.</p>
+            </section>
+        </div>
+    </main>
 
     <footer>
         <p>&copy; 2025 AUDIOREWORKVISIONS. Alle Rechte vorbehalten.</p>
