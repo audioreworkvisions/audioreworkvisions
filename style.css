@@ -19,18 +19,18 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 2rem;
   background-color: var(--dark-blue);
 }
 
 header img {
-  width: 150px;
+  width: 9.375rem;
   height: auto;
 }
 
 nav {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 nav a {
@@ -53,21 +53,21 @@ body {
 
 /* Chat interface styling */
 #chatbox-container {
-  border-radius: 8px;
+  border-radius: 0.5rem;
   background-color: var(--background-color);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.25rem;
 }
 
 #userInputForm {
   display: flex;
   border-top: 1px solid var(--border-color);
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 #userInput {
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 0.3125rem;
+  padding: 0.625rem;
   background-color: #f9f9f9;
   border: 1px solid var(--border-color);
   flex: 1;
@@ -76,9 +76,9 @@ body {
 input[type="submit"] {
   background-color: var(--primary-color);
   color: white;
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-left: 10px;
+  border-radius: 0.3125rem;
+  padding: 0.625rem 1.25rem;
+  margin-left: 0.625rem;
   cursor: pointer;
   border: none;
 }
@@ -101,7 +101,7 @@ input[type="submit"]:hover {
   left: 0;
   right: 0;
   background-color: var(--background-color);
-  padding: 10px;
+  padding: 0.625rem;
   display: flex;
   justify-content: space-around;
   border-top: 1px solid var(--border-color);
@@ -111,8 +111,8 @@ input[type="submit"]:hover {
   background-color: var(--primary-color);
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 0.625rem 0.9375rem;
+  border-radius: 0.3125rem;
   text-decoration: none;
   cursor: pointer;
 }
@@ -126,12 +126,12 @@ input[type="submit"]:hover {
   background-color: var(--secondary-color);
   color: white;
   cursor: pointer;
-  padding: 18px;
+  padding: 1.125rem;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
+  font-size: 0.9375rem;
   transition: all 0.3s ease;
 }
 
@@ -140,7 +140,7 @@ input[type="submit"]:hover {
 }
 
 .content {
-  padding: 0 18px;
+  padding: 0 1.125rem;
   display: none;
   overflow: hidden;
   background-color: var(--background-color);
@@ -160,11 +160,11 @@ input[type="submit"]:hover {
 
 /* Loading animation */
 .loading-spinner {
-  border: 4px solid rgba(255, 255, 255, 0.3);
+  border: 0.25rem solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  border-top: 4px solid var(--primary-color);
-  width: 40px;
-  height: 40px;
+  border-top: 0.25rem solid var(--primary-color);
+  width: 2.5rem;
+  height: 2.5rem;
   animation: spin 1s linear infinite;
 }
 
@@ -178,24 +178,24 @@ footer {
   background-color: var(--background-color);
   color: var(--text-color);
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 1.25rem;
+  margin-top: 2.5rem;
   border-top: 1px solid var(--border-color);
 }
 
 footer img {
-  max-width: 100px;
-  margin: 10px;
+  max-width: 6.25rem;
+  margin: 0.625rem;
 }
 
 .contact-button {
   display: inline-block;
   background-color: var(--primary-color);
   color: white;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
+  border-radius: 0.3125rem;
+  margin-top: 0.625rem;
 }
 
 .contact-button:hover {
@@ -203,13 +203,13 @@ footer img {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .nav-manager {
     flex-direction: column;
   }
 
   .nav-manager button, .nav-manager a {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
 }
 
@@ -218,7 +218,7 @@ footer img {
   background-color: var(--mint-green);
   color: var(--dark-text);
   cursor: pointer;
-  padding: 10px;
+  padding: 0.625rem;
   width: 100%;
   border: none;
   text-align: left;
@@ -234,24 +234,24 @@ footer img {
 }
 
 .content {
-  padding: 0 18px;
+  padding: 0 1.125rem;
   display: none;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 0.625rem 0.625rem;
   animation: fadeIn 0.5s ease-out;
 }
 
 /* Styles for animated icons and headers */
 header img {
-  width: 200px;
+  width: 12.5rem;
   height: auto;
   animation: fadeIn 1s ease-out 0.5s both, pulse 2s infinite;
 }
 
 header h1 {
-  font-size: 2em;
-  margin: 10px 0;
+  font-size: 1.25rem;
+  margin: 0.625rem 0;
   color: var(--mint-green);
   animation: slideInFromLeft 0.5s ease-out 0.2s both;
 }
@@ -266,13 +266,13 @@ header p {
 .progress-bar {
   width: 100%;
   background-color: var(--background-color);
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   overflow: hidden;
   position: relative;
 }
 
 .progress-bar-inner {
-  height: 20px;
+  height: 1.25rem;
   background-color: var(--primary-color);
   width: 0;
   animation: progressBar 2s ease-out forwards;
@@ -299,7 +299,7 @@ header p {
 
 @keyframes slideInFromLeft {
   from {
-    transform: translateX(-50px);
+    transform: translateX(-3.125rem);
     opacity: 0;
   }
   to {
@@ -310,7 +310,7 @@ header p {
 
 @keyframes slideInFromRight {
   from {
-    transform: translateX(50px);
+    transform: translateX(3.125rem);
     opacity: 0;
   }
   to {
@@ -321,7 +321,7 @@ header p {
 
 @keyframes slideInFromTop {
   from {
-    transform: translateY(-50px);
+    transform: translateY(-3.125rem);
     opacity: 0;
   }
   to {
@@ -332,7 +332,7 @@ header p {
 
 @keyframes slideInFromBottom {
   from {
-    transform: translateY(50px);
+    transform: translateY(3.125rem);
     opacity: 0;
   }
   to {
