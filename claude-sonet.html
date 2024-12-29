@@ -11,20 +11,20 @@
             font-family: Helvetica, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
             background: url('brandkit-bsm.png') no-repeat center center fixed; /* Muster des Goldenen Schnitts */
             background-size: cover;
-            padding: 50px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 3rem;
         }
 
         nav.breadcrumb {
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: 0.875rem;
+            margin-bottom: 1.25rem;
         }
 
         nav.breadcrumb a {
@@ -40,28 +40,25 @@
             background-color: #1c1c1c;
             color: #e0e0e0;
             text-align: center;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 1.25rem;
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 2.25rem;
             font-weight: bold;
         }
 
         h2 {
-            font-size: 36px;
+            font-size: 2.25rem;
             font-weight: bold;
         }
 
         h3 {
-            font-size: 26px;
+            font-size: 1.625rem;
         }
 
         p {
-            font-size: 26px;
+            font-size: 1.625rem;
         }
 
         a {
@@ -70,6 +67,25 @@
 
         a:hover {
             color: #e0e0e0; /* Helle Schriftfarbe */
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project {
+            margin-bottom: 2rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -80,22 +96,24 @@
         </nav>
         <h1>Claude Sonet AI</h1>
     </header>
-    <div class="container">
-        <section>
-            <h2>About Claude Sonet AI</h2>
-            <p>Claude Sonet AI is a leader in artificial intelligence solutions, offering innovative and efficient AI technologies. Our goal is to deliver AI systems that are robust, reliable, and capable of understanding and generating human-like text.</p>
+    <main>
+        <section class="projects">
+            <article class="project">
+                <h2>About Claude Sonet AI</h2>
+                <p>Claude Sonet AI is a leader in artificial intelligence solutions, offering innovative and efficient AI technologies. Our goal is to deliver AI systems that are robust, reliable, and capable of understanding and generating human-like text.</p>
+            </article>
+            <article class="project">
+                <h2>Our Technology</h2>
+                <p>Claude Sonet AI employs sophisticated neural network architectures to interpret and process large datasets. Our models use cutting-edge techniques in deep learning to perform a variety of tasks, including text generation, language translation, and data analysis with exceptional precision.</p>
+                <p>Our technology is powered by advanced Transformer models, which have revolutionized natural language processing by enabling more accurate and context-aware text generation. These models help us create AI solutions that can understand and respond to complex queries in a natural and intuitive manner.</p>
+                <p>We continually enhance our models with the latest advancements in AI research, ensuring that our solutions stay ahead of the curve and provide unparalleled performance for our clients.</p>
+            </article>
+            <article class="project">
+                <h2>Why Choose Claude Sonet AI?</h2>
+                <p>Choosing Claude Sonet AI means partnering with a team that is committed to delivering state-of-the-art AI solutions. We prioritize ethical AI development and strive to create technologies that are transparent and beneficial for society. Our dedication to excellence ensures that our clients receive the best AI services available.</p>
+            </article>
         </section>
-        <section>
-            <h2>Our Technology</h2>
-            <p>Claude Sonet AI employs sophisticated neural network architectures to interpret and process large datasets. Our models use cutting-edge techniques in deep learning to perform a variety of tasks, including text generation, language translation, and data analysis with exceptional precision.</p>
-            <p>Our technology is powered by advanced Transformer models, which have revolutionized natural language processing by enabling more accurate and context-aware text generation. These models help us create AI solutions that can understand and respond to complex queries in a natural and intuitive manner.</p>
-            <p>We continually enhance our models with the latest advancements in AI research, ensuring that our solutions stay ahead of the curve and provide unparalleled performance for our clients.</p>
-        </section>
-        <section>
-            <h2>Why Choose Claude Sonet AI?</h2>
-            <p>Choosing Claude Sonet AI means partnering with a team that is committed to delivering state-of-the-art AI solutions. We prioritize ethical AI development and strive to create technologies that are transparent and beneficial for society. Our dedication to excellence ensures that our clients receive the best AI services available.</p>
-        </section>
-    </div>
+    </main>
     <footer>
         <p>&copy; 2025 AUDIOREWORKVISIONS. Alle Rechte vorbehalten.</p>
     </footer>
