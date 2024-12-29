@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPTCoder</title>
+    <link rel="stylesheet" href="main.css"> 
+    <style>
+        /* Inline-Stile für schnelle Anpassungen */
+        body {
+            background-color: #121212; /* Dunkler Hintergrund */
+            color: #e0e0e0; /* Helle Schriftfarbe */
+            font-family: Helvetica, sans-serif;
+            display: flex; /* Flexbox für zentrierte Anordnung */
+            flex-direction: column; /* Vertikale Anordnung */
+            min-height: 100vh; /* Mindesthöhe für zentrierte Inhalte */
+        }
+
+        header {
+            background: url('brandkit-bsm.png') no-repeat center center fixed; /* Muster des Goldenen Schnitts */
+            background-size: cover;
+            padding: 50px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav.breadcrumb {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        nav.breadcrumb a {
+            color: #40e0d0; /* Minzgrün */
+            text-decoration: none;
+        }
+
+        nav.breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #1c1c1c;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 26px;
+        }
+
+        p {
+            font-size: 26px;
+        }
+
+        a {
+            color: #40e0d0; /* Minzgrün */
+        }
+
+        a:hover {
+            color: #e0e0e0; /* Helle Schriftfarbe */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="gemini-appcode.html">GPTCoder</a>
+        </nav>
+        <img id="logo" src="https://stflywithai026072919948.blob.core.windows.net/datencloud/test/15.png" alt="GPTCoder-Logo">
+        <div id="subtitle">Swissinotechno</div>
+    </header>
+
+    <div id="chatContainer">
+        <div id="chatWindow">
+            <ul id="chat"></ul>
+        </div>
+        <input id="inputField" type="text" placeholder="Enter your message here..." />
+        <button id="sendButton" onclick="generateResponse()">Send</button>
+    </div>
+
+    <script>
+        // ... (JavaScript-Code bleibt gleich)
+    </script>
+
+    <footer>
+        <p>&copy; 2025 AUDIOREWORKVISIONS. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>
