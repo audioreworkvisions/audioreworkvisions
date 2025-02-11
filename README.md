@@ -23,7 +23,7 @@ I'm passionate about audio engineering, music production, and software developme
 ## 📫 How to reach me
 - **Email**: [ai@flywithai.net](mailto:ai@flywithai.net)
 - **LinkedIn**: [linkedin.com/in/audioreworkvisions](https://linkedin.com/in/audioreworkvisions)
-- **Twitter**: [twitter.com/audioreworkvisions](https://twitter.com/audioreworkvisions)
+- **Twitter**: [twitter.com/audioreworkvisions](https://twitter.com/audioreworks)
 
 ## ⚡ Fun fact
 I love experimenting with vintage synthesizers and creating unique soundscapes. Music and technology are my ultimate passions!
