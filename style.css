@@ -1,17 +1,18 @@
 /* Main styles for api2store */
 
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --background-color: #ffffff;
-  --text-color: #333333;
-  --border-color: #eaeaea;
-  --hover-color: #0056b3;
-  --dark-blue: #3B3B3B;
-  --mint-green: #40e0d0;
-  --magenta: #ff00ff;
-  --light-text: #222222;
-  --dark-text: #333333;
+  --primary-color: #ff2800; /* Red like the BTTF logo */
+  --secondary-color: #3fc6ff; /* Electric blue for time circuits */
+  --background-color: #000000; /* Black background */
+  --text-color: #ffffff; /* White text */
+  --border-color: #3fc6ff; /* Electric blue borders */
+  --hover-color: #ff9900; /* Orange hover like the BTTF flames */
+  --dark-blue: #000033; /* Dark blue for depth */
+  --title-color: #ff2800; /* Red title color */
+  --flux-yellow: #ffff00; /* Flux capacitor yellow */
+  --digital-green: #00ff66; /* Time circuit display green */
+  --light-text: #ffffff; /* Light text color */
+  --dark-text: #000000; /* Dark text */
 }
 
 /* Header and Navigation styles */
@@ -351,4 +352,155 @@ header p {
   100% {
     transform: scale(1);
   }
+}
+
+/* Back to the Future Theme */
+body {
+  font-family: "digital-clock", "Courier New", monospace;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  background-image: linear-gradient(to bottom, #000033, #000000);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Digital clock font for the time travel look */
+@font-face {
+  font-family: 'digital-clock';
+  src: url('https://fonts.cdnfonts.com/css/alarm-clock') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Header with DeLorean-inspired styling */
+header {
+  background: linear-gradient(to right, #000033, #000044);
+  border-bottom: 3px solid var(--secondary-color);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(63, 198, 255, 0.05),
+    rgba(63, 198, 255, 0.05) 10px,
+    rgba(63, 198, 255, 0) 10px,
+    rgba(63, 198, 255, 0) 20px
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+header h1 {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(255, 40, 0, 0.7);
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  animation: flicker 2s infinite alternate;
+}
+
+/* Time circuit display effect for navigation */
+nav.breadcrumb {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-color);
+  display: inline-block;
+}
+
+nav.breadcrumb a {
+  color: var(--digital-green);
+  text-decoration: none;
+  font-family: "digital-clock", "Courier New", monospace;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+nav.breadcrumb a:hover {
+  color: var(--flux-yellow);
+  text-shadow: 0 0 5px var(--flux-yellow);
+}
+
+/* Flux capacitor pulsing animation */
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.7;
+  }
+}
+
+/* Time travel effect animations */
+.time-travel-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  background: linear-gradient(to right, #ff2800, #3fc6ff);
+  transition: opacity 0.5s;
+}
+
+@keyframes timeTravel {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Digital LED count display */
+.count-display {
+  font-family: "digital-clock", "Courier New", monospace;
+  color: var(--digital-green);
+  background-color: #000;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid var(--secondary-color);
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Time circuit display styling */
+.time-circuit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 2rem 0;
+  background-color: #111;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 1rem;
 }
