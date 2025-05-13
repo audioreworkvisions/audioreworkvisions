@@ -3,204 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthropic</title>
-    <style>
-        body {
-            background-color: #121212; /* Dunkler Hintergrund */
-            color: #e0e0e0; /* Helle Schriftfarbe */
-            font-family: Helvetica, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background: url('brandkit-bsm.png') no-repeat center center fixed; /* Muster des Goldenen Schnitts */
-            background-size: cover;
-            padding: 3rem;
-        }
-
-        nav.breadcrumb {
-            font-size: 0.875rem;
-            margin-bottom: 1.25rem;
-        }
-
-        nav.breadcrumb a {
-            color: #40e0d0; /* Minzgrün */
-            text-decoration: none;
-        }
-
-        nav.breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            background-color: #1c1c1c;
-            color: #e0e0e0;
-            text-align: center;
-            padding: 1.25rem;
-        }
-
-        h1 {
-            font-size: 2.25rem;
-            font-weight: bold;
-        }
-
-        h2 {
-            font-size: 2.25rem;
-            font-weight: bold;
-        }
-
-        h3 {
-            font-size: 1.625rem;
-        }
-
-        p {
-            font-size: 1.625rem;
-        }
-
-        a {
-            color: #40e0d0; /* Minzgrün */
-        }
-
-        a:hover {
-            color: #e0e0e0; /* Helle Schriftfarbe */
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .projects {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .project {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-    </style>
+    <title>Claude Sonet AI - AUDIOREWORKVISIONS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="f.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Starfield background container -->
+    <div id="starfield-container"></div>
+    
     <header>
         <nav class="breadcrumb">
-            <a href="index.html">Home</a> &gt; <a href="claude-sonet.html">Anthropic</a>
+            <a href="index.html">HOME</a> &gt; <a href="claude-sonet.html">CLAUDE SONET AI</a>
         </nav>
-        <h1>Anthropic</h1>
+        <img src="assets/images/user-icon.png" alt="AUDIOREWORKVISIONS Logo" class="logo">
+        <h1 class="glitch-text">CLAUDE SONET AI</h1>
     </header>
+    
     <main>
-        <section class="projects">
-            <article class="project">
-                <h2>About Anthropic</h2>
+        <div class="container">
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250426_1634_Cosmic+Wedding+Launch_simple_compose_01jss8af8ve2jvf0a4x9hwrwjz.gif" alt="Cosmic Animation" class="feature-image">
+            </div>
+            
+            <section class="section">
+                <h2 class="glitch-text">ABOUT ANTHROPIC</h2>
                 <p>Claude Sonet is a LLM from the Company Anthropic. They offering innovative and efficient AI technologies.</p>
-            </article>
-            <article class="project">
-                <h2>The Technology</h2>
-                <p>Anthropic entwickelt Technologien, um Unternehmen in großem Maßstab mit einer starken Leistung bei Benchmark-Bewertungen für logisches Denken, Mathematik, Programmieren und fließende Kenntnisse in Englisch und anderen Sprachen zu unterstützen.
+            </section>
 
-Hier ist eine nicht erschöpfende Liste der Funktionen und häufigen Anwendungen von Claude.
+            <section class="section">
+                <h2 class="glitch-text">THE TECHNOLOGY</h2>
+                <p>Anthropic develops technologies to support businesses at scale with strong performance in benchmark assessments for logical thinking, mathematics, programming, and fluency in English and other languages.</p>
+                
+                <h3>Claude 3.5 Family</h3>
+                <ul class="punk-list">
+                    <li><strong>Claude 3.5 Sonett:</strong> Most intelligent model that combines first-class performance with improved speed.</li>
+                    <li><strong>Claude 3.5 Haiku:</strong> Fastest and most cost-effective model.</li>
+                </ul>
+                
+                <h3>Claude 3 Family</h3>
+                <ul class="punk-list">
+                    <li><strong>Opus:</strong> Strong performance on highly complex tasks like mathematics and programming.</li>
+                    <li><strong>Sonett:</strong> Balanced ratio of intelligence and speed for high-throughput tasks.</li>
+                    <li><strong>Haiku:</strong> Near-instantaneous responsiveness that can mimic human interactions.</li>
+                </ul>
+            </section>
 
-Fähigkeit	Ermöglicht Ihnen...
-Text- und Codegenerierung	
-Halten Sie sich an die Markenstimme für hervorragende kundenorientierte Erfahrungen wie Texterstellung und Chatbots
-Erstellen von Code auf Produktionsebene und Betreiben (Inline-Codegenerierung, Debugging und Konversationsabfragen) in komplexen Codebasen
-Erstellen Sie automatische Übersetzungsfunktionen zwischen Sprachen
-Führen Sie komplexe Finanzprognosen durch
-Unterstützung von juristischen Anwendungsfällen, die eine qualitativ hochwertige technische Analyse, lange Kontextfenster für die Verarbeitung detaillierter Dokumente und schnelle Ausgaben erfordern
-Vision	
-Verarbeiten und analysieren Sie visuelle Eingaben, z. B. das Extrahieren von Erkenntnissen aus Diagrammen und Grafiken
-Generieren von Code aus Bildern mit Code-Snippets oder Vorlagen auf der Grundlage von Diagrammen
-Beschreiben eines Bildes für einen Benutzer mit Sehbehinderung
-Werkzeuggebrauch	
-Interagieren Sie mit externen clientseitigen Tools und Funktionen, die es Claude ermöglichen, Aktionen zu begründen, zu planen und auszuführen, indem strukturierte Ausgaben über API-Aufrufe generiert werden
-​
-Modelloptionen
-Anwendungsfälle in Unternehmen bedeuten oft komplexe Anforderungen und Grenzfälle. Anthropic bietet eine Reihe von Modellen für die Familien Claude 3 und Claude 3.5 an, mit denen Sie die richtige Balance zwischen Intelligenz, Geschwindigkeit und Kosten wählen können.
+            <section class="section">
+                <h2 class="glitch-text">KEY CAPABILITIES</h2>
+                <ul class="punk-list">
+                    <li><strong>Text and Code Generation:</strong> Adhere to brand voice for excellent customer-facing experiences like copywriting and chatbots.</li>
+                    <li><strong>Vision:</strong> Process and analyze visual inputs, such as extracting insights from charts and graphs.</li>
+                    <li><strong>Tool Use:</strong> Interact with external client-side tools and functions that allow Claude to reason about, plan, and execute actions.</li>
+                    <li><strong>Low Hallucination Rates:</strong> Highly accurate responses with minimal fabricated information.</li>
+                    <li><strong>Global Fluency:</strong> Ideal for programming tasks and fluency in English and non-English languages like Spanish and Japanese.</li>
+                </ul>
+            </section>
 
-​
-Claude 3.5 Familie
-Claude 3.5 Sonett	Claude 3.5 Haiku
-Beschreibung	Intelligentestes Modell, das erstklassige Leistung mit verbesserter Geschwindigkeit kombiniert.	Schnellstes und kostengünstigstes Modell.
-Anwendungsbeispiele	
-Fortschrittliche Forschung und Analyse
-Komplexe Problemlösung
-Anspruchsvolles Sprachverständnis und -generierung
-Strategische Planung auf hohem Niveau
-Code-Generierung
-Echtzeit-Chatbots
-Datenextraktion und Beschriftung
-Klassifizierung des Inhalts
-Name des neuesten 1P-API-Modells
-claude-3-5-sonnet-20241022	claude-3-5-haiku-20241022
-Name des neuesten AWS Bedrock-Modells
-anthropic.claude-3-5-sonnet-20241022-v2:0	anthropic.claude-3-5-haiku-20241022-v1:0
-Name des Vertex-KI-Modells
-claude-3-5-sonnet-v2@20241022	claude-3-5-haiku@20241022
-​
-Claude 3 Familie
-Opus	Sonett	Haiku
-Beschreibung	Starke Leistung bei hochkomplexen Aufgaben wie Mathematik und Programmieren.	Ausgewogenes Verhältnis von Intelligenz und Geschwindigkeit für Aufgaben mit hohem Durchsatz.	Nahezu sofortige Reaktionsfähigkeit, die menschliche Interaktionen nachahmen kann.
-Anwendungsbeispiele	
-Aufgabenautomatisierung über APIs und Datenbanken hinweg sowie leistungsstarke Codierungsaufgaben
-Forschung und Entwicklung, Brainstorming und Hypothesengenerierung sowie Arzneimittelforschung
-Strategie, erweiterte Analyse von Diagrammen und Grafiken, Finanzen und Markttrends sowie Prognosen
-Datenverarbeitung über riesige Wissensmengen
-Umsatzprognosen und gezieltes Marketing
-Codegenerierung und Qualitätskontrolle
-Live-Support-Chat
-Übersetzungen
-Moderation von Inhalten
-Extraktion von Wissen aus unstrukturierten Daten
-Name des neuesten 1P-API-Modells
-claude-3-opus-20240229	claude-3-sonnet-20240229	claude-3-haiku-20240307
-Name des neuesten AWS Bedrock-Modells
-anthropic.claude-3-opus-20240229-v1:0	anthropic.claude-3-sonnet-20240229-v1:0	anthropic.claude-3-haiku-20240307-v1:0
-Name des Vertex-KI-Modells
-claude-3-opus@20240229	claude-3-sonnet@20240229	claude-3-haiku@20240307
-​
-Überlegungen für Unternehmen
-Neben einem umfangreichen Satz von Funktionen, Tools und Fähigkeiten ist Claude auch sicher, vertrauenswürdig und skalierbar für weitreichende Unternehmensanforderungen.
-
-Merkmal	Beschreibung
-Sicher	
-Sicherheit und Datenverarbeitung auf Unternehmensniveau für API
-SOC II Typ 2 zertifiziert, HIPAA-Compliance-Optionen für API
-Zugänglich über AWS (GA) und GCP (in der privaten Vorschau)
-Vertrauenswürdig	
-Resistent gegen Jailbreaks und Missbrauch. Wir überwachen kontinuierlich Eingabeaufforderungen und Ausgaben auf schädliche, bösartige Anwendungsfälle, die gegen unser AUP verstoßen.
-Urheberrechtsschutz für kostenpflichtige kommerzielle Dienstleistungen
-Einzigartig positioniert für Branchen mit hohem Vertrauen, die große Mengen sensibler Benutzerdaten verarbeiten
-Fähig	
-200K-Token-Kontextfenster für erweiterte Anwendungsfälle, mit zukünftiger Unterstützung für 1M
-Tool-Nutzung, auch bekannt als Funktionsaufrufe, die eine nahtlose Integration von Claude in spezialisierte Anwendungen und benutzerdefinierte Workflows ermöglicht
-Multimodale Eingabefunktionen mit Textausgabe, mit denen Sie Bilder (z. B. Tabellen, Grafiken und Fotos) zusammen mit Textaufforderungen hochladen können, um einen umfangreicheren Kontext und komplexe Anwendungsfälle zu erhalten
-Developer Console mit Workbench und Tool zur Generierung von Eingabeaufforderungen für einfachere und leistungsfähigere Eingabeaufforderungen und Experimente
-SDKs und APIs zur Beschleunigung und Verbesserung der Entwicklung
-Zuverlässig	
-Sehr niedrige Halluzinationsraten
-Genauigkeit über lange Dokumente
-Global	
-Ideal für Programmieraufgaben und fließende Kenntnisse in Englisch und nicht-englischen Sprachen wie Spanisch und Japanisch
-Ermöglicht Anwendungsfälle wie Übersetzungsdienste und einen breiteren globalen Nutzen
-Kostenbewusst	
-Modellfamilie bietet ein ausgewogenes Verhältnis zwischen Kosten, Leistung und Intelligenz</p>                
-            </article>
-            <article class="project">
-                <h2>Why Choose Claude Sonet AI?</h2>
+            <section class="section">
+                <h2 class="glitch-text">WHY CHOOSE CLAUDE SONET AI?</h2>
                 <p>Choosing Claude Sonet AI means partnering with a team that is committed to delivering state-of-the-art AI solutions. We prioritize ethical AI development and strive to create technologies that are transparent and beneficial for society. Our dedication to excellence ensures that our clients receive the best AI services available.</p>
-            </article>
-        </section>
+                
+                <!-- Featured GIF -->
+                <div class="featured-gif">
+                    <img src="assets/images/20250429_1931_Retro+Space+Exploration_simple_compose_01jt19m0ncenbscdtxextzfcbe.gif" alt="Retro Space Exploration" class="feature-image">
+                </div>
+            </section>
+        </div>
     </main>
+    
     <footer>
-        <p>&copy; 2025 AUDIOREWORKVISIONS. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2025 AUDIOREWORKVISIONS. All rights reserved.</p>
     </footer>
+    
+    <!-- Three.js library -->
+    <script src="assets/js/three.min.js"></script>
+    <!-- Starfield animation -->
+    <script src="assets/js/starfield.js"></script>
 </body>
 </html>

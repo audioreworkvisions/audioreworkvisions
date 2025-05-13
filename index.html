@@ -3,112 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zurück in die Zukunft - Audioreworkvisions</title>
+    <title>AUDIOREWORKVISIONS</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Time circuit display for header background */
-        header {
-            background: #000033;
-            background-image: linear-gradient(to right, 
-                rgba(0, 0, 51, 0.9), 
-                rgba(0, 0, 102, 0.8)
-            );
-            padding: 3rem;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 3px solid #3fc6ff;
-        }
-        
-        /* Circuit patterns in the background */
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                linear-gradient(rgba(63, 198, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(63, 198, 255, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-            z-index: 1;
-            pointer-events: none;
-        }
-        
-        /* Flux capacitor glow effect */
-        h1, h2 {
-            color: #ff2800;
-            text-shadow: 0 0 10px rgba(255, 40, 0, 0.7);
-            font-family: "Arial", sans-serif;
-            font-weight: bold;
-            letter-spacing: 2px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* DeLorean speedometer style list */
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        ul li {
-            margin: 10px 0;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border: 1px solid #3fc6ff;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        ul li:hover {
-            background-color: rgba(63, 198, 255, 0.2);
-            transform: translateX(10px);
-            box-shadow: 0 0 15px rgba(63, 198, 255, 0.5);
-        }
-        
-        /* Time travel link style */
-        a {
-            color: #3fc6ff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        a:hover {
-            color: #ffff00;
-            text-shadow: 0 0 5px #ffff00;
-        }
-        
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: "Arial", sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-image: linear-gradient(to bottom, #000033, #000000);
-        }
-    </style>
+    <link rel="icon" href="f.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Starfield background container -->
+    <div id="starfield-container"></div>
+    
     <header>
         <nav class="breadcrumb">
-            <a href="index.html">OCT 26 1985</a> &gt; <a href="index.html">DESTINATION TIME</a>
+            <a href="index.html">HOME</a>
         </nav>
-        <h1>ZURÜCK IN DIE ZUKUNFT - AUDIOREWORKVISIONS</h1>
+        <img src="assets/images/user-icon.png" alt="AUDIOREWORKVISIONS Logo" class="logo">
+        <h1 class="glitch-text">AUDIOREWORKVISIONS</h1>
     </header>
+    
     <main>
         <div class="container">
             <section class="section">
-                <h2>ABOUT AUDIOREWORKVISIONS</h2>
-                <p>Willkommen in der Zeitmaschine von Audioreworkvisions. Hier finden Sie eine Sammlung von Blogbeiträgen, Dokumentationen und Artikeln zu verschiedenen Themen - 1.21 GIGAWATT POWER!</p>
+                <h2 class="glitch-text">ABOUT AUDIOREWORKVISIONS</h2>
+                <p>Welcome to the digital realm of Audioreworkvisions. Explore our collection of articles, documentation, and blog posts on various topics in the world of audio engineering and AI.</p>
+                
+                <!-- Featured GIF -->
+                <div class="featured-gif">
+                    <img src="assets/images/20250427_0403_Moonlit+Tesla+Parade_simple_compose_01jstfqmg3f9nt84vfpb9m327p.gif" alt="Featured Animation" class="feature-image">
+                </div>
             </section>
+            
             <section class="section">
-                <h2>Inhaltsverzeichnis</h2>
-                <ul>
+                <h2 class="glitch-text">CONTENT INDEX</h2>
+                <ul class="punk-list">
                     <li><a href="cos.html">Morphogenetisches Kollektivbewusstsein</a></li>
                     <li><a href="forschungspapier.html">Forschungspapier: Das Morphogenetische Kollektivbewusstsein und die Symmetrie der Singularität</a></li>
                     <li><a href="singularity_concepts.html">Die Rückführung in die Singularität</a></li>
@@ -136,26 +62,31 @@
             </section>
         </div>
     </main>
+    
     <footer>
-        <p>&copy; 1985-2025 AUDIOREWORKVISIONS. "Your future is whatever you make it, so make it a good one!"</p>
+        <p>&copy; 2025 AUDIOREWORKVISIONS. All rights reserved.</p>
     </footer>
-    <div class="time-travel-effect" id="timeTravelEffect"></div>
+    
+    <!-- Three.js library -->
+    <script src="assets/js/three.min.js"></script>
+    <!-- Starfield animation -->
+    <script src="assets/js/starfield.js"></script>
+    
     <script>
-        // Time travel effect when clicking links
+        // Page transition effect
         document.addEventListener('DOMContentLoaded', function() {
             const links = document.querySelectorAll('a');
-            const timeTravelEffect = document.getElementById('timeTravelEffect');
             
             links.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    if (this.href !== window.location.href) {
+                    if (this.href !== window.location.href && !this.getAttribute('target')) {
                         e.preventDefault();
-                        timeTravelEffect.style.opacity = '0';
-                        timeTravelEffect.style.animation = 'timeTravel 1s';
+                        document.body.style.opacity = '0';
+                        document.body.style.transition = 'opacity 0.5s';
                         
                         setTimeout(() => {
                             window.location.href = this.href;
-                        }, 1000);
+                        }, 500);
                     }
                 });
             });
