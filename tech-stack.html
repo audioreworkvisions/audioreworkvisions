@@ -1,541 +1,359 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprachsynthese-Dokumentationen</title>
-    <style>
-        :root {
-            --dark-blue: #0e1f40;
-            --light-text: #e5e5e5;
-            --mint-green: #3eb489;
-            --dark-text: #1c1c1c;
-            --magenta: #ff007f;
-            --light-gray: #f1f1f1;
-            --medium-gray: #ccc;
-            --dark-gray: #444;
-            --hover-gray: #555;
-            --accent-color: #3eb489;
-        }
-
-        body {
-            background-color: var(--dark-blue);
-            color: var(--light-gray);
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-            margin: 0;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            background-color: var(--dark-blue);
-            color: var(--light-gray);
-            border-bottom: 4px solid var(--accent-color);
-        }
-
-        header img {
-            width: 150px;
-            height: auto;
-            animation: fadeIn 1s ease-out;
-        }
-
-        header h1 {
-            font-size: 2em;
-            margin: 10px 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        nav a {
-            color: var(--light-text);
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--mint-green);
-        }
-
-        h3, h4 {
-            color: var(--light-gray);
-        }
-
-        p {
-            margin: 10px 0;
-        }
-
-        ol {
-            margin: 0 0 20px 20px;
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            color: var(--hover-gray);
-        }
-
-        .header-button, .footer-button {
-            display: inline-block;
-            padding: 10px;
-            margin: 5px;
-            background-color: var(--dark-gray);
-            color: var(--light-gray);
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .header-button:hover, .footer-button:hover {
-            background-color: var(--hover-gray);
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: var(--dark-blue);
-            color: var(--light-gray);
-            border-top: 4px solid var (--accent-color);
-            margin-top: 40px;
-        }
-
-        footer nav {
-            margin-bottom: 20px;
-        }
-
-        .collapsible {
-            background-color: var(--mint-green);
-            color: var(--dark-text);
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 1em;
-            transition: all 0.3s ease;
-        }
-
-        .active,
-        .collapsible:hover {
-            background-color: var(--magenta);
-            color: var (--light-text);
-        }
-
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 0 0 10px 10px;
-            animation: fadeIn 0.5s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+    <title>Speech Synthesis Tech Stack - AUDIOREWORKVISIONS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="f.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Starfield background container -->
+    <div id="starfield-container"></div>
+    
     <header>
-        <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/audioreworkvisions-textlogo/1.png" alt="Logo">
-        <h1>Chloé 2020 Tech-Stack</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="tech-stack.html">Tech Stack</a>
-            <a href="tools.html">Tools</a>
+        <nav class="breadcrumb">
+            <a href="index.html">HOME</a> &gt; <a href="tech-stack.html">TECH STACK</a>
         </nav>
+        <img src="assets/images/user-icon.png" alt="AUDIOREWORKVISIONS Logo" class="logo">
+        <h1 class="glitch-text">SPEECH SYNTHESIS TECH STACK</h1>
     </header>
-
+    
     <main>
-        <h3>Dokumentation Teil 2 (Speech Recognition)</h3>
-        <p><strong>Name:</strong> <a href="https://pypi.org/project">SpeechRecognition Dokumentation</a></p>
+        <div class="container">
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250429_1534_Retro+Space+Expedition_simple_compose_01jt0w3kc8eja8km5xg0y7ah9q.gif" alt="Retro Space Expedition" class="feature-image">
+            </div>
+            
+            <section class="section">
+                <h2 class="glitch-text">SPEECH RECOGNITION</h2>
+                <p>Explore our comprehensive documentation on speech recognition technologies and implementation guides.</p>
+            </section>
 
-        <h3>Sprachsynthese-Dokumentation</h3>
+            <div class="doc-section">
+                <h2 class="glitch-text">PYTTSX3 DOCUMENTATION</h2>
+                <ul class="punk-list">
+                    <li><strong>Name:</strong> <a href="https://pyttsx3.readthedocs.io/" class="neon-link">pyttsx3 Documentation</a></li>
+                    <li><strong>Description:</strong> pyttsx3 is a cross-platform text-to-speech library for Python. It works offline and is compatible with various speech synthesis engines, including SAPI5 on Windows, NSSpeechSynthesizer on macOS, and espeak on Linux. The library allows customization of voice properties, event-driven notifications, and integration into various applications.</li>
+                    <li><strong>Use Cases:</strong></li>
+                    <ul class="punk-list">
+                        <li><strong>Voice Notifications:</strong> Implementation of text-to-speech notifications in applications, such as alarm systems or assistive technologies.</li>
+                        <li><strong>Audiobook Creation:</strong> Conversion of text documents into spoken content to create audiobooks or voice content for visually impaired users.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://pyttsx3.readthedocs.io/" class="neon-link">pyttsx3 Documentation</a></li>
+                </ul>
+            </div>
 
-        <button type="button" class="collapsible">pyttsx3 Dokumentation</button>
-        <div class="content">
-            <p>
-                <strong>Name:</strong> <a href="https://pyttsx3.readthedocs.io/">pyttsx3 Dokumentation</a><br>
-                <strong>Beschreibung:</strong> pyttsx3 ist eine plattformübergreifende Text-zu-Sprache-Bibliothek für Python. Sie funktioniert offline und ist mit
-                verschiedenen Sprachsynthesemotoren kompatibel, einschließlich SAPI5 auf Windows, NSSpeechSynthesizer auf macOS und espeak auf Linux. Die Bibliothek
-                ermöglicht die Anpassung von Stimmeigenschaften, ereignisgesteuerte Benachrichtigungen und die Integration in verschiedene Anwendungen.
-            </p>
-            <p><strong>Anwendungsfälle:</strong></p>
-            <ol>
-                <li><strong>Sprachbenachrichtigungen:</strong> Implementierung von Text-zu-Sprache-Benachrichtigungen in Anwendungen, wie Alarmsystemen oder
-                    assistiven Technologien.</li>
-                <li><strong>Erstellung von Hörbüchern:</strong> Konvertierung von Textdokumenten in gesprochene Inhalte, um Hörbücher oder Sprachinhalte für sehbehinderte Benutzer zu erstellen.</li>
-            </ol>
-            <p><strong>Link:</strong> <a href="https://pyttsx3.readthedocs.io/">pyttsx3 Dokumentation</a></p>
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250426_1543_Retro+Space+Ceremony_simple_compose_01jss5cqx5frat53nwpkn1zyet.gif" alt="Retro Space Ceremony" class="feature-image">
+            </div>
+            
+            <div class="doc-section">
+                <h2 class="glitch-text">COQUI TTS DOCUMENTATION</h2>
+                <ul class="punk-list">
+                    <li><strong>Name:</strong> <a href="https://coqui-tts.readthedocs.io/" class="neon-link">Coqui TTS Documentation</a></li>
+                    <li><strong>Description:</strong> Coqui TTS is an open-source text-to-speech toolkit that provides a CLI interface for speech synthesis with pre-trained models. Users can use either their own models or provided models to synthesize speech. The library supports various models and vocoders, including multi-speaker models and voice conversion models.</li>
+                    <li><strong>Use Cases:</strong></li>
+                    <ul class="punk-list">
+                        <li><strong>Speech Synthesis:</strong> Creation of audio files from text with pre-trained models, ideal for developing speech assistant systems or interactive applications.</li>
+                        <li><strong>Voice Conversion:</strong> Converting one speaker's voice to another's, useful for applications such as personalized speech assistants or voice-controlled devices.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://coqui-tts.readthedocs.io/" class="neon-link">Coqui TTS Documentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2 class="glitch-text">GTTS DOCUMENTATION</h2>
+                <ul class="punk-list">
+                    <li><strong>Name:</strong> <a href="https://gtts.readthedocs.io/" class="neon-link">gTTS Documentation</a></li>
+                    <li><strong>Description:</strong> gTTS (Google Text-to-Speech) is a Python library and CLI tool for interfacing with the Google Text-to-Speech API. It enables the conversion of text to speech using various language and dialect options. gTTS can create audio files directly or play audio in real-time.</li>
+                    <li><strong>Use Cases:</strong></li>
+                    <ul class="punk-list">
+                        <li><strong>Real-time Speech Output:</strong> Development of applications that provide text-to-speech functions in real-time, such as chatbots or interactive speech systems.</li>
+                        <li><strong>Creation of Voice Recordings:</strong> Creating voice recordings for e-learning, podcasts, or other applications that require voice content.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://gtts.readthedocs.io/" class="neon-link">gTTS Documentation</a></li>
+                </ul>
+            </div>
+            
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250427_0403_Moonlit+Tesla+Parade_simple_compose_01jstfqmg3f9nt84vfpb9m327p.gif" alt="Moonlit Tesla Parade" class="feature-image">
+            </div>
+
+            <div class="doc-section">
+                <h2 class="glitch-text">SPEECHRECOGNITION DOCUMENTATION</h2>
+                <ul class="punk-list">
+                    <li><strong>Name:</strong> <a href="https://pypi.org/project/SpeechRecognition/" class="neon-link">SpeechRecognition Documentation</a></li>
+                    <li><strong>Description:</strong> SpeechRecognition is a Python library that provides a simple API for speech-to-text conversion. It supports multiple speech recognition systems such as Google Web Speech API, CMU Sphinx, Microsoft Bing Voice Recognition, Houndify API, IBM Speech to Text, and others.</li>
+                    <li><strong>Use Cases:</strong></li>
+                    <ul class="punk-list">
+                        <li><strong>Voice-Controlled Applications:</strong> Develop applications that are controlled by voice commands, such as personal assistants or smart home devices.</li>
+                        <li><strong>Audio Data Transcription:</strong> Automatically transcribe audio files into text, ideal for creating meeting minutes or dictations.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://pypi.org/project/SpeechRecognition/" class="neon-link">SpeechRecognition Documentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2 class="glitch-text">MOZILLA DEEPSPEECH DOCUMENTATION</h2>
+                <ul class="punk-list">
+                    <li><strong>Name:</strong> <a href="https://deepspeech.readthedocs.io/" class="neon-link">DeepSpeech Documentation</a></li>
+                    <li><strong>Description:</strong> Mozilla DeepSpeech is an open-source speech recognition engine based on neural networks. It is designed to run efficiently on many platforms and supports various programming languages. DeepSpeech provides a simple way to convert speech to text and can be used both offline and online.</li>
+                    <li><strong>Use Cases:</strong></li>
+                    <ul class="punk-list">
+                        <li><strong>Speech Recognition in Applications:</strong> Integration of DeepSpeech into mobile or desktop applications for speech-to-text conversion.</li>
+                        <li><strong>Transcription of Large Audio Data Volumes:</strong> Using DeepSpeech to transcribe large amounts of audio data, such as interviews or podcasts.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://deepspeech.readthedocs.io/" class="neon-link">DeepSpeech Documentation</a></li>
+                </ul>
+            </div>
+
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250426_1634_Cosmic+Wedding+Launch_simple_compose_01jss8af8ve2jvf0a4x9hwrwjz.gif" alt="Cosmic Wedding Launch" class="feature-image">
+            </div>
+            
+            <div class="doc-section">
+                <h2 class="glitch-text">SPEECHBRAIN DOCUMENTATION</h2>
+                <ul class="punk-list">
+                    <li><strong>Name:</strong> <a href="https://speechbrain.readthedocs.io/" class="neon-link">SpeechBrain Documentation</a></li>
+                    <li><strong>Description:</strong> SpeechBrain is an all-in-one toolkit for speech technologies based on PyTorch. It supports the development of speech-to-text, speaker recognition, speech enhancement, and other speech processing systems. SpeechBrain provides an extensive collection of pre-trained models and a user-friendly API.</li>
+                    <li><strong>Use Cases:</strong></li>
+                    <ul class="punk-list">
+                        <li><strong>Automatic Speech Recognition (ASR):</strong> Development and training of ASR models for converting spoken language into text.</li>
+                        <li><strong>Speaker Recognition:</strong> Implementation of systems for identifying or verifying speakers based on their voice characteristics.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://speechbrain.readthedocs.io/" class="neon-link">SpeechBrain Documentation</a></li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h2 class="glitch-text">FLASH SPEECHRECOGNITION DOCUMENTATION</h2>
+                <ul class="punk-list">
+                    <li><strong>Name:</strong> <a href="https://lightning-flash.readthedocs.io/en/latest/tasks/speech_recognition.html" class="neon-link">Flash SpeechRecognition Documentation</a></li>
+                    <li><strong>Description:</strong> Flash SpeechRecognition is an extension of PyTorch Lightning that facilitates the development and deployment of speech-to-text models. It integrates various pre-trained models like Wav2Vec2 that can be used for speech conversion. The library enables easy fine-tuning, prediction, and deployment of speech models.</li>
+                    <li><strong>Use Cases:</strong></li>
+                    <ul class="punk-list">
+                        <li><strong>Fine-tuning of Models:</strong> Use Flash SpeechRecognition to refine pre-trained speech models with your own data and improve accuracy for specific use cases.</li>
+                        <li><strong>Real-time Speech Recognition:</strong> Implementation of real-time speech recognition systems in applications for transcribing speech to text.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://lightning-flash.readthedocs.io/en/latest/tasks/speech_recognition.html" class="neon-link">Flash SpeechRecognition Documentation</a></li>
+                </ul>
+            </div>
+            
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250429_1534_Retro+Space+Expedition_simple_compose_01jt0w3kc8eja8km5xg0y7ah9q.gif" alt="Retro Space Expedition" class="feature-image">
+            </div>
+            
+            <section class="section">
+                <h2 class="glitch-text">COMPREHENSIVE DOCUMENTATION</h2>
+                <p>These documentations provide comprehensive information and examples for implementing and using the respective speech synthesis and speech recognition technologies in Python.</p>
+            </section>
+            
+            <section class="section">
+                <h2 class="glitch-text">SPEECH RECOGNITION DOCUMENTATION</h2>
+                <p>The SpeechRecognition library provides a simple API for speech recognition in Python. It supports various speech recognition systems such as Google Web Speech API, CMU Sphinx, Microsoft Bing Voice Recognition, Houndify API, IBM Speech to Text, and more.</p>
+                <p><a href="https://speechrecognition.readthedocs.io/" class="neon-link">View Documentation</a></p>
+            </section>
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250429_1931_Retro+Space+Exploration_simple_compose_01jt19m0ncenbscdtxextzfcbe.gif" alt="Retro Space Exploration" class="feature-image">
+            </div>
+            
+            <section class="section">
+                <h2 class="glitch-text">API DOCUMENTATION</h2>
+                <div class="doc-section">
+                    <h3 class="glitch-text">OPENAI API</h3>
+                    <ul class="punk-list">
+                        <li><strong>Name:</strong> <a href="https://platform.openai.com/docs/api-reference" class="neon-link">OpenAI API Documentation</a></li>
+                        <li><strong>Description:</strong> The OpenAI API provides access to advanced language models like GPT-4 and GPT-3.5, enabling developers to integrate AI capabilities into their applications. It supports a wide range of functions such as text generation, language translation, summarization, and more.</li>
+                        <li><strong>Use Cases:</strong></li>
+                        <ul class="punk-list">
+                            <li><strong>Text Generation:</strong> Creating human-like text for chatbots, content creation, and customer support automation.</li>
+                            <li><strong>Function Calls:</strong> Extending applications with structured outputs that can perform tasks like API calls, database queries, or executing predefined functions based on natural language.</li>
+                        </ul>
+                    </ul>
+                </div>
+                
+                <div class="doc-section">
+                    <h3 class="glitch-text">CALDAV API</h3>
+                    <ul class="punk-list">
+                        <li><strong>Name:</strong> <a href="https://datatracker.ietf.org/doc/html/rfc4791" class="neon-link">CalDAV API Documentation</a></li>
+                        <li><strong>Description:</strong> CalDAV is a standard protocol that extends WebDAV to enable calendar access. It allows clients to access, manage, and share calendar resources on a server, providing a way to perform scheduling operations with iCalendar data.</li>
+                        <li><strong>Use Cases:</strong></li>
+                        <ul class="punk-list">
+                            <li><strong>Calendar Sharing and Management:</strong> Enables sharing and managing calendar entries between different clients and users.</li>
+                            <li><strong>Automated Appointment Scheduling:</strong> Automation of appointment scheduling and calendar management through server-side applications.</li>
+                        </ul>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250426_1543_Retro+Space+Ceremony_simple_compose_01jss5cqx5frat53nwpkn1zyet.gif" alt="Retro Space Ceremony" class="feature-image">
+            </div>
+            
+            <section class="section">
+                <h2 class="glitch-text">AI & MUSIC INTEGRATION</h2>
+                <div class="doc-section">
+                    <h3 class="glitch-text">LITELLM</h3>
+                    <ul class="punk-list">
+                        <li><strong>Name:</strong> <a href="https://guidance.readthedocs.io/en/latest/generated/guidance.models.LiteLLM.html" class="neon-link">LiteLLM Documentation</a></li>
+                        <li><strong>Description:</strong> LiteLLM is a lightweight model API designed for efficient interaction with various language models. It simplifies the creation and management of model instances and facilitates the integration and deployment of language models in applications.</li>
+                        <li><strong>Use Cases:</strong></li>
+                        <ul class="punk-list">
+                            <li><strong>Model Management:</strong> Creating, modifying, and managing language model instances with ease, including setting attributes and handling state.</li>
+                            <li><strong>Interactive AI Applications:</strong> Building interactive applications that require real-time responses and model updates.</li>
+                        </ul>
+                    </ul>
+                </div>
+                
+                <div class="doc-section">
+                    <h3 class="glitch-text">SPOTIFY API</h3>
+                    <ul class="punk-list">
+                        <li><strong>Name:</strong> <a href="https://developer.spotify.com/documentation/web-api/" class="neon-link">Spotify API Documentation</a></li>
+                        <li><strong>Description:</strong> The Spotify Web API allows developers to access Spotify's music catalog, manage user playlists and libraries, and control Spotify playback. It provides a wide range of endpoints to retrieve data about tracks, albums, artists, and more.</li>
+                        <li><strong>Use Cases:</strong></li>
+                        <ul class="punk-list">
+                            <li><strong>Music Discovery Application:</strong> Creating an app that recommends new music based on users' listening history and favorite artists.</li>
+                            <li><strong>Playback Control:</strong> Developing a web app that allows users to control Spotify playback on their devices, including play, pause, and skipping tracks.</li>
+                        </ul>
+                    </ul>
+                </div>
+                
+                <div class="doc-section">
+                    <h3 class="glitch-text">SPOTIPY</h3>
+                    <ul class="punk-list">
+                        <li><strong>Name:</strong> <a href="http://spoti-py.readthedocs.io/" class="neon-link">Spotipy Documentation</a></li>
+                        <li><strong>Description:</strong> Spotipy is a lightweight Python library for the Spotify Web API. It enables easy integration with the Spotify API and allows developers to interact with Spotify data, including searching for tracks, artists, albums, and managing user playlists.</li>
+                        <li><strong>Use Cases:</strong></li>
+                        <ul class="punk-list">
+                            <li><strong>Music Data Querying:</strong> Retrieving detailed information about tracks, artists, and albums to create applications that display and analyze Spotify music data.</li>
+                            <li><strong>Playlist Management:</strong> Creating, updating, and managing Spotify playlists programmatically to enable custom experiences and automated playlist curation.</li>
+                        </ul>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250427_0403_Moonlit+Tesla+Parade_simple_compose_01jstfqmg3f9nt84vfpb9m327p.gif" alt="Moonlit Tesla Parade" class="feature-image">
+            </div>
+            
+            <section class="section">
+                <h2 class="glitch-text">SMART HOME & IOT</h2>
+                <div class="doc-section">
+                    <h3 class="glitch-text">SPOTIFYD</h3>
+                    <ul class="punk-list">
+                        <li><strong>Name:</strong> <a href="https://github.com/Spotifyd/spotifyd/blob/master/README.md" class="neon-link">Spotifyd Documentation</a></li>
+                        <li><strong>Description:</strong> Spotifyd is an open-source Spotify client that runs as a UNIX daemon. It's lightweight and supports more platforms than the official client. Spotifyd streams music via the Spotify Connect protocol and appears as a controllable device within official Spotify clients.</li>
+                        <li><strong>Use Cases:</strong></li>
+                        <ul class="punk-list">
+                            <li><strong>Home Automation Integration:</strong> Using Spotifyd to integrate Spotify music streaming into a home automation system that enables playback control through various smart home devices.</li>
+                            <li><strong>Headless Music Streaming:</strong> Setting up Spotifyd on a Raspberry Pi or other headless device to create a dedicated music streaming box that can be controlled from any Spotify client.</li>
+                        </ul>
+                    </ul>
+                </div>
+                
+                <div class="doc-section">
+                    <h3 class="glitch-text">PHILIPS HUE API</h3>
+                    <ul class="punk-list">
+                        <li><strong>Name:</strong> <a href="https://developers.meethue.com/new-hue-api/" class="neon-link">Philips Hue API Documentation</a></li>
+                        <li><strong>Description:</strong> The Philips Hue API allows developers to create applications that can control Philips Hue lighting systems. The API supports features like dynamic scenes, gradient entertainment technology, and proactive status change events in the local network. It includes comprehensive guides for getting started, application development, and a complete API reference.</li>
+                        <li><strong>Use Cases:</strong></li>
+                        <ul class="punk-list">
+                            <li><strong>Home Automation Integration:</strong> Developing applications that integrate Philips Hue lights with other smart home devices to enable automated control based on various triggers.</li>
+                            <li><strong>Custom Light Effects Creation:</strong> Creating custom light scenes and effects that can be triggered via a mobile app or web interface to enhance user experience.</li>
+                        </ul>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250426_1634_Cosmic+Wedding+Launch_simple_compose_01jss8af8ve2jvf0a4x9hwrwjz.gif" alt="Cosmic Wedding Launch" class="feature-image">
+            </div>
+            
+            <section class="section">
+                <h2 class="glitch-text">WEATHER & SCHEDULING</h2>
+                <div class="doc-section">
+                    <h3 class="glitch-text">OPENWEATHERMAP API</h3>
+                    <ul class="punk-list">
+                        <li><strong>Name:</strong> <a href="https://openweathermap.org/api" class="neon-link">OpenWeatherMap API Documentation</a></li>
+                        <li><strong>Description:</strong> The OpenWeatherMap API provides access to a wide range of weather data, including current weather conditions, forecasts, historical data, and weather maps. It supports multiple formats such as JSON and XML and offers various endpoints for retrieving specific weather information.</li>
+                        <li><strong>Use Cases:</strong></li>
+                        <ul class="punk-list">
+                            <li><strong>Weather Forecast Applications:</strong> Integrating real-time weather data, hourly and daily forecasts into applications to provide users with current weather conditions.</li>
+                            <li><strong>Climate Research:</strong> Using historical weather data and statistical weather data for research and analysis of climate trends and patterns.</li>
+                        </ul>
+                    </ul>
+                </div>
+                
+                <div class="doc-section">
+                    <h3 class="glitch-text">SCHEDULE</h3>
+                    <ul class="punk-list">
+                        <li><strong>Name:</strong> <a href="https://schedule.readthedocs.io/" class="neon-link">Schedule Documentation</a></li>
+                        <li><strong>Description:</strong> Schedule is a user-friendly Python library for task scheduling that allows for periodic execution of Python functions (or other callables). It's lightweight and has no external dependencies, making it ideal for simple automation tasks.</li>
+                        <li><strong>Use Cases:</strong></li>
+                        <ul class="punk-list">
+                            <li><strong>Automating Recurring Tasks:</strong> Using Schedule to regularly execute tasks such as data backups, report generation, or system maintenance without manual intervention.</li>
+                            <li><strong>Task Scheduling in Applications:</strong> Integrating Schedule into applications to manage periodic tasks like sending notifications or updating data.</li>
+                        </ul>
+                    </ul>
+                </div>
+                
+                <div class="doc-section">
+                    <h3 class="glitch-text">APSCHEDULER</h3>
+                    <ul class="punk-list">
+                        <li><strong>Name:</strong> <a href="https://apscheduler.readthedocs.io/" class="neon-link">APScheduler Documentation</a></li>
+                        <li><strong>Description:</strong> APScheduler is a Python library that allows for executing Python code at a later time, either once or periodically. It supports various triggers such as cron-like expressions, interval, and date triggers, and provides a flexible and extensible architecture for complex scheduling requirements.</li>
+                        <li><strong>Use Cases:</strong></li>
+                        <ul class="punk-list">
+                            <li><strong>Complex Scheduling Requirements:</strong> APScheduler can manage complex schedules, such as running tasks at specific times or intervals, with support for multiple triggers and job stores.</li>
+                            <li><strong>Distributed Job Management:</strong> Using APScheduler to manage and distribute jobs across multiple servers to ensure high availability and scalability.</li>
+                        </ul>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="glitch-text">USEFUL RESOURCES</h2>
+                <div class="resource-links">
+                    <ul class="punk-list">
+                        <li><a href="https://shipfa.st/?via=autogpt" class="neon-link">Build Your AI Startup</a></li>
+                        <li><a href="https://try.elevenlabs.io/Owgaz29csuo5" class="neon-link">AI Voice</a></li>
+                        <li><a href="https://nextjsdirectory.com?aff=j1Dej" class="neon-link">NextJS Directory</a></li>
+                        <li><a href="https://github.com/hacksider/Deep-Live-Cam" class="neon-link">Deep Live Cam</a></li>
+                        <li><a href="https://github.com/huggingface/parler" class="neon-link">Parler-TTS</a></li>
+                        <li><a href="https://github.com/open-mmlab/Live2Diff" class="neon-link">Live2Diff</a></li>
+                        <li><a href="https://github.com/weaviate/Verba" class="neon-link">Verba</a></li>
+                        <li><a href="https://github.com/frdel/agent-zero" class="neon-link">Agent Zero</a></li>
+                        <li><a href="https://github.com/InternLM/lagent" class="neon-link">Lagent</a></li>
+                        <li><a href="https://github.com/langchain-ai/langg" class="neon-link">LangGraph Studio</a></li>
+                        <li><a href="https://github.com/ckeditor/ckeditor5" class="neon-link">CKEditor-5</a></li>
+                        <li><a href="https://github.com/getsentry/sentry" class="neon-link">Sentry</a></li>
+                        <li><a href="https://github.com/NaiboWang/EasySpider" class="neon-link">EasySpider</a></li>
+                    </ul>
+                </div>
+            </section>
         </div>
-
-        <button type="button" class="collapsible">Coqui TTS Dokumentation</button>
-        <div class="content">
-            <p>
-                <strong>Name:</strong> <a href="https://coqui-tts.readthedocs.io/">Coqui TTS Dokumentation</a><br>
-                <strong>Beschreibung:</strong> Coqui TTS ist ein Open-Source-Text-zu-Sprache-Toolkit, das eine CLI-Schnittstelle für die Sprachsynthese mit
-                vortrainierten Modellen bietet. Benutzer können entweder eigene Modelle oder bereitgestellte Modelle verwenden, um Sprache zu synthetisieren. Die
-                Bibliothek unterstützt verschiedene Modelle und Vocoder, einschließlich Multi-Speaker-Modelle und Voice-Conversion-Modelle.
-            </p>
-            <p><strong>Anwendungsfälle:</strong></p>
-            <ol>
-                <li><strong>Sprachsynthese:</strong> Erstellung von Audiodateien aus Text mit vortrainierten Modellen, ideal für die Entwicklung von
-                    Sprachassistenzsystemen oder interaktiven Anwendungen.</li>
-                <li><strong>Stimmenkonvertierung:</strong> Konvertierung der Stimme eines Sprechers in die eines anderen, nützlich für Anwendungen wie personalisierte
-                    Sprachassistenten oder stimmgesteuerte Geräte.</li>
-            </ol>
-            <p><strong>Link:</strong> <a href="https://coqui-tts.readthedocs.io/">Coqui TTS Dokumentation</a></p>
-        </div>
-
-        <button type="button" class="collapsible">gTTS Dokumentation</button>
-        <div class="content">
-            <p>
-                <strong>Name:</strong> <a href="https://gtts.readthedocs.io/">gTTS Dokumentation</a><br>
-                <strong>Beschreibung:</strong> gTTS (Google Text-to-Speech) ist eine Python-Bibliothek und CLI-Tool zur Schnittstelle mit dem Google Text-to-Speech API. Sie ermöglicht die Konvertierung von Text in Sprache unter Verwendung verschiedener Sprach- und Dialektoptionen. gTTS kann Audiodateien direkt erstellen oder Audio in Echtzeit abspielen.
-            </p>
-            <p><strong>Anwendungsfälle:</strong></p>
-            <ol>
-                <li><strong>Echtzeit-Sprachausgabe:</strong> Entwicklung von Anwendungen, die Text-zu-Sprache-Funktionen in Echtzeit bieten, wie Chatbots oder interaktive Sprachsysteme.</li>
-                <li><strong>Erstellung von Sprachaufnahmen:</strong> Erstellen von Sprachaufnahmen für E-Learning, Podcasts oder andere Anwendungen, die Sprachinhalte erfordern.</li>
-            </ol>
-            <p><strong>Link:</strong> <a href="https://gtts.readthedocs.io/">gTTS Dokumentation</a></p>
-        </div>
-
-        <button type="button" class="collapsible">SpeechRecognition Dokumentation</button>
-        <div class="content">
-            <p>
-                <strong>Name:</strong> <a href="https://pypi.org/project/SpeechRecognition/">SpeechRecognition Dokumentation</a><br>
-                <strong>Beschreibung:</strong> SpeechRecognition ist eine Python-Bibliothek, die eine einfache API für die Sprach-zu-Text-Umwandlung bietet. Sie unterstützt mehrere Spracherkennungssysteme wie Google Web Speech API, CMU Sphinx, Microsoft Bing Voice Recognition, Houndify API, IBM Speech to Text und andere.
-            </p>
-            <p><strong>Anwendungsfälle:</strong></p>
-            <ol>
-                <li><strong>Sprachgesteuerte Anwendungen:</strong> Entwickeln von Anwendungen, die durch Sprachbefehle gesteuert werden, wie persönliche Assistenten oder Smart-Home-Geräte.</li>
-                <li><strong>Transkription von Audiodaten:</strong> Automatisches Transkribieren von Audiodateien in Text, ideal für die Erstellung von Meetingprotokollen oder Diktaten.</li>
-            </ol>
-            <p><strong>Link:</strong> <a href="https://pypi.org/project/SpeechRecognition/">SpeechRecognition Dokumentation</a></p>
-        </div>
-
-        <button type="button" class="collapsible">Mozilla DeepSpeech Dokumentation</button>
-        <div class="content">
-            <p>
-                <strong>Name:</strong> <a href="https://deepspeech.readthedocs.io/">DeepSpeech Dokumentation</a><br>
-                <strong>Beschreibung:</strong> Mozilla DeepSpeech ist eine Open-Source-Spracherkennungs-Engine, die auf neuronalen Netzwerken basiert. Sie ist darauf ausgelegt, effizient auf vielen Plattformen zu laufen und unterstützt verschiedene Programmiersprachen. DeepSpeech bietet eine einfache Möglichkeit, Sprache in Text umzuwandeln und kann sowohl offline als auch online genutzt werden.
-            </p>
-            <p><strong>Anwendungsfälle:</strong></p>
-            <ol>
-                <li><strong>Spracherkennung in Anwendungen:</strong> Integration von DeepSpeech in mobile oder Desktop-Anwendungen zur Sprach-zu-Text-Umwandlung.</li>
-                <li><strong>Transkription großer Audiodatenmengen:</strong> Verwendung von DeepSpeech zur Transkription großer Mengen von Audiodaten, wie Interviews oder Podcasts.</li>
-            </ol>
-            <p><strong>Link:</strong> <a href="https://deepspeech.readthedocs.io/">DeepSpeech Dokumentation</a></p>
-        </div>
-
-        <button type="button" class="collapsible">SpeechBrain Dokumentation</button>
-        <div class="content">
-            <p>
-                <strong>Name:</strong> <a href="https://speechbrain.readthedocs.io/">SpeechBrain Dokumentation</a><br>
-                <strong>Beschreibung:</strong> SpeechBrain ist ein All-in-One-Toolkit für Sprachtechnologien, das auf PyTorch basiert. Es unterstützt die Entwicklung von Sprach-zu-Text-, Sprechererkennungs-, Sprachverbesserungs- und anderen Sprachverarbeitungssystemen. SpeechBrain bietet eine umfangreiche Sammlung vortrainierter Modelle und eine benutzerfreundliche API.
-            </p>
-            <p><strong>Anwendungsfälle:</strong></p>
-            <ol>
-                <li><strong>Automatische Spracherkennung (ASR):</strong> Entwicklung und Training von ASR-Modellen zur Umwandlung von gesprochener Sprache in Text.</li>
-                <li><strong>Sprechererkennung:</strong> Implementierung von Systemen zur Identifizierung oder Verifizierung von Sprechern basierend auf ihren Stimmmerkmalen.</li>
-            </ol>
-            <p><strong>Link:</strong> <a href="https://speechbrain.readthedocs.io/">SpeechBrain Dokumentation</a></p>
-        </div>
-
-        <button type="button" class="collapsible">Flash SpeechRecognition Dokumentation</button>
-        <div class="content">
-            <p>
-                <strong>Name:</strong> <a href="https://lightning-flash.readthedocs.io/en/latest/tasks/speech_recognition.html">Flash SpeechRecognition Dokumentation</a><br>
-                <strong>Beschreibung:</strong> Flash SpeechRecognition ist eine Erweiterung von PyTorch Lightning, die die Entwicklung und Bereitstellung von Sprach-zu-Text-Modellen erleichtert. Es integriert verschiedene vortrainierte Modelle wie Wav2Vec2, die für die Sprachumwandlung verwendet werden können. Die Bibliothek ermöglicht einfache Feinabstimmung, Vorhersage und Bereitstellung von Sprachmodellen.
-            </p>
-            <p><strong>Anwendungsfälle:</strong></p>
-            <ol>
-                <li><strong>Feinabstimmung von Modellen:</strong> Verwenden Sie Flash SpeechRecognition, um vortrainierte Sprachmodelle mit eigenen Daten zu verfeinern und die Genauigkeit für spezifische Anwendungsfälle zu verbessern.</li>
-                <li><strong>Echtzeit-Spracherkennung:</strong> Implementierung von Echtzeit-Spracherkennungssystemen in Anwendungen zur Transkription von Sprache in Text.</li>
-            </ol>
-            <p><strong>Link:</strong> <a href="https://lightning-flash.readthedocs.io/en/latest/tasks/speech_recognition.html">Flash SpeechRecognition Dokumentation</a></p>
-        </div>
-
-        <p>Diese Dokumentationen bieten umfassende Informationen und Beispiele zur Implementierung und Nutzung der jeweiligen Sprachsynthese- und Spracherkennungstechnologien in Python.</p>
-
-        <h3>Dokumentation zur Spracherkennung</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://speechrecognition.readthedocs.io/">SpeechRecognition Documentation</a><br>
-            <strong>Beschreibung:</strong> Die SpeechRecognition-Bibliothek bietet eine einfache API für die Spracherkennung in Python. Sie unterstützt verschiedene Spracherkennungssysteme wie Google Web Speech API, CMU Sphinx, Microsoft Bing Voice Recognition, Houndify API, IBM Speech to Text und mehr.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Sprachgesteuerte Anwendungen:</strong> Entwicklung von Anwendungen, die durch Sprachbefehle gesteuert werden können, wie persönliche Assistenten oder intelligente Haussteuerungen.</li>
-            <li><strong>Transkription von Audioaufnahmen:</strong> Automatische Transkription von Audioaufnahmen in Text, z.B. für Meeting-Protokolle oder Diktate.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://speechrecognition.readthedocs.io/">SpeechRecognition Documentation</a></p>
-
-        <h3>OpenAI API Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://platform.openai.com/docs/api-reference">OpenAI API Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Die OpenAI API bietet Zugriff auf fortschrittliche Sprachmodelle wie GPT-4 und GPT-3.5, die es Entwicklern ermöglichen, KI-Funktionen in ihre Anwendungen zu integrieren. Sie unterstützt eine breite Palette von Funktionen wie Textgenerierung, Sprachübersetzung, Zusammenfassungen und mehr.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Textgenerierung:</strong> Erstellen menschenähnlicher Texte für Chatbots, Inhaltserstellung und Kundensupport-Automatisierung.</li>
-            <li><strong>Funktionsaufrufe:</strong> Erweiterung von Anwendungen mit strukturierten Ausgaben, die Aufgaben wie API-Aufrufe, Datenbankabfragen oder das Ausführen vordefinierter Funktionen basierend auf natürlicher Sprache ermöglichen.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://platform.openai.com/docs/api-reference">OpenAI API Dokumentation</a></p>
-
-        <h3>CalDAV API Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://datatracker.ietf.org/doc/html/rfc4791">CalDAV API Dokumentation</a><br>
-            <strong>Beschreibung:</strong> CalDAV ist ein Standardprotokoll, das WebDAV erweitert, um den Zugriff auf Kalender zu ermöglichen. Es erlaubt Clients, auf Kalenderressourcen auf einem Server zuzugreifen, diese zu verwalten und zu teilen, und bietet eine Möglichkeit, Planungsoperationen mit iCalendar-Daten durchzuführen.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Kalenderfreigabe und -verwaltung:</strong> Ermöglicht das Teilen und Verwalten von Kalendereinträgen zwischen verschiedenen Clients und Benutzern.</li>
-            <li><strong>Automatisierte Terminplanung:</strong> Automatisierung von Terminvereinbarungen und Verwaltung von Kalendern durch serverseitige Anwendungen.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://datatracker.ietf.org/doc/html/rfc4791">CalDAV API Dokumentation</a></p>
-
-        <h3>LiteLLM Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://guidance.readthedocs.io/en/latest/generated/guidance.models.LiteLLM.html">LiteLLM Dokumentation</a><br>
-            <strong>Beschreibung:</strong> LiteLLM ist eine leichtgewichtige Modell-API, die für die effiziente Interaktion mit verschiedenen Sprachmodellen entwickelt wurde. Sie vereinfacht die Erstellung und Verwaltung von Modellinstanzen und erleichtert die Integration und Bereitstellung von Sprachmodellen in Anwendungen.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Modellverwaltung:</strong> Erstellen, Ändern und Verwalten von Instanzen von Sprachmodellen mit Leichtigkeit, einschließlich der Einstellung von Attributen und der Handhabung des Zustands.</li>
-            <li><strong>Interaktive KI-Anwendungen:</strong> Aufbau interaktiver Anwendungen, die Echtzeit-Antworten und Modellaktualisierungen erfordern.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://guidance.readthedocs.io/en/latest/generated/guidance.models.LiteLLM.html">LiteLLM Dokumentation</a></p>
-
-        <h3>Spotify API Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://developer.spotify.com/documentation/web-api/">Spotify API Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Die Spotify Web API ermöglicht Entwicklern den Zugriff auf den Musikkatalog von Spotify, das Verwalten von Benutzer-Playlists und -Bibliotheken sowie die Steuerung der Spotify-Wiedergabe. Sie bietet eine breite Palette von Endpunkten, um Daten zu Tracks, Alben, Künstlern und mehr abzurufen.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Musik-Entdeckungsanwendung:</strong> Erstellen einer App, die neue Musik basierend auf dem Hörverlauf und den Lieblingskünstlern der Benutzer empfiehlt.</li>
-            <li><strong>Wiedergabesteuerung:</strong> Entwickeln einer Web-App, die es Benutzern ermöglicht, die Spotify-Wiedergabe auf ihren Geräten zu steuern, einschließlich Wiedergabe, Pause und Überspringen von Titeln.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://developer.spotify.com/documentation/web-api/">Spotify API Dokumentation</a></p>
-
-        <h3>Spotipy Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="http://spoti-py.readthedocs.io/">Spotipy Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Spotipy ist eine leichtgewichtige Python-Bibliothek für die Spotify Web API. Sie ermöglicht eine einfache Integration mit der Spotify-API und erlaubt es Entwicklern, mit Spotify-Daten zu interagieren, einschließlich der Suche nach Tracks, Künstlern, Alben und dem Verwalten von Benutzer-Playlists.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Musikdatenabfrage:</strong> Abrufen detaillierter Informationen zu Tracks, Künstlern und Alben, um Anwendungen zu erstellen, die Spotify-Musikdaten anzeigen und analysieren.</li>
-            <li><strong>Playlist-Management:</strong> Erstellen, Aktualisieren und Verwalten von Spotify-Playlists programmgesteuert, um benutzerdefinierte Erlebnisse und automatisierte Playlist-Kuration zu ermöglichen.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="http://spoti-py.readthedocs.io/">Spotipy Dokumentation</a></p>
-
-        <h3>Spotifyd Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://github.com/Spotifyd/spotifyd/blob/master/README.md">Spotifyd Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Spotifyd ist ein Open-Source-Spotify-Client, der als UNIX-Daemon läuft. Er ist leichtgewichtig und unterstützt mehr Plattformen als der offizielle Client. Spotifyd streamt Musik über das Spotify Connect-Protokoll und erscheint als steuerbares Gerät innerhalb der offiziellen Spotify-Clients.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Integration in Hausautomatisierung:</strong> Nutzung von Spotifyd zur Integration von Spotify-Musikstreaming in ein Hausautomatisierungssystem, das die Steuerung der Wiedergabe über verschiedene Smart-Home-Geräte ermöglicht.</li>
-            <li><strong>Headless-Musikstreaming:</strong> Einrichtung von Spotifyd auf einem Raspberry Pi oder einem anderen headless Gerät, um eine dedizierte Musik-Streaming-Box zu erstellen, die von jedem Spotify-Client aus gesteuert werden kann.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://github.com/Spotifyd/spotifyd/blob/master/README.md">Spotifyd Dokumentation</a></p>
-
-        <h3>Philips Hue API Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://developers.meethue.com/new-hue-api/">Philips Hue API Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Die Philips Hue API ermöglicht Entwicklern die Erstellung von Anwendungen, die Philips Hue-Beleuchtungssysteme steuern können. Die API unterstützt Funktionen wie dynamische Szenen, Gradient-Entertainment-Technologie und proaktive Statusänderungsereignisse im lokalen Netzwerk. Sie enthält umfassende Leitfäden zum Einstieg, zur Anwendungsentwicklung und eine vollständige API-Referenz.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Integration in Hausautomatisierung:</strong> Entwicklung von Anwendungen, die Philips Hue-Lichter mit anderen Smart-Home-Geräten integrieren, um eine automatisierte Steuerung basierend auf verschiedenen Auslösern zu ermöglichen.</li>
-            <li><strong>Erstellung benutzerdefinierter Lichteffekte:</strong> Erstellung benutzerdefinierter Lichtszenen und Effekte, die über eine mobile App oder eine Weboberfläche ausgelöst werden können, um die Benutzererfahrung zu verbessern.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://developers.meethue.com/new-hue-api/">Philips Hue API Dokumentation</a></p>
-
-        <h3>Philips Hue Python API Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://github.com/studioimaginaire/phue">phue</a><br>
-            <strong>Beschreibung:</strong> Die `phue` Bibliothek ist eine Python-Bibliothek, die für die Interaktion mit dem Philips Hue Beleuchtungssystem entwickelt wurde. Sie bietet umfassende Funktionen zur Steuerung von Lichtern, Gruppen, Zeitplänen und Szenen und unterstützt sowohl prozedurale als auch objektorientierte Programmieransätze.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Automatisierte Lichtsteuerung:</strong> Entwicklung von Skripten zur Automatisierung der Beleuchtung basierend auf Tageszeit oder Sensoreingaben, um Hausautomatisierungssetups zu verbessern.</li>
-            <li><strong>Erstellung benutzerdefinierter Lichtszenen:</strong> Erstellen und Verwalten benutzerdefinierter Lichtszenen und Übergänge für personalisierte Ambiente-Einstellungen.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://github.com/studioimaginaire/phue">phue Dokumentation</a></p>
-
-        <h3>HUESDK Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://github.com/AlexisGomes/huesdk">huesdk</a><br>
-            <strong>Beschreibung:</strong> `huesdk` ist ein Python SDK für die Philips Hue API, das eine objektorientierte Struktur bietet, um die Interaktion mit den Hue-Lichtern zu vereinfachen. Es unterstützt die Erkennung, Verbindung und Steuerung von Hue-Lichtern, einschließlich der Einstellung von Farben, Helligkeit und Übergangseffekten.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Licht-Synchronisation:</strong> Synchronisieren von Lichtern mit anderen Hausautomatisierungssystemen oder Multimedia-Erlebnissen für immersive Effekte.</li>
-            <li><strong>Batch-Lichtsteuerung:</strong> Effiziente Verwaltung mehrerer Lichter oder Lichtgruppen, die Batch-Operationen für eine nahtlose Steuerung ermöglichen.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://github.com/AlexisGomes/huesdk">huesdk Dokumentation</a></p>
-
-        <h3>OpenWeatherMap API Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://openweathermap.org/api">OpenWeatherMap API Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Die OpenWeatherMap API bietet Zugriff auf eine breite Palette von Wetterdaten, einschließlich aktueller Wetterbedingungen, Vorhersagen, historischer Daten und Wetterkarten. Sie unterstützt mehrere Formate wie JSON und XML und bietet verschiedene Endpunkte zum Abrufen spezifischer Wetterinformationen.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Wettervorhersageanwendungen:</strong> Integration von Echtzeit-Wetterdaten, stündlichen und täglichen Vorhersagen in Anwendungen, um den Benutzern aktuelle Wetterbedingungen bereitzustellen.</li>
-            <li><strong>Klimaforschung:</strong> Nutzung historischer Wetterdaten und statistischer Wetterdaten für die Forschung und Analyse von Klimatrends und -mustern.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://openweathermap.org/api">OpenWeatherMap API Dokumentation</a></p>
-
-        <h3>Open-Meteo API Dokumentation</h3>
-        <p>
-            <strong>Name:</strong> <a href="https://open-meteo.com/en/docs">Open-Meteo API Dokumentation</a><br>
-            <strong>Beschreibung:</strong> Open-Meteo bietet eine kostenlose, hochauflösende Wettervorhersage-API, die genaue Wetterdaten aus mehreren Wettermodellen bereitstellt. Sie umfasst Endpunkte für aktuelle Wetterdaten, Vorhersagen, historische Daten und Klimadaten und ist darauf ausgelegt, einfach und unkompliziert zu integrieren, ohne dass ein API-Schlüssel für die nicht-kommerzielle Nutzung erforderlich ist.
-        </p>
-        <p><strong>Anwendungsfälle:</strong></p>
-        <ol>
-            <li><strong>Wettervorhersageanwendungen:</strong> Integration von Echtzeit- und Vorhersage-Wetterdaten in mobile oder Webanwendungen, um den Benutzern detaillierte Wetterinformationen bereitzustellen.</li>
-            <li><strong>Klimaforschung und -analyse:</strong> Zugriff auf historische Wetterdaten und langfristige Klimamodelle für wissenschaftliche Forschung und Analyse.</li>
-        </ol>
-        <p><strong>Link:</strong> <a href="https://open-meteo.com/en/docs">Open-Meteo API Dokumentation</a></p>
-
-        <h3>Python Crontab Dokumentation</h3>
-
-        <button type="button" class="collapsible">Schedule Dokumentation</button>
-        <div class="content">
-            <p>
-                <strong>Name:</strong> <a href="https://schedule.readthedocs.io/">Schedule Dokumentation</a><br>
-                <strong>Beschreibung:</strong> Schedule ist eine benutzerfreundliche Python-Bibliothek zur Aufgabenplanung, die es ermöglicht, Python-Funktionen (oder andere Callables) periodisch auszuführen. Sie ist leichtgewichtig und hat keine externen Abhängigkeiten, was sie ideal für einfache Automatisierungsaufgaben macht.
-            </p>
-            <p><strong>Anwendungsfälle:</strong></p>
-            <ol>
-                <li><strong>Automatisierung wiederkehrender Aufgaben:</strong> Verwendung von Schedule zur regelmäßigen Ausführung von Aufgaben wie Datensicherungen, Berichtserstellung oder Systemwartung ohne manuelles Eingreifen.</li>
-                <li><strong>Aufgabenplanung in Anwendungen:</strong> Integration von Schedule in Anwendungen zur Verwaltung periodischer Aufgaben wie das Senden von Benachrichtigungen oder das Aktualisieren von Daten.</li>
-            </ol>
-            <p><strong>Link:</strong> <a href="https://schedule.readthedocs.io/">Schedule Dokumentation</a></p>
-        </div>
-
-        <button type="button" class="collapsible">APScheduler Dokumentation</button>
-        <div class="content">
-            <p>
-                <strong>Name:</strong> <a href="https://apscheduler.readthedocs.io/">APScheduler Dokumentation</a><br>
-                <strong>Beschreibung:</strong> APScheduler ist eine Python-Bibliothek, die es ermöglicht, Python-Code zu einem späteren Zeitpunkt auszuführen, entweder einmalig oder periodisch. Sie unterstützt verschiedene Trigger wie Cron-ähnliche Ausdrücke, Intervall- und Datumsauslöser, und bietet eine flexible und erweiterbare Architektur für komplexe Planungsanforderungen.
-            </p>
-            <p><strong>Anwendungsfälle:</strong></p>
-            <ol>
-                <li><strong>Komplexe Planungsanforderungen:</strong> APScheduler kann komplexe Zeitpläne verwalten, wie das Ausführen von Aufgaben zu bestimmten Zeiten oder Intervallen, mit Unterstützung für mehrere Trigger und Job-Stores.</li>
-                <li><strong>Verteiltes Job-Management:</strong> Verwendung von APScheduler zur Verwaltung und Verteilung von Jobs über mehrere Server, um hohe Verfügbarkeit und Skalierbarkeit zu gewährleisten.</li>
-            </ol>
-            <p><strong>Link:</strong> <a href="https://apscheduler.readthedocs.io/">APScheduler Dokumentation</a></p>
-        </div>
-
-        <button type="button" class="collapsible">Fritzing Schaltpläne Dokumentation</button>
-        <div class="content">
-            <p>
-                <strong>Name:</strong> <a href="https://fritzing.org/learning/full_reference">Fritzing Dokumentation</a><br>
-                <strong>Beschreibung:</strong> Fritzing ist ein Open-Source-Tool zur elektronischen Designautomatisierung (EDA), das darauf abzielt, Designern, Künstlern und Bastlern zu helfen, Elektronikprojekte zu erstellen, zu dokumentieren und zu teilen. Es bietet eine umfassende Umgebung für die Erstellung von Breadboard-, Schaltplan- und PCB-Layouts.
-            </p>
-            <p><strong>Anwendungsfälle:</strong></p>
-            <ol>
-                <li><strong>Dokumentation von Elektronikprojekten:</strong> Verwenden Sie Fritzing, um Ihre Elektronikprototypen und -entwürfe visuell zu dokumentieren und zu teilen, mit detaillierten Breadboard-, Schaltplan- und PCB-Ansichten.</li>
-                <li><strong>PCB-Design und -Fertigung:</strong> Entwerfen Sie kundenspezifische Leiterplatten (PCBs) mit der benutzerfreundlichen Oberfläche von Fritzing und exportieren Sie Ihre Designs zur Fertigung mit Diensten wie Fritzing Fab.</li>
-            </ol>
-            <p><strong>Link:</strong> <a href="https://fritzing.org/learning/full_reference">Fritzing Dokumentation</a></p>
-        </div>
-
-        <h3>Nützliche Links</h3>
-        <p>
-            <strong>Build Your AI Startup:</strong> <a href="https://shipfa.st/?via=autogpt">https://shipfa.st/?via=autogpt</a>
-        </p>
-        <p>
-            <strong>AI Voice:</strong> <a href="https://try.elevenlabs.io/Owgaz29csuo5">https://try.elevenlabs.io/Owgaz29csuo5</a>
-        </p>
-        <p>
-            <strong>NextJS Directory:</strong> <a href="https://nextjsdirectory.com?aff=j1Dej">https://nextjsdirectory.com?aff=j1Dej</a>
-        </p>
-        <p>
-            <strong>Deep Live Cam:</strong> <a href="https://github.com/hacksider/Deep-Live-Cam">https://github.com/hacksider/Deep-Live-Cam</a>
-        </p>
-        <p>
-            <strong>Parler-TTS:</strong> <a href="https://github.com/huggingface/parler">https://github.com/huggingface/parler</a>
-        </p>
-        <p>
-            <strong>Live2Diff:</strong> <a href="https://github.com/open-mmlab/Live2Diff">https://github.com/open-mmlab/Live2Diff</a>
-        </p>
-        <p>
-            <strong>Verba:</strong> <a href="https://github.com/weaviate/Verba">https://github.com/weaviate/Verba</a>
-        </p>
-        <p>
-            <strong>Agent Zero:</strong> <a href="https://github.com/frdel/agent-zero">https://github.com/frdel/agent-zero</a>
-        </p>
-        <p>
-            <strong>Lagent:</strong> <a href="https://github.com/InternLM/lagent">https://github.com/InternLM/lagent</a>
-        </p>
-        <p>
-            <strong>LangGraph Studio:</strong> <a href="https://github.com/langchain-ai/langg">https://github.com/langchain-ai/langg</a>
-        </p>
-        <p>
-            <strong>CKEditor-5:</strong> <a href="https://github.com/ckeditor/ckeditor5">https://github.com/ckeditor/ckeditor5</a>
-        </p>
-        <p>
-            <strong>Sentry:</strong> <a href="https://github.com/getsentry/sentry">https://github.com/getsentry/sentry</a>
-        </p>
-        <p>
-            <strong>EasySpider:</strong> <a href="https://github.com/NaiboWang/EasySpider">https://github.com/NaiboWang/EasySpider</a>
-        </p>
     </main>
 
     <footer>
-        <nav>
-            <a href="index.html" class="footer-button">Chloé GPT</a>
-            <a href="tools.html" class="footer-button">Tools</a>
-        </nav>
-        <p>&copy; Copyright 2024 API2STORE</p>
-        <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="footer-button">Kontakt auf LinkedIn</a>
+        <p>&copy; 2025 AUDIOREWORKVISIONS. All rights reserved.</p>
     </footer>
-
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
-    </script>
+    
+    <!-- Three.js library -->
+    <script src="assets/js/three.min.js"></script>
+    <!-- Starfield animation -->
+    <script src="assets/js/starfield.js"></script>
 </body>
 
 </html>
