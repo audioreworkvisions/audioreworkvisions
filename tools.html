@@ -1,252 +1,101 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API2STORE - Tooling</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --dark-blue: #0e1f40;
-            --light-text: #e5e5e5;
-            --mint-green: #3eb489;
-            --dark-text: #1c1c1c;
-            --magenta: #ff007f;
-            --light-gray: #f1f1f1;
-            --medium-gray: #ccc;
-            --dark-gray: #444;
-            --hover-gray: #555;
-            --accent-color: #3eb489;
-        }
-
-        body {
-            background-color: var(--dark-blue);
-            color: var(--light-text);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            background-color: var(--dark-blue);
-        }
-
-        header img {
-            width: 200px;
-            height: auto;
-        }
-
-        header h1 {
-            font-size: 2em;
-            margin: 10px 0;
-            color: var(--mint-green);
-        }
-
-        .header-button {
-            font-size: 1em;
-            cursor: pointer;
-            background-color: var(--mint-green);
-            color: var(--dark-text);
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            margin: 10px;
-            transition: background-color 0.3s;
-            text-decoration: none;
-        }
-
-        .header-button:hover {
-            background-color: var (--magenta);
-            color: var (--light-text);
-        }
-
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px;
-        }
-
-        .documentation {
-            width: 100%;
-            max-width: 800px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
-        }
-
-        .documentation h1,
-        .documentation h2 {
-            color: var(--light-text);
-        }
-
-        .documentation p,
-        .documentation ul,
-        .documentation ol {
-            color: var(--medium-gray);
-        }
-
-        .doc-section {
-            margin-bottom: 30px;
-        }
-
-        .doc-section h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .doc-section ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .doc-section ul li {
-            margin-bottom: 10px;
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            color: var(--hover-gray);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: var(--dark-blue);
-            color: var(--light-text);
-            border-top: 4px solid var(--accent-color);
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: var(--hover-gray);
-        }
-
-        .collapsible {
-            background-color: var(--mint-green);
-            color: var(--dark-text);
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 1em;
-            transition: all 0.3s ease;
-        }
-
-        .active,
-        .collapsible:hover {
-            background-color: var(--magenta);
-            color: var (--light-text);
-        }
-
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 0 0 10px 10px;
-            animation: fadeIn 0.5s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+    <title>Development Tools - AUDIOREWORKVISIONS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="f.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Starfield background container -->
+    <div id="starfield-container"></div>
+    
     <header>
-        <img src="https://stflywithai026072919948.blob.core.windows.net/datencloud/audioreworkvisions-textlogo/1.png" alt="Logo">
-        <h1>Chloé 2020 Tools</h1>
-        <nav>
-            <a href="index.html" class="header-button">Chloe GPT</a>
-            <a href="tech-stack.html" class="header-button">Tech-Stack</a>
+        <nav class="breadcrumb">
+            <a href="index.html">HOME</a> &gt; <a href="tools.html">DEVELOPMENT TOOLS</a>
         </nav>
+        <img src="assets/images/user-icon.png" alt="AUDIOREWORKVISIONS Logo" class="logo">
+        <h1 class="glitch-text">DEVELOPMENT TOOLS</h1>
     </header>
-
+    
     <main>
-        <section class="documentation" id="documentation-content">
-            <h1>Dokumentationen</h1>
+        <div class="container">
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250426_1634_Cosmic+Wedding+Launch_simple_compose_01jss8af8ve2jvf0a4x9hwrwjz.gif" alt="Cosmic Wedding Launch" class="feature-image">
+            </div>
+            
+            <section class="section">
+                <h2 class="glitch-text">DOCUMENTATION RESOURCES</h2>
+                <p>Explore our curated collection of essential development tools and documentation resources for audio processing, embedded systems, and web development.</p>
+            </section>
 
             <div class="doc-section">
-                <h2>Raspberry Pi Dokumentation</h2>
-                <ul>
-                    <li><strong>Name:</strong> <a href="https://www.raspberrypi.org/help/">Raspberry Pi Dokumentation</a></li>
-                    <li><strong>Beschreibung:</strong> Die offizielle Dokumentation für Raspberry Pi-Computer und Mikrocontroller bietet umfassende Anleitungen und technische Informationen. Sie umfasst Hardware- und Softwaredokumentation, Konfigurationsanleitungen, Tutorials und vieles mehr.</li>
-                    <li><strong>Anwendungsfälle:</strong></li>
-                    <ul>
-                        <li><strong>Einrichtung und Konfiguration:</strong> Anleitung zur Installation des Raspberry Pi OS, Konfiguration der Netzwerkeinstellungen und Verbindung von Peripheriegeräten.</li>
-                        <li><strong>Fernzugriff:</strong> Anleitungen zur Einrichtung von SSH und VNC für den Fernzugriff auf den Raspberry Pi.</li>
+                <h2 class="glitch-text">RASPBERRY PI DOCUMENTATION</h2>
+                <ul class="punk-list">
+                    <li><strong>Name:</strong> <a href="https://www.raspberrypi.org/help/" class="neon-link">Raspberry Pi Documentation</a></li>
+                    <li><strong>Description:</strong> The official documentation for Raspberry Pi computers and microcontrollers provides comprehensive guides and technical information. It covers hardware and software documentation, configuration guides, tutorials, and more.</li>
+                    <li><strong>Use Cases:</strong></li>
+                    <ul class="punk-list">
+                        <li><strong>Setup and Configuration:</strong> Guide to installing Raspberry Pi OS, configuring network settings, and connecting peripheral devices.</li>
+                        <li><strong>Remote Access:</strong> Instructions for setting up SSH and VNC for remote access to the Raspberry Pi.</li>
                     </ul>
-                    <li><strong>Link:</strong> <a href="https://www.raspberrypi.org/help/">Raspberry Pi Dokumentation</a></li>
+                    <li><strong>Link:</strong> <a href="https://www.raspberrypi.org/help/" class="neon-link">Raspberry Pi Documentation</a></li>
+                </ul>
+            </div>
+
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250427_0403_Moonlit+Tesla+Parade_simple_compose_01jstfqmg3f9nt84vfpb9m327p.gif" alt="Moonlit Tesla Parade" class="feature-image">
+            </div>
+            
+            <div class="doc-section">
+                <h2 class="glitch-text">DOCKER DOCUMENTATION</h2>
+                <ul class="punk-list">
+                    <li><strong>Name:</strong> <a href="https://docs.docker.com/" class="neon-link">Docker Documentation</a></li>
+                    <li><strong>Description:</strong> Comprehensive documentation for Docker, covering installation, configuration, and use of Docker products. It provides guides, manuals, and reference materials for containerizing applications and managing Docker environments.</li>
+                    <li><strong>Use Cases:</strong></li>
+                    <ul class="punk-list">
+                        <li><strong>Docker Setup:</strong> Instructions for installing Docker on various operating systems and configuring Docker Desktop.</li>
+                        <li><strong>Using the Docker CLI:</strong> Detailed instructions for using the Docker command-line interface to manage containers, images, networks, and volumes.</li>
+                    </ul>
+                    <li><strong>Link:</strong> <a href="https://docs.docker.com/" class="neon-link">Docker Documentation</a></li>
                 </ul>
             </div>
 
             <div class="doc-section">
-                <h2>Docker Dokumentation</h2>
-                <ul>
-                    <li><strong>Name:</strong> <a href="https://docs.docker.com/">Docker Dokumentation</a></li>
-                    <li><strong>Beschreibung:</strong> Umfassende Dokumentation für Docker, die Installation, Konfiguration und Nutzung von Docker-Produkten abdeckt. Sie bietet Leitfäden, Handbücher und Referenzmaterialien zur Containerisierung von Anwendungen und Verwaltung von Docker-Umgebungen.</li>
-                    <li><strong>Anwendungsfälle:</strong></li>
-                    <ul>
-                        <li><strong>Docker Einrichtung:</strong> Anleitungen zur Installation von Docker auf verschiedenen Betriebssystemen und Konfiguration von Docker Desktop.</li>
-                        <li><strong>Verwendung der Docker CLI:</strong> Detaillierte Anleitungen zur Nutzung der Docker-Befehlszeilenschnittstelle zur Verwaltung von Containern, Images, Netzwerken und Volumes.</li>
+                <h2 class="glitch-text">DOCKER BUILDX DOCUMENTATION</h2>
+                <ul class="punk-list">
+                    <li><strong>Name:</strong> <a href="https://docs.docker.com/buildx/" class="neon-link">Docker Buildx Documentation</a></li>
+                    <li><strong>Description:</strong> Docker Buildx extends the functionality of the Docker `docker build` command and provides advanced features such as multi-architecture builds, cache management, and BuildKit integration.</li>
+                    <li><strong>Use Cases:</strong></li>
+                    <ul class="punk-list">
+                        <li><strong>Multi-Architecture Builds:</strong> Simplifies the creation of Docker images for multiple CPU architectures (e.g., ARM and x86) with a single build command.</li>
+                        <li><strong>Build Cache Export:</strong> Enables the export and import of build caches to speed up subsequent builds and share caches between different environments.</li>
                     </ul>
-                    <li><strong>Link:</strong> <a href="https://docs.docker.com/">Docker Dokumentation</a></li>
+                    <li><strong>Link:</strong> <a href="https://docs.docker.com/buildx/" class="neon-link">Docker Buildx Documentation</a></li>
                 </ul>
+            </div>
+            
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250429_1931_Retro+Space+Exploration_simple_compose_01jt19m0ncenbscdtxextzfcbe.gif" alt="Retro Space Exploration" class="feature-image">
             </div>
 
             <div class="doc-section">
-                <h2>Docker Buildx Dokumentation</h2>
-                <ul>
-                    <li><strong>Name:</strong> <a href="https://docs.docker.com/buildx/">Docker Buildx Dokumentation</a></li>
-                    <li><strong>Beschreibung:</strong> Docker Buildx erweitert die Funktionen des Docker `docker build` Befehls und bietet erweiterte Funktionen wie Multi-Architektur-Builds, Cache-Management und BuildKit-Integration.</li>
-                    <li><strong>Anwendungsfälle:</strong></li>
-                    <ul>
-                        <li><strong>Multi-Architektur-Builds:</strong> Vereinfachung der Erstellung von Docker-Images für mehrere CPU-Architekturen (z. B. ARM und x86) mit einem einzigen Build-Befehl.</li>
-                        <li><strong>Build-Cache-Export:</strong> Ermöglicht den Export und Import von Build-Caches, um nachfolgende Builds zu beschleunigen und Caches zwischen verschiedenen Umgebungen zu teilen.</li>
+                <h2 class="glitch-text">FASTAPI DOCUMENTATION</h2>
+                <ul class="punk-list">
+                    <li><strong>Name:</strong> <a href="https://fastapi.tiangolo.com/" class="neon-link">FastAPI Documentation</a></li>
+                    <li><strong>Description:</strong> FastAPI is a modern, fast (high-performance) web framework for building APIs with Python, based on standard Python type hints. It provides automatic interactive documentation, high performance, and ease of use.</li>
+                    <li><strong>Use Cases:</strong></li>
+                    <ul class="punk-list">
+                        <li><strong>Rapid API Building:</strong> FastAPI allows developers to quickly create APIs with automatic documentation using OpenAPI and JSON Schema standards.</li>
+                        <li><strong>Asynchronous Programming:</strong> FastAPI supports asynchronous programming, enabling the development of high-performance applications.</li>
                     </ul>
-                    <li><strong>Link:</strong> <a href="https://docs.docker.com/buildx/">Docker Buildx Dokumentation</a></li>
-                </ul>
-            </div>
-
-            <div class="doc-section">
-                <h2>FastAPI Dokumentation</h2>
-                <ul>
-                    <li><strong>Name:</strong> <a href="https://fastapi.tiangolo.com/">FastAPI Dokumentation</a></li>
-                    <li><strong>Beschreibung:</strong> FastAPI ist ein modernes, schnelles (hochleistungsfähiges) Webframework für den Aufbau von APIs mit Python, basierend auf Standard-Python-Typ-Hinweisen. Es bietet automatische interaktive Dokumentation, hohe Leistung und einfache Nutzung.</li>
-                    <li><strong>Anwendungsfälle:</strong></li>
-                    <ul>
-                        <li><strong>Schneller Aufbau von APIs:</strong> FastAPI ermöglicht es Entwicklern, schnell APIs mit automatischer Dokumentation unter Verwendung von OpenAPI und JSON-Schema-Standards zu erstellen.</li>
-                        <li><strong>Asynchrones Programmieren:</strong> FastAPI unterstützt asynchrones Programmieren, wodurch die Entwicklung leistungsfähiger Anwendungen ermöglicht wird.</li>
-                    </ul>
-                    <li><strong>Link:</strong> <a href="https://fastapi.tiangolo.com/">FastAPI Dokumentation</a></li>
+                    <li><strong>Link:</strong> <a href="https://fastapi.tiangolo.com/" class="neon-link">FastAPI Documentation</a></li>
                 </ul>
             </div>
 
@@ -408,28 +257,13 @@
     </main>
 
     <footer>
-        <p>&copy; Copyright 2024 API2STORE</p>
-        <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="contact-button">Kontakt auf LinkedIn</a>
+        <p>&copy; 2025 AUDIOREWORKVISIONS. All rights reserved.</p>
+        <a href="https://www.linkedin.com/in/audioreworkvisions/" target="_blank" class="neon-link">Contact on LinkedIn</a>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/showdown@2.0.3/dist/showdown.min.js"></script>
-    <script src="scripts.js"></script>
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
-    </script>
+    
+    <!-- Three.js library -->
+    <script src="assets/js/three.min.js"></script>
+    <!-- Starfield animation -->
+    <script src="assets/js/starfield.js"></script>
 </body>
-
 </html>
