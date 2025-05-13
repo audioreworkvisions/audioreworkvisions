@@ -1,139 +1,80 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willkommen bei Audioreworkvisions</title>
-    <style>
-        body {
-            background-color: #121212; /* Dunkler Hintergrund */
-            color: #e0e0e0; /* Helle Schriftfarbe */
-            font-family: Helvetica, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background: url('brandkit-bsm.png') no-repeat center center fixed; /* Muster des Goldenen Schnitts */
-            background-size: cover;
-            padding: 3rem;
-        }
-
-        nav.breadcrumb {
-            font-size: 0.875rem;
-            margin-bottom: 1.25rem;
-        }
-
-        nav.breadcrumb a {
-            color: #40e0d0; /* Minzgrün */
-            text-decoration: none;
-        }
-
-        nav.breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            background-color: #1c1c1c;
-            color: #e0e0e0;
-            text-align: center;
-            padding: 1.25rem;
-        }
-
-        h1 {
-            font-size: 2.25rem;
-            font-weight: bold;
-        }
-
-        h2 {
-            font-size: 2.25rem;
-            font-weight: bold;
-        }
-
-        h3 {
-            font-size: 1.625rem;
-        }
-
-        p {
-            font-size: 1.625rem;
-        }
-
-        a {
-            color: #40e0d0; /* Minzgrün */
-        }
-
-        a:hover {
-            color: #e0e0e0; /* Helle Schriftfarbe */
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .section {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-    </style>
+    <title>Welcome to AUDIOREWORKVISIONS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="f.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Starfield background container -->
+    <div id="starfield-container"></div>
+    
     <header>
         <nav class="breadcrumb">
-            <a href="index.html">Home</a> &gt; <a href="index_overview.html">Willkommen bei Audioreworkvisions</a>
+            <a href="index.html">HOME</a> &gt; <a href="index_overview.html">OVERVIEW</a>
         </nav>
-        <h1>Willkommen bei Audioreworkvisions</h1>
+        <img src="assets/images/user-icon.png" alt="AUDIOREWORKVISIONS Logo" class="logo">
+        <h1 class="glitch-text">WELCOME TO AUDIOREWORKVISIONS</h1>
     </header>
+    
     <main>
         <div class="container">
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250426_1634_Cosmic+Wedding+Launch_simple_compose_01jss8af8ve2jvf0a4x9hwrwjz.gif" alt="Cosmic Wedding Launch" class="feature-image">
+            </div>
+            
             <section class="section">
-                <h2>Über Audioreworkvisions</h2>
-                <p>Willkommen auf der offiziellen Webseite von Audioreworkvisions. Hier finden Sie eine Sammlung von Blogbeiträgen, Dokumentationen und Artikeln zu verschiedenen Themen rund um Audioreworkvisions.</p>
+                <h2 class="glitch-text">ABOUT AUDIOREWORKVISIONS</h2>
+                <p>Welcome to the official website of AUDIOREWORKVISIONS. Here you will find a collection of blog posts, documentation, and articles on various topics related to AUDIOREWORKVISIONS.</p>
             </section>
+            
+            <!-- Featured GIF -->
+            <div class="featured-gif">
+                <img src="assets/images/20250427_0403_Moonlit+Tesla+Parade_simple_compose_01jstfqmg3f9nt84vfpb9m327p.gif" alt="Moonlit Tesla Parade" class="feature-image">
+            </div>
+            
             <section class="section">
-                <h2>Inhaltsverzeichnis</h2>
-                <ul>
-                    <li><a href="cos.html">Morphogenetisches Kollektivbewusstsein</a></li>
-                    <li><a href="forschungspapier.html">Forschungspapier: Das Morphogenetische Kollektivbewusstsein und die Symmetrie der Singularität</a></li>
-                    <li><a href="singularity_concepts.html">Die Rückführung in die Singularität</a></li>
-                    <li><a href="2gitindex.html">API2STORE</a></li>
-                    <li><a href="3gitindex.html">API2STORE</a></li>
-                    <li><a href="4gitindex.html">API2STORE</a></li>
-                    <li><a href="claude-sonet.html">Claude Sonet AI</a></li>
-                    <li><a href="codestrallapp.html">Simple Website</a></li>
-                    <li><a href="cohere-command-r.html">Cohere Command R+ AI</a></li>
-                    <li><a href="conclusion.html">Schlussseite</a></li>
-                    <li><a href="dall-e-3.html">DALL-E 3 AI</a></li>
-                    <li><a href="docs.html">Sprachsynthese-Dokumentationen</a></li>
-                    <li><a href="gemini-15.html">Gemini 1.5 AI</a></li>
-                    <li><a href="gemini-appcode.html">GPTCoder</a></li>
-                    <li><a href="gitindex.html">API2STORE</a></li>
-                    <li><a href="llama3.html">LLaMA 3 AI</a></li>
-                    <li><a href="microsoft-phi-3.html">Microsoft Phi 3 AI</a></li>
-                    <li><a href="mistral-ai.html">Mistral AI</a></li>
-                    <li><a href="serverai.html">Server AI</a></li>
-                    <li><a href="stable-diffusion.html">Stable Diffusion AI</a></li>
-                    <li><a href="top-20-ai-developer-tools.html">Top 20 AI Developer Tools</a></li>
-                    <li><a href="top-20-ai-models.html">Top 20 AI Models</a></li>
-                    <li><a href="top-20-git-repositories.html">Top 20 Git Repositories</a></li>
+                <h2 class="glitch-text">TABLE OF CONTENTS</h2>
+                <ul class="punk-list">
+                    <li><a href="cos.html" class="neon-link">MORPHOGENETIC COLLECTIVE CONSCIOUSNESS</a></li>
+                    <li><a href="forschungspapier.html" class="neon-link">RESEARCH PAPER: MORPHOGENETIC COLLECTIVE CONSCIOUSNESS AND SINGULARITY SYMMETRY</a></li>
+                    <li><a href="singularity_concepts.html" class="neon-link">RETURN TO SINGULARITY</a></li>
+                    <li><a href="2gitindex.html" class="neon-link">API2STORE</a></li>
+                    <li><a href="3gitindex.html" class="neon-link">API2STORE</a></li>
+                    <li><a href="4gitindex.html" class="neon-link">API2STORE</a></li>
+                    <li><a href="claude-sonet.html" class="neon-link">CLAUDE SONET AI</a></li>
+                    <li><a href="codestrallapp.html" class="neon-link">GPTCODER</a></li>
+                    <li><a href="cohere-command-r.html" class="neon-link">COHERE COMMAND R+ AI</a></li>
+                    <li><a href="conclusion.html" class="neon-link">CONCLUSION</a></li>
+                    <li><a href="dall-e-3.html" class="neon-link">DALL-E 3 AI</a></li>
+                    <li><a href="docs.html" class="neon-link">SPEECH SYNTHESIS DOCUMENTATION</a></li>
+                    <li><a href="gemini-15.html" class="neon-link">GEMINI 1.5 AI</a></li>
+                    <li><a href="gemini-appcode.html" class="neon-link">GPTCODER</a></li>
+                    <li><a href="gitindex.html" class="neon-link">API2STORE</a></li>
+                    <li><a href="llama3.html" class="neon-link">LLAMA 3 AI</a></li>
+                    <li><a href="microsoft-phi-3.html" class="neon-link">MICROSOFT PHI 3 AI</a></li>
+                    <li><a href="mistral-ai.html" class="neon-link">MISTRAL AI</a></li>
+                    <li><a href="serverai.html" class="neon-link">SERVER AI</a></li>
+                    <li><a href="stable-diffusion.html" class="neon-link">STABLE DIFFUSION AI</a></li>
+                    <li><a href="top-20-ai-developer-tools.html" class="neon-link">TOP 20 AI DEVELOPER TOOLS</a></li>
+                    <li><a href="top-20-ai-models.html" class="neon-link">TOP 20 AI MODELS</a></li>
+                    <li><a href="top-20-git-repositories.html" class="neon-link">TOP 20 GIT REPOSITORIES</a></li>
                 </ul>
             </section>
         </div>
     </main>
+    
     <footer>
-        <p>&copy; 2025 AUDIOREWORKVISIONS. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2025 AUDIOREWORKVISIONS. All rights reserved.</p>
     </footer>
+    
+    <!-- Three.js library -->
+    <script src="assets/js/three.min.js"></script>
+    <!-- Starfield animation -->
+    <script src="assets/js/starfield.js"></script>
 </body>
 </html>
