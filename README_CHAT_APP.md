@@ -1,15 +1,20 @@
-# AUDIOREWORKVISIONS Chat & Image Generator
+# OIOS AI - Chat & Image Generator
 
-Eine AI-gestützte Chat- und Bildgenerierungs-Plattform mit Punk-Wave Design und OpenAI API-Integration.
+Eine moderne AI-gestützte Chat- und Bildgenerierungs-Plattform mit innovativem Design und OpenAI API-Integration.
 
 ## Features
 
 ### 🤖 AI Chat Interface
-- Interaktiver Chat mit OpenAI GPT-Modellen (GPT-3.5 Turbo, GPT-4, GPT-4 Turbo)
+- Interaktiver Chat mit neuesten OpenAI GPT-Modellen:
+  - GPT-4o Mini (Standard)
+  - GPT-4o Mini Audio Preview
+  - GPT-4.1 Mini
+  - GPT-4.1 Nano
+  - O1 Mini
 - Anpassbare Einstellungen (Temperature, Max Tokens)
 - Chat-Verlauf wird lokal gespeichert
 - Echtzeit-Typing-Indikatoren
-- Responsive Design mit Punk-Wave Ästhetik
+- Modernes OIOS AI Design mit Glassmorphismus-Effekten
 
 ### 🎨 AI Bild Generator
 - Bildgenerierung mit OpenAI DALL-E
@@ -19,11 +24,12 @@ Eine AI-gestützte Chat- und Bildgenerierungs-Plattform mit Punk-Wave Design und
 - Vollbild-Ansicht für generierte Bilder
 
 ### 🎨 Design
-- Punk-Wave Theme mit Neon-Farben
+- Modernes OIOS AI Branding mit dunklem Theme
+- Glassmorphismus-Effekte und sanfte Animationen
 - Starfield-Hintergrund Animation
-- Glitch-Effekte für Text
+- Drei-Spalten-Layout mit kollabierenden Sidebars
 - Responsive Design für alle Geräte
-- Konsistente Benutzeroberfläche
+- Konsistente Benutzeroberfläche mit Gold/Blau Akzenten
 
 ## Installation
 
@@ -45,6 +51,8 @@ npm install
 ```
 
 3. **Umgebungsvariablen konfigurieren:**
+
+**Für lokale Entwicklung:**
 ```bash
 cp .env.example .env
 ```
@@ -52,16 +60,22 @@ cp .env.example .env
 Bearbeiten Sie die `.env` Datei und fügen Sie Ihren OpenAI API Key hinzu:
 ```
 OPENAI_API_KEY=your_openai_api_key_here
-PORT=3000
+PORT=3001
 NODE_ENV=development
 ```
+
+**Für Produktion (GitHub Secrets):**
+Konfigurieren Sie den OpenAI API Key als GitHub Secret:
+1. Gehen Sie zu Repository Settings → Secrets and variables → Actions
+2. Fügen Sie `OPENAI_API_KEY` als neues Secret hinzu
+3. Der Server lädt automatisch den Key aus den Umgebungsvariablen
 
 4. **Server starten:**
 ```bash
 npm start
 ```
 
-Die Anwendung ist dann unter `http://localhost:3000` verfügbar.
+Die Anwendung ist dann unter `http://localhost:3001` verfügbar.
 
 ## Verwendung
 
@@ -87,12 +101,19 @@ Chat mit OpenAI GPT-Modellen
 ```json
 {
   "message": "Ihre Nachricht",
-  "model": "gpt-3.5-turbo",
+  "model": "gpt-4o-mini",
   "temperature": 0.7,
   "max_tokens": 1000,
   "conversation_history": []
 }
 ```
+
+**Verfügbare Modelle:**
+- `gpt-4o-mini` (Standard)
+- `gpt-4o-mini-audio-preview`
+- `gpt-4.1-mini`
+- `gpt-4.1-nano`
+- `o1-mini`
 
 ### POST /api/generate-image
 Bildgenerierung mit DALL-E
@@ -101,8 +122,7 @@ Bildgenerierung mit DALL-E
 ```json
 {
   "prompt": "Bildbeschreibung",
-  "size": "1024x1024",
-  "quality": "standard"
+  "size": "1024x1024"
 }
 ```
 
@@ -112,8 +132,10 @@ Gesundheitscheck für den Server
 ## Sicherheit
 
 - OpenAI API Keys werden serverseitig gespeichert und nie an das Frontend übertragen
+- Unterstützung für GitHub Secrets in Produktionsumgebungen
 - CORS ist für Entwicklung konfiguriert
 - Alle API-Aufrufe werden über den Backend-Server geleitet
+- .env Dateien sind in .gitignore ausgeschlossen
 
 ## Entwicklung
 
