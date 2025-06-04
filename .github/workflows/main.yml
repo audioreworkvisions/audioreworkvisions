@@ -50,11 +50,20 @@ jobs:
       - name: Build project (optional, if needed)
         run: npm run build
 
+      - name: Verify build output
+        run: |
+          if [ ! -d "./dist" ]; then
+            echo "Error: 'dist' directory does not exist."
+            exit 1
+          fi
+          echo "Build output verified - dist directory exists"
+          ls -la ./dist
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload build folder or repository content
-          path: './dist' # Passe dies an deine Build-Ausgabe an
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
