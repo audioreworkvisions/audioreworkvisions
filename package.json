@@ -1,8 +1,9 @@
 
 {
   "name": "audioreworkvisions",
-  "version": "0.2.0",
-  "description": "package.json",
+  "version": "0.3.0",
+  "description": "AI-powered chat and image generation platform with punk-wave design",
+  "main": "server.js",
   "dependencies": {
     "@primer/css": "17.0.1",
     "dotenv": "^16.4.5",
@@ -10,6 +11,16 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "build"
-  }
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'No build step required for static files'"
+  },
+  "keywords": [
+    "ai",
+    "chat",
+    "image-generation",
+    "openai",
+    "punk-wave",
+    "audioreworkvisions"
+  ]
 }
