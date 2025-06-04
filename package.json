@@ -13,7 +13,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "build": "echo 'No build step required for static files'"
+    "build": "mkdir -p dist && cp -r *.html *.css *.ico assets dist/ && cp package.json dist/"
   },
   "keywords": [
     "ai",
