@@ -65,14 +65,17 @@ class ImageGenerator {
     async generateImage() {
         const prompt = document.getElementById('prompt').value;
         if (!prompt.trim()) {
-            alert('Bitte geben Sie eine Bildbeschreibung ein.');
+            this.showError('Bitte geben Sie eine Bildbeschreibung ein.');
             return;
         }
 
         const container = document.getElementById('generated-image-container');
-        container.innerHTML = '<div class="loading-spinner"></div><p>Bild wird generiert...</p>';
+        this.showLoadingState(container);
 
         try {
+            const size = document.getElementById('image-size')?.value || '1024x1024';
+            const quality = document.getElementById('image-quality')?.value || 'standard';
+
             const response = await fetch(this.apiEndpoint, {
                 method: 'POST',
                 headers: {
@@ -80,21 +83,121 @@ class ImageGenerator {
                 },
                 body: JSON.stringify({
                     prompt: prompt,
-                    size: '1024x1024',
-                    quality: 'standard'
+                    size: size,
+                    quality: quality
                 })
             });
 
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                let errorMessage = `HTTP ${response.status}: ${response.statusText}`;
+                
+                try {
+                    const errorData = await response.json();
+                    if (errorData.error) {
+                        errorMessage = errorData.error;
+                    }
+                } catch (parseError) {
+                }
+
+                switch (response.status) {
+                    case 401:
+                        errorMessage = 'API-Authentifizierung fehlgeschlagen. Bitte überprüfen Sie die OpenAI API-Konfiguration.';
+                        break;
+                    case 429:
+                        errorMessage = 'API-Rate-Limit erreicht. Bitte warten Sie einen Moment und versuchen Sie es erneut.';
+                        break;
+                    case 400:
+                        errorMessage = 'Ungültiger Prompt. Bitte überprüfen Sie Ihre Bildbeschreibung.';
+                        break;
+                    case 500:
+                        errorMessage = 'Server-Fehler. Bitte versuchen Sie es später erneut.';
+                        break;
+                    case 503:
+                        errorMessage = 'Bildgenerierungs-Service vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.';
+                        break;
+                }
+
+                throw new Error(errorMessage);
             }
 
             const result = await response.json();
+            
+            if (!result.imageUrl) {
+                throw new Error('Keine Bild-URL in der Server-Antwort erhalten.');
+            }
+            
             this.displayImage(result.imageUrl, prompt);
         } catch (error) {
             console.error('Image generation error:', error);
-            container.innerHTML = '<p>Fehler beim Generieren des Bildes. Bitte versuchen Sie es erneut.</p>';
+            
+            let userMessage = 'Ein unerwarteter Fehler ist aufgetreten beim Generieren des Bildes.';
+            if (error.message) {
+                userMessage = error.message;
+            }
+            
+            if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                userMessage = 'Netzwerkfehler: Verbindung zum Server fehlgeschlagen. Bitte überprüfen Sie Ihre Internetverbindung.';
+            }
+            
+            this.showErrorState(container, userMessage, prompt);
         }
+    }
+
+    showLoadingState(container) {
+        container.innerHTML = `
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+                <h3>🎨 Bild wird generiert...</h3>
+                <p>Dies kann einige Sekunden dauern. Bitte haben Sie Geduld.</p>
+                <div class="loading-progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        `;
+    }
+
+    showErrorState(container, errorMessage, prompt) {
+        container.innerHTML = `
+            <div class="error-container">
+                <div class="error-icon">❌</div>
+                <h3>Fehler beim Generieren</h3>
+                <p class="error-message">${errorMessage}</p>
+                <div class="error-actions">
+                    <button onclick="window.imageGenerator.retryGeneration('${prompt.replace(/'/g, "\\'")}')">
+                        🔄 Erneut versuchen
+                    </button>
+                    <button onclick="window.imageGenerator.clearError()">
+                        ✨ Neuer Versuch
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+
+    showError(message) {
+        const container = document.getElementById('generated-image-container');
+        container.innerHTML = `
+            <div class="error-container">
+                <div class="error-icon">⚠️</div>
+                <p class="error-message">${message}</p>
+            </div>
+        `;
+    }
+
+    async retryGeneration(prompt) {
+        document.getElementById('prompt').value = prompt;
+        await this.generateImage();
+    }
+
+    clearError() {
+        const container = document.getElementById('generated-image-container');
+        container.innerHTML = `
+            <div class="placeholder-content">
+                <div class="placeholder-icon">🖼️</div>
+                <h3>Bereit für Ihre Kreativität</h3>
+                <p>Geben Sie eine Bildbeschreibung ein und lassen Sie die KI Ihre Vision zum Leben erwecken.</p>
+            </div>
+        `;
     }
 
     displayImage(url, prompt) {

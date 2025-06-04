@@ -54,8 +54,18 @@ class ChatInterface {
             this.addMessage('assistant', response);
         } catch (error) {
             this.hideTypingIndicator();
-            this.addMessage('system', 'Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.');
+            
+            let userMessage = 'Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.';
+            if (error.message) {
+                userMessage = error.message;
+            }
+            
+            this.addMessage('system', `❌ ${userMessage}`);
             console.error('Chat API Error:', error);
+            
+            if (error.message.includes('Netzwerkfehler') || error.message.includes('Server-Fehler')) {
+                this.showRetryOption(message);
+            }
         }
 
         this.saveChatHistory();
@@ -66,26 +76,63 @@ class ChatInterface {
         const temperature = parseFloat(document.getElementById('temperature-slider').value);
         const maxTokens = parseInt(document.getElementById('max-tokens-input').value);
 
-        const response = await fetch(this.apiEndpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                message: message,
-                model: model,
-                temperature: temperature,
-                max_tokens: maxTokens,
-                conversation_history: this.messages.slice(-10) // Last 10 messages for context
-            })
-        });
+        try {
+            const response = await fetch(this.apiEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message,
+                    model: model,
+                    temperature: temperature,
+                    max_tokens: maxTokens,
+                    conversation_history: this.messages.slice(-10) // Last 10 messages for context
+                })
+            });
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            if (!response.ok) {
+                let errorMessage = `HTTP ${response.status}: ${response.statusText}`;
+                
+                try {
+                    const errorData = await response.json();
+                    if (errorData.error) {
+                        errorMessage = errorData.error;
+                    }
+                } catch (parseError) {
+                }
+
+                switch (response.status) {
+                    case 401:
+                        errorMessage = 'API-Authentifizierung fehlgeschlagen. Bitte überprüfen Sie die OpenAI API-Konfiguration.';
+                        break;
+                    case 429:
+                        errorMessage = 'API-Rate-Limit erreicht. Bitte warten Sie einen Moment und versuchen Sie es erneut.';
+                        break;
+                    case 500:
+                        errorMessage = 'Server-Fehler. Bitte versuchen Sie es später erneut.';
+                        break;
+                    case 503:
+                        errorMessage = 'Service vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.';
+                        break;
+                }
+
+                throw new Error(errorMessage);
+            }
+
+            const data = await response.json();
+            
+            if (!data.response) {
+                throw new Error('Ungültige Antwort vom Server erhalten.');
+            }
+            
+            return data.response;
+        } catch (error) {
+            if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                throw new Error('Netzwerkfehler: Verbindung zum Server fehlgeschlagen. Bitte überprüfen Sie Ihre Internetverbindung.');
+            }
+            throw error;
         }
-
-        const data = await response.json();
-        return data.response;
     }
 
     addMessage(role, content) {
@@ -152,6 +199,29 @@ class ChatInterface {
         if (typingIndicator) {
             typingIndicator.remove();
         }
+    }
+
+    showRetryOption(originalMessage) {
+        const messagesContainer = document.getElementById('chat-messages');
+        const retryElement = document.createElement('div');
+        retryElement.className = 'message system-message retry-option';
+        retryElement.innerHTML = `
+            <div class="message-content">
+                <button onclick="window.chatInterface.retryMessage('${originalMessage.replace(/'/g, "\\'")}')">
+                    🔄 Nachricht erneut senden
+                </button>
+            </div>
+        `;
+        messagesContainer.appendChild(retryElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    async retryMessage(message) {
+        const retryOptions = document.querySelectorAll('.retry-option');
+        retryOptions.forEach(option => option.remove());
+        
+        document.getElementById('chat-input').value = message;
+        await this.sendMessage();
     }
 
     clearChat() {

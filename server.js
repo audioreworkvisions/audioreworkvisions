@@ -5,6 +5,15 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+if (!process.env.OPENAI_API_KEY) {
+    console.error('ERROR: OPENAI_API_KEY environment variable is required');
+    console.error('Please set OPENAI_API_KEY in your .env file or environment variables');
+    process.exit(1);
+}
+
+console.log('✅ OpenAI API Key configured successfully');
+console.log('🚀 Server starting on port', PORT);
+
 app.use(express.json());
 app.use(express.static('.'));
 
@@ -80,8 +89,7 @@ app.post('/api/generate-image', async (req, res) => {
             body: JSON.stringify({
                 prompt: prompt,
                 n: 1,
-                size: size,
-                quality: quality
+                size: size
             })
         });
 
