@@ -13,7 +13,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "build": "mkdir -p dist && cp -r *.html *.css *.ico assets dist/ && cp package.json dist/"
+    "build": "mkdir -p dist && cp index.html dist/ && if [ -d public ]; then cp -r public dist/; else echo 'No public directory found'; fi && if ls *.ico >/dev/null 2>&1; then cp *.ico dist/; else echo 'No ICO files found'; fi && if [ -f CNAME ]; then cp CNAME dist/; fi && cp package.json dist/"
   },
   "keywords": [
     "ai",
