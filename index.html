@@ -180,26 +180,12 @@
     const barCount = 72; function buildBars(){ const w = 1200, h = 200; barsSvg.setAttribute('viewBox', '0 0 '+w+' '+h); barsSvg.innerHTML = ''; for(let i=0;i<barCount;i++){ const x = (i+0.5) * (w/barCount); const line = document.createElementNS('http://www.w3.org/2000/svg','line'); line.setAttribute('x1', x); line.setAttribute('x2', x); line.setAttribute('y1', h/2); line.setAttribute('y2', h/2); line.setAttribute('stroke', 'url(#grad)'); line.setAttribute('stroke-width','3'); barsSvg.appendChild(line);} const defs = document.createElementNS('http://www.w3.org/2000/svg','defs'); const grad = document.createElementNS('http://www.w3.org/2000/svg','linearGradient'); grad.id = 'grad'; grad.setAttribute('x1','0'); grad.setAttribute('x2','1'); const s1 = document.createElementNS('http://www.w3.org/2000/svg','stop'); s1.setAttribute('offset','0'); s1.setAttribute('stop-color','var(--brand2)'); const s2 = document.createElementNS('http://www.w3.org/2000/svg','stop'); s2.setAttribute('offset','1'); s2.setAttribute('stop-color','var(--brand)'); grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad); barsSvg.prepend(defs);} buildBars();
 
     const fmt = s=>{ if(!isFinite(s)) return '00:00'; const m=Math.floor(s/60); const ss=Math.floor(s%60); return (m<10?'0':'')+m+':' + (ss<10?'0':'')+ss; };
-  // Audio Source Handling: GitHub Pages + LFS
-  // Problem: LFS Dateien werden über raw.githubusercontent.com -> media.githubusercontent.com ausgeliefert (Redirect).
-  // Für reine Wiedergabe reicht das, aber wegen fehlender CORS Header funktioniert der WebAudio Analyser nur bei gleicher Origin / lokal.
-  const RELATIVE_PATH = './public/audio/' + FILE_NAME; // Fallback statisch
-  const STREAM_PATH = '/audio/' + FILE_NAME; // Range-Streaming vom eigenen Server
-  // Commit-spezifische Media URL (funktioniert oft besser für große Dateien). Wird dynamisch gebaut sobald wir das HEAD SHA haben.
-  let MEDIA_COMMIT_URL = '';
-  fetch('./').catch(()=>{}).finally(()=>{ try { /* Versuch SHA aus eingebettetem Meta (optional später) */ } catch {} });
-
+  // Audio Source Handling (rein statisch unter 100MB)
+  // Wir nutzen eine heruntergerechnete 96k MP3 direkt aus dem Repo (keine LFS / kein Backend nötig).
+  const FILE_NAME = 'panicroom_on_air_2019-12-12_96k.mp3';
+  const RELATIVE_PATH = './public/audio/' + FILE_NAME; // Statische Quelle (GitHub Pages)
   let currentSourceAttempt = 0;
-  let sourceCandidates = [];
-  function buildSourceCandidates(){
-    const isLocal = /^(localhost|127\.)/.test(location.hostname);
-    const rel = RELATIVE_PATH;
-    // Media URL nur anhängen wenn gesetzt
-  const list = [STREAM_PATH, rel]; // Priorität: Eigener Streaming Endpoint (Range + Same-Origin)
-  if(isLocal) list.push(rel); // lokale Datei direkt verfügbar
-    sourceCandidates = list;
-  }
-  buildSourceCandidates();
+  let sourceCandidates = [RELATIVE_PATH];
 
   function applyCrossOrigin(url){
     // Für Fremddomains KEIN crossOrigin setzen -> Browser lädt ohne CORS, Audio spielbar, aber Analyser (decode) evtl. eingeschränkt.
@@ -224,11 +210,8 @@
 
   function tryNextSource(){
     if(currentSourceAttempt >= sourceCandidates.length){
-      statusNode.textContent = 'Keine funktionierende Quelle gefunden.';
-      return;
-    }
-    const url = sourceCandidates[currentSourceAttempt++];
-    setAudioUrl(url);
+      statusNode.textContent = 'Keine funktionierende Quelle gefunden.'; return; }
+    setAudioUrl(sourceCandidates[currentSourceAttempt++]);
   }
 
   audio.addEventListener('error', ()=>{
@@ -270,8 +253,7 @@
     function animate(){ requestAnimationFrame(animate); t += 0.008; group.children.forEach((ring, idx)=>{ ring.position.z += 0.12; if(ring.position.z > 2) ring.position.z = -ringCount*1.8; ring.material.opacity = 0.45 + 0.35*Math.sin(t + idx*0.15); ring.material.color.setHSL( (0.62 + 0.12*Math.sin(t*0.7 + idx*0.03)) % 1, 1, 0.5 ); }); let energy = 0; if(analyser){ analyser.getByteFrequencyData(dataArr); const n = dataArr.length; for(let i=0;i<n;i++) energy += dataArr[i]; energy = (energy/n)/255; } else { energy = (Math.sin(t*1.5)+1)/4 + 0.25; } const s = parseFloat(sens.value || '1.6'); const intensity = Math.min(1.6, Math.max(0.2, energy * s)); group.rotation.z += 0.001 + 0.003*intensity; camera.position.z = 9 - intensity*1.1; const h = 200; const arr = lineEls(); const len = arr.length; for(let i=0;i<len;i++){ const k = dataArr ? Math.floor((i/len)*dataArr.length) : 0; const v = dataArr ? dataArr[k]/255 : (0.5 + 0.5*Math.sin(t*2 + i*0.2)); const amp = 20 + v*90*intensity; const y1 = h/2 - amp, y2 = h/2 + amp; const ln = arr[i]; ln.setAttribute('y1', y1); ln.setAttribute('y2', y2); ln.setAttribute('opacity', 0.55 + v*0.45); } renderer.render(scene, camera); }
     animate();
 
-  // Default lokal eingebundener Track (Git LFS)
-  // Starte mit erster Quelle; bei Fehlern fallback.
+  // Standard-Track laden
   tryNextSource();
   audio.volume = parseFloat(vol.value);
   </script>
