@@ -183,8 +183,10 @@
   // Audio Source Handling: GitHub Pages + LFS
   // Problem: LFS Dateien werden über raw.githubusercontent.com -> media.githubusercontent.com ausgeliefert (Redirect).
   // Für reine Wiedergabe reicht das, aber wegen fehlender CORS Header funktioniert der WebAudio Analyser nur bei gleicher Origin / lokal.
-  const RAW_BRANCH_URL = 'https://raw.githubusercontent.com/audioreworkvisions/audioreworkvisions/main/panicroom_on_air_2019-12-12_320k.mp3';
-  const RELEASE_DL_URL = 'https://github.com/audioreworkvisions/audioreworkvisions/releases/latest/download/panicroom_on_air_2019-12-12_320k.mp3';
+  const FILE_NAME = 'panicroom_on_air_2019-12-12_320k.mp3';
+  const RELATIVE_PATH = './public/audio/' + FILE_NAME;
+  const RAW_BRANCH_URL = 'https://raw.githubusercontent.com/audioreworkvisions/audioreworkvisions/main/public/audio/' + FILE_NAME;
+  const RELEASE_DL_URL = 'https://github.com/audioreworkvisions/audioreworkvisions/releases/latest/download/' + FILE_NAME;
   // Commit-spezifische Media URL (funktioniert oft besser für große Dateien). Wird dynamisch gebaut sobald wir das HEAD SHA haben.
   let MEDIA_COMMIT_URL = '';
   fetch('./').catch(()=>{}).finally(()=>{ try { /* Versuch SHA aus eingebettetem Meta (optional später) */ } catch {} });
@@ -193,7 +195,7 @@
   let sourceCandidates = [];
   function buildSourceCandidates(){
     const isLocal = /^(localhost|127\.)/.test(location.hostname);
-    const rel = './panicroom_on_air_2019-12-12_320k.mp3';
+    const rel = RELATIVE_PATH;
     // Media URL nur anhängen wenn gesetzt
     const list = [];
     if(isLocal) list.push(rel); // lokale Datei direkt verfügbar
