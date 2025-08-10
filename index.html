@@ -184,34 +184,44 @@
   // Problem: LFS Dateien werden über raw.githubusercontent.com -> media.githubusercontent.com ausgeliefert (Redirect).
   // Für reine Wiedergabe reicht das, aber wegen fehlender CORS Header funktioniert der WebAudio Analyser nur bei gleicher Origin / lokal.
   const RAW_BRANCH_URL = 'https://raw.githubusercontent.com/audioreworkvisions/audioreworkvisions/main/panicroom_on_air_2019-12-12_320k.mp3';
-  // Optional: falls du später eine Version taggst, ist ein stabiler Tag besser (Cache).
-  // const RAW_TAG_URL = 'https://raw.githubusercontent.com/audioreworkvisions/audioreworkvisions/v0.1.0/panicroom_on_air_2019-12-12_320k.mp3';
+  const RELEASE_DL_URL = 'https://github.com/audioreworkvisions/audioreworkvisions/releases/latest/download/panicroom_on_air_2019-12-12_320k.mp3';
+  // Commit-spezifische Media URL (funktioniert oft besser für große Dateien). Wird dynamisch gebaut sobald wir das HEAD SHA haben.
+  let MEDIA_COMMIT_URL = '';
+  fetch('./').catch(()=>{}).finally(()=>{ try { /* Versuch SHA aus eingebettetem Meta (optional später) */ } catch {} });
 
   let currentSourceAttempt = 0;
   let sourceCandidates = [];
   function buildSourceCandidates(){
-    const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    const isLocal = /^(localhost|127\.)/.test(location.hostname);
     const rel = './panicroom_on_air_2019-12-12_320k.mp3';
-    // Reihenfolge: lokal zuerst im Dev, dann Raw CDN. Im Prod (Pages / Custom Domain) direkt Raw CDN.
-    sourceCandidates = isLocal ? [ rel, RAW_BRANCH_URL ] : [ RAW_BRANCH_URL, rel ];
+    // Media URL nur anhängen wenn gesetzt
+    const list = [];
+    if(isLocal) list.push(rel); // lokale Datei direkt verfügbar
+    // Raw (Pointer oder 404 bei Pages + LFS) – dennoch versuchen
+    list.push(RAW_BRANCH_URL);
+    if(MEDIA_COMMIT_URL) list.push(MEDIA_COMMIT_URL);
+    // Release Download (kein CORS Header → OHNE crossOrigin Attribut laden!)
+    list.push(RELEASE_DL_URL);
+    // fallback erneut relative (falls man lokal später hinzufügt)
+    if(!isLocal) list.push(rel);
+    sourceCandidates = list;
   }
   buildSourceCandidates();
 
   function applyCrossOrigin(url){
-    // Nur bei relativen / same-origin Pfaden CORS für Analyser setzen.
+    // Für Fremddomains KEIN crossOrigin setzen -> Browser lädt ohne CORS, Audio spielbar, aber Analyser (decode) evtl. eingeschränkt.
     if(/^(\.|\/)/.test(url) || url.startsWith(location.origin)){
-      audio.removeAttribute('crossorigin'); // nicht nötig same-origin
+      audio.removeAttribute('crossorigin');
     } else {
-      // Fremddomain -> Analyser wird scheitern; wir versuchen es dennoch mit anonymous und zeigen Hinweis bei Fehler
-      audio.crossOrigin = 'anonymous';
+      audio.removeAttribute('crossorigin');
     }
   }
 
   function setAudioUrl(url){
     statusNode.textContent = 'Lade Track …';
     applyCrossOrigin(url);
-    const withBust = url + (url.includes('?') ? '' : ('?v=' + Date.now()));
-    audio.src = withBust;
+  const withBust = url + (url.includes('?') ? ('&v=' + Date.now()) : ('?v=' + Date.now()));
+  audio.src = withBust; console.log('[Audio] Lade Quelle', withBust);
     audio.load();
     // Autoplay Versuch leise (Browser Autoplay Policies können blocken)
     audio.play().catch(()=>{});
@@ -229,11 +239,13 @@
   }
 
   audio.addEventListener('error', ()=>{
+    console.warn('[Audio] Fehler bei Quelle', audio.currentSrc);
     if(currentSourceAttempt < sourceCandidates.length){
       statusNode.textContent = 'Quelle fehlgeschlagen – versuche Alternative …';
       tryNextSource();
     } else {
       statusNode.textContent = 'Audio Fehler (evt. LFS/CORS)';
+      console.error('Alle Quellen fehlgeschlagen', sourceCandidates);
     }
   });
   audio.addEventListener('canplay', ()=>{ statusNode.textContent = 'Bereit – Play drücken'; });
