@@ -180,7 +180,46 @@
     const barCount = 72; function buildBars(){ const w = 1200, h = 200; barsSvg.setAttribute('viewBox', '0 0 '+w+' '+h); barsSvg.innerHTML = ''; for(let i=0;i<barCount;i++){ const x = (i+0.5) * (w/barCount); const line = document.createElementNS('http://www.w3.org/2000/svg','line'); line.setAttribute('x1', x); line.setAttribute('x2', x); line.setAttribute('y1', h/2); line.setAttribute('y2', h/2); line.setAttribute('stroke', 'url(#grad)'); line.setAttribute('stroke-width','3'); barsSvg.appendChild(line);} const defs = document.createElementNS('http://www.w3.org/2000/svg','defs'); const grad = document.createElementNS('http://www.w3.org/2000/svg','linearGradient'); grad.id = 'grad'; grad.setAttribute('x1','0'); grad.setAttribute('x2','1'); const s1 = document.createElementNS('http://www.w3.org/2000/svg','stop'); s1.setAttribute('offset','0'); s1.setAttribute('stop-color','var(--brand2)'); const s2 = document.createElementNS('http://www.w3.org/2000/svg','stop'); s2.setAttribute('offset','1'); s2.setAttribute('stop-color','var(--brand)'); grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad); barsSvg.prepend(defs);} buildBars();
 
     const fmt = s=>{ if(!isFinite(s)) return '00:00'; const m=Math.floor(s/60); const ss=Math.floor(s%60); return (m<10?'0':'')+m+':' + (ss<10?'0':'')+ss; };
-  function setAudioUrl(url){ audio.src = url; audio.crossOrigin='anonymous'; audio.load(); audio.play().catch(()=>{}); connectAudio(); statusNode.textContent = 'Lade Track …'; if(currentTrack){ currentTrack.textContent = 'Track: ' + decodeURIComponent(url.split('/').pop()); } }
+  // GitHub Pages lädt LFS-Dateien NICHT direkt (Pointer statt Audio). Fallback: Release-Asset.
+  const RELEASE_FALLBACK_URL = 'https://github.com/audioreworkvisions/audioreworkvisions/releases/latest/download/panicroom_on_air_2019-12-12_320k.mp3';
+  let currentSourceAttempt = 0;
+  let sourceCandidates = [];
+  function buildSourceCandidates(){
+    sourceCandidates = [
+      './panicroom_on_air_2019-12-12_320k.mp3', // relativer Pfad (lokal / dev)
+      RELEASE_FALLBACK_URL // Release Asset (funktioniert auf Pages / prod)
+    ];
+  }
+  buildSourceCandidates();
+  function setAudioUrl(url){
+    statusNode.textContent = 'Lade Track …';
+    audio.src = url + (url.includes('?')?'':'?ts=' + Date.now()); // Cache-Bust
+    audio.crossOrigin = 'anonymous';
+    audio.load();
+    audio.play().catch(()=>{});
+    connectAudio();
+    if(currentTrack){ currentTrack.textContent = 'Track: ' + decodeURIComponent(url.split('/').pop()); }
+  }
+  function tryNextSource(){
+    if(currentSourceAttempt >= sourceCandidates.length){
+      statusNode.textContent = 'Fehler: Keine funktionierende Audioquelle (LFS Pointer?).';
+      return;
+    }
+    const url = sourceCandidates[currentSourceAttempt++];
+    setAudioUrl(url);
+  }
+  audio.addEventListener('error', ()=>{
+    // Wenn es ein LFS Pointer statt Audio ist, oder 404 -> nächsten Kandidaten versuchen
+    if(currentSourceAttempt < sourceCandidates.length){
+      statusNode.textContent = 'Quell-Fehler – versuche Alternative …';
+      tryNextSource();
+    } else {
+      statusNode.textContent = 'Audio konnte nicht geladen werden.';
+    }
+  });
+  audio.addEventListener('canplay', ()=>{ statusNode.textContent = 'Bereit – Play drücken'; });
+  audio.addEventListener('playing', ()=>{ statusNode.textContent = 'Spielt'; });
+  audio.addEventListener('pause', ()=>{ statusNode.textContent = 'Pausiert'; });
 
   vol.addEventListener('input', ()=> audio.volume = parseFloat(vol.value)); btnPlay.addEventListener('click', async ()=>{ ensureCtx(); try{ await ctx.resume(); }catch{} if(audio.src){ audio.play(); }}); btnPause.addEventListener('click', ()=> audio.pause()); btnPick?.addEventListener('click', ()=> filePick.click());
   filePick.addEventListener('change', e=>{ const f=e.target.files&&e.target.files[0]; if(!f) return; const url=URL.createObjectURL(f); setAudioUrl(url); });
@@ -208,7 +247,8 @@
     animate();
 
   // Default lokal eingebundener Track (Git LFS)
-  setAudioUrl('./panicroom_on_air_2019-12-12_320k.mp3');
+  // Starte mit erster Quelle; bei Fehlern fallback.
+  tryNextSource();
   audio.volume = parseFloat(vol.value);
   </script>
 </body>
