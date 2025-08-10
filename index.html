@@ -1,269 +1,216 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="auto">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OIOS AI - Innovative AI Solutions</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="f.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AUDIOREWORKVISIONS &amp; LENOX · Techno</title>
+  <meta name="description" content="AUDIOREWORKVISIONS &amp; LENOX — Hypnotic techno, neon visuals, live sets, tracks and streams." />
+  <style>
+    :root{ --bg0:#05060a; --bg1:#0a0c14; --fg:#e6f1ff; --muted:#9fb5d1; --ac1:#00e5ff; --ac2:#ff00cc; --ac3:#8dff00; --border:rgba(255,255,255,.12); --card:rgba(18,22,32,.55); --glass:rgba(12,14,20,.55); }
+    @media (prefers-color-scheme: light){ :root{ --bg0:#f5f7fb; --bg1:#eaf0fb; --fg:#0b1220; --muted:#445066; --border:rgba(0,0,0,.12); --card:rgba(255,255,255,.7); --glass:rgba(255,255,255,.6); } }
+    html[data-theme="dark"]{ --bg0:#05060a; --bg1:#0a0c14; --fg:#e6f1ff; --muted:#9fb5d1; --border:rgba(255,255,255,.12); --card:rgba(18,22,32,.55); --glass:rgba(12,14,20,.55); }
+    html[data-theme="light"]{ --bg0:#f5f7fb; --bg1:#eaf0fb; --fg:#0b1220; --muted:#445066; --border:rgba(0,0,0,.12); --card:rgba(255,255,255,.7); --glass:rgba(255,255,255,.6); }
+    :root{ --brand:#00ffd5; --brand2:#6a00ff; --danger:#ff4571; }
+    *{box-sizing:border-box} html,body{height:100%} body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 800px at 70% -10%,var(--bg1) 0%,var(--bg0) 55%,#000 100%), linear-gradient(180deg,var(--bg1),var(--bg0));color:var(--fg);}
+    .app{min-height:100dvh;display:flex;flex-direction:column} main{flex:1;position:relative;z-index:2}
+    #three-wrap{position:fixed;inset:0;z-index:0} canvas{display:block}
+    .scanlines{pointer-events:none;position:fixed;inset:0;z-index:1;background:repeating-linear-gradient(180deg,rgba(255,255,255,.05) 0 1px,transparent 1px 3px);mix-blend-mode:overlay;opacity:.1}
+    .hero{position:relative;padding:40px 24px 12px;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 180deg at 50% 50%, color-mix(in oklab, var(--brand) 30%, transparent), color-mix(in oklab, var(--brand2) 30%, transparent), color-mix(in oklab, var(--brand) 30%, transparent));filter:blur(60px);z-index:0;animation:spin 18s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:18px}
+    .brand-left{display:flex;align-items:center;justify-content:flex-start}
+    .brand-left img{width:120px;height:120px;object-fit:contain;border-radius:50%;filter:drop-shadow(0 0 22px color-mix(in oklab, var(--brand) 70%, transparent))}
+    .brand-right{display:flex;align-items:center;justify-content:flex-end}
+    .title-awr{margin:0;line-height:0.95;text-align:right;font-weight:900;letter-spacing:1.5px;font-size:clamp(32px,10vw,120px);background:linear-gradient(90deg,var(--brand2),var(--brand),var(--brand2));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:glow 6s linear infinite}
+    @keyframes glow{0%{background-position:0% 50%; text-shadow:0 0 14px color-mix(in oklab, var(--brand) 45%, transparent);}50%{background-position:100% 50%; text-shadow:0 0 24px color-mix(in oklab, var(--brand2) 60%, transparent);}100%{background-position:0% 50%; text-shadow:0 0 14px color-mix(in oklab, var(--brand) 45%, transparent);}}
+    .btn{appearance:none;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,.12));color:var(--fg);padding:10px 14px;border-radius:14px;cursor:pointer;transition:.2s;user-select:none}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.25)} .btn.primary{border-color:transparent;background:linear-gradient(90deg,var(--brand2),var(--brand));color:#081017;font-weight:800} .btn.ghost{background:transparent}
+    .wrap{display:grid;place-items:center;padding:0 24px 32px}
+    .card{width:min(1100px,96vw);backdrop-filter:saturate(1.4) blur(12px);background:var(--card);border:1px solid var(--border);border-radius:22px;box-shadow:0 20px 80px rgba(0,0,0,.45);overflow:hidden}
+    .header{padding:16px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;justify-content:space-between} .header small{color:var(--muted)}
+    .player{display:grid;grid-template-columns:1fr;gap:14px;padding:18px 18px 22px} .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center} .row > *{flex:1}
+    .field{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:10px 12px} .field input[type="text"]{flex:1;background:transparent;border:0;color:var(--fg);outline:none}
+    .controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .viz{position:relative;height:120px;border-radius:14px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.1));overflow:hidden}
+    svg#bars{position:absolute;inset:0}
+    .audioui{display:flex;align-items:center;gap:12px;flex-wrap:wrap} .time{font-variant-tabular-nums:tabular-nums;min-width:84px;text-align:center;color:var(--muted)}
+    .progress{position:relative;flex:1;height:10px;background:rgba(255,255,255,.08);border:1px solid var(--border);border-radius:999px;overflow:hidden;cursor:pointer}
+    .bar{position:absolute;inset:0;transform-origin:left center;background:linear-gradient(90deg,var(--brand),var(--brand2)) scaleX(0);} .knob{position:absolute;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;background:var(--fg);border-radius:50%;box-shadow:0 0 10px color-mix(in oklab, var(--brand) 55%, transparent);left:0%}
+    .flash{width:min(1100px,96vw);margin:26px auto 6px;display:grid;gap:14px;grid-template-columns:repeat(3,1fr)} .f{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px 16px 18px;backdrop-filter:blur(10px);min-height:120px} .f h3{margin:0 0 6px;font-size:16px} .f p{margin:0;color:var(--muted);font-size:13px}
+    @media (max-width:900px){.flash{grid-template-columns:1fr}}
+    .community{width:min(1100px,96vw);margin:20px auto 36px;display:grid;grid-template-columns:1fr 1fr;gap:14px} @media (max-width:900px){.community{grid-template-columns:1fr}}
+    .panel{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;backdrop-filter:blur(10px)} .panel h3{margin:0 0 10px}
+    .note{color:var(--muted);font-size:12px} .input{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--fg)} .stack{display:flex;gap:10px;flex-wrap:wrap}
+    .list{display:flex;flex-direction:column;gap:10px;max-height:280px;overflow:auto;padding-right:4px} .comment{padding:10px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.04)} .comment small{color:var(--muted)}
+    footer{border-top:1px solid var(--border);background:rgba(0,0,0,.22);backdrop-filter:blur(10px);padding:10px 16px;color:var(--muted);font-size:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .social a{color:inherit;text-decoration:none;border:1px solid var(--border);padding:6px 10px;border-radius:999px}
+    .header svg.lines{height:44px} .dash{stroke:url(#g);stroke-width:2;fill:none;stroke-dasharray:6 10;animation:dash 7s linear infinite} @keyframes dash{to{stroke-dashoffset:-200}}
+  </style>
 </head>
 <body>
-    <!-- Starfield background container -->
-    <div id="starfield-container"></div>
-    
-    <!-- Three-column layout container -->
-    <div class="app-container">
-        <!-- Left Sidebar -->
-        <aside class="sidebar-left" id="leftSidebar">
-            <div class="sidebar-header">
-                <div class="logo-container">
-                    <div class="oios-logo">
-                        <div class="logo-icon">🤖</div>
-                        <span class="logo-text">OIOS AI</span>
-                    </div>
-                </div>
-                <button class="sidebar-toggle" id="leftToggle">
-                    <span class="toggle-icon">←</span>
-                </button>
-            </div>
-            
-            <nav class="sidebar-nav">
-                <div class="nav-section">
-                    <h3 class="nav-title">Navigation</h3>
-                    <ul class="nav-list">
-                        <li><a href="#home" class="nav-link active">🏠 Home</a></li>
-                        <li><a href="#services" class="nav-link">⚙️ Services</a></li>
-                        <li><a href="#portfolio" class="nav-link">💼 Portfolio</a></li>
-                        <li><a href="#contact" class="nav-link">📧 Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="nav-section">
-                    <h3 class="nav-title">AI Tools</h3>
-                    <ul class="nav-list">
-                        <li><a href="chat.html" class="nav-link">💬 AI Chat</a></li>
-                        <li><a href="image-generator.html" class="nav-link">🎨 Image Generator</a></li>
-                    </ul>
-                </div>
-                
-                <div class="nav-section">
-                    <h3 class="nav-title">Resources</h3>
-                    <ul class="nav-list">
-                        <li><a href="top-20-ai-developer-tools.html" class="nav-link">🛠️ AI Dev Tools</a></li>
-                        <li><a href="top-20-ai-models.html" class="nav-link">🧠 AI Models</a></li>
-                        <li><a href="top-20-git-repositories.html" class="nav-link">📚 Git Repos</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </aside>
+  <div class="app">
+    <div id="three-wrap"></div>
+    <div class="scanlines"></div>
 
-        <!-- Main Content Area -->
-        <main class="main-content" id="mainContent">
-            <div class="content-header">
-                <h1 class="page-title">OIOS AI - Innovative AI Solutions</h1>
-                <p class="page-subtitle">Erleben Sie die nächste Generation von KI-gestützter Audio- und Videotechnologie</p>
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="brand-left">
+            <img src="./public/assets/logo-rund-horus.png" alt="AUDIOREWORKVISIONS · Logo">
+          </div>
+          <div class="brand-right">
+            <h1 class="title-awr">AUDIOREWORKVISIONS</h1>
+          </div>
+        </div>
+      </section>
+
+      <div class="wrap">
+        <section id="player-card" class="card">
+          <header class="header">
+            <small>WebAudio + SVG + Three.js</small>
+            <svg class="lines" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="var(--brand2)"/><stop offset="1" stop-color="var(--brand)"/></linearGradient>
+              </defs>
+              <path class="dash" d="M0 40 C 200 20, 400 60, 600 40 S 1000 20, 1200 40"/>
+            </svg>
+          </header>
+
+          <div class="player">
+            <div class="row">
+              <div class="field" title="Füge hier den Audio/Stream-Link ein.">
+                <span>🎧 Audio‑/Stream‑URL</span>
+                <input id="audioUrl" type="text" placeholder="https://…/lenox_set.mp3" />
+              </div>
+              <button id="btnLoad" class="btn">URL übernehmen</button>
+              <input id="filePick" type="file" accept="audio/*" style="display:none"/>
             </div>
 
-            <section id="home" class="hero-section">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h2 class="hero-title">Willkommen in der Zukunft der KI</h2>
-                        <p class="hero-description">
-                            OIOS AI revolutioniert die Art, wie Sie mit künstlicher Intelligenz arbeiten. 
-                            Von intelligenten Chatbots bis hin zur Bildgenerierung - entdecken Sie die 
-                            unbegrenzten Möglichkeiten moderner AI-Technologie.
-                        </p>
-                        <div class="hero-actions">
-                            <button class="cta-button primary">🚀 Jetzt starten</button>
-                            <button class="cta-button secondary">📖 Mehr erfahren</button>
-                        </div>
-                    </div>
-                    <div class="hero-visual">
-                        <div class="ai-visualization">
-                            <div class="neural-network">
-                                <div class="node"></div>
-                                <div class="node"></div>
-                                <div class="node"></div>
-                                <div class="connection"></div>
-                                <div class="connection"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="services" class="services-section">
-                <h2 class="section-title">Unsere AI Services</h2>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <div class="service-icon">💬</div>
-                        <h3>AI Chat Interface</h3>
-                        <p>Intelligente Konversationen mit fortschrittlichen Sprachmodellen</p>
-                        <a href="chat.html" class="service-link">Jetzt chatten →</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🎨</div>
-                        <h3>AI Bildgenerierung</h3>
-                        <p>Erstellen Sie beeindruckende Bilder mit DALL-E Technologie</p>
-                        <a href="image-generator.html" class="service-link">Bilder erstellen →</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🛠️</div>
-                        <h3>AI Developer Tools</h3>
-                        <p>Professionelle Entwicklungstools für AI-Projekte</p>
-                        <a href="top-20-ai-developer-tools.html" class="service-link">Tools entdecken →</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🧠</div>
-                        <h3>AI Modelle</h3>
-                        <p>Übersicht der neuesten und besten AI-Modelle</p>
-                        <a href="top-20-ai-models.html" class="service-link">Modelle erkunden →</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-index">
-                <h2 class="section-title">Alle Inhalte</h2>
-                <div class="content-grid">
-                    <div class="content-category">
-                        <h3>AI Tools</h3>
-                        <ul>
-                            <li><a href="chat.html">🤖 AI Chat Interface</a></li>
-                            <li><a href="image-generator.html">🎨 AI Bild Generator</a></li>
-                            <li><a href="claude-sonet.html">Claude Sonet AI</a></li>
-                            <li><a href="dall-e-3.html">DALL-E 3 AI</a></li>
-                            <li><a href="gemini-15.html">Gemini 1.5 AI</a></li>
-                            <li><a href="llama3.html">LLaMA 3 AI</a></li>
-                            <li><a href="mistral-ai.html">Mistral AI</a></li>
-                            <li><a href="stable-diffusion.html">Stable Diffusion AI</a></li>
-                        </ul>
-                    </div>
-                    <div class="content-category">
-                        <h3>Forschung</h3>
-                        <ul>
-                            <li><a href="cos.html">Morphogenetisches Kollektivbewusstsein</a></li>
-                            <li><a href="forschungspapier.html">Forschungspapier: Das Morphogenetische Kollektivbewusstsein</a></li>
-                            <li><a href="singularity_concepts.html">Die Rückführung in die Singularität</a></li>
-                            <li><a href="conclusion.html">Schlussseite</a></li>
-                        </ul>
-                    </div>
-                    <div class="content-category">
-                        <h3>Entwicklung</h3>
-                        <ul>
-                            <li><a href="top-20-ai-developer-tools.html">Top 20 AI Developer Tools</a></li>
-                            <li><a href="top-20-ai-models.html">Top 20 AI Models</a></li>
-                            <li><a href="top-20-git-repositories.html">Top 20 Git Repositories</a></li>
-                            <li><a href="gemini-appcode.html">GPTCoder</a></li>
-                            <li><a href="serverai.html">Server AI</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Right Panel - AI Assistant -->
-        <aside class="sidebar-right" id="rightSidebar">
-            <div class="sidebar-header">
-                <h3 class="assistant-title">KI-Assistent</h3>
-                <button class="sidebar-toggle" id="rightToggle">
-                    <span class="toggle-icon">→</span>
-                </button>
+            <div class="controls">
+              <button id="btnPlay" class="btn primary">▶ Play</button>
+              <button id="btnPause" class="btn">⏸ Pause</button>
+              <label class="field" style="max-width:260px">
+                🔊 Lautstärke
+                <input id="vol" type="range" min="0" max="1" step="0.01" value="0.9"/>
+              </label>
+              <div class="field" style="max-width:300px">
+                <span>🎚️ Sensitivity</span>
+                <input id="sens" type="range" min="0.5" max="4" step="0.1" value="1.6"/>
+              </div>
+              <span id="status" aria-live="polite" style="color:var(--muted)">Bereit</span>
             </div>
-            
-            <div class="ai-assistant" id="aiAssistant">
-                <div class="assistant-status">
-                    <div class="status-indicator online"></div>
-                    <span>Online</span>
-                </div>
-                
-                <div class="chat-container">
-                    <div class="chat-messages" id="assistantMessages">
-                        <div class="message assistant-message">
-                            <div class="message-content">
-                                Hallo! Ich bin Ihr KI-Assistent. Wie kann ich Ihnen heute helfen?
-                            </div>
-                            <div class="message-time">Jetzt</div>
-                        </div>
-                    </div>
-                    
-                    <div class="chat-input-container">
-                        <input type="text" class="chat-input" placeholder="Fragen Sie mich etwas..." id="assistantInput">
-                        <button class="send-button" id="assistantSend">
-                            <span class="send-icon">→</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </aside>
-    </div>
-    
-    <!-- Three.js library -->
-    <script src="assets/js/three.min.js"></script>
-    <!-- Starfield animation -->
-    <script src="assets/js/starfield.js"></script>
-    
-    <script>
-        // Sidebar toggle functionality
-        document.getElementById('leftToggle').addEventListener('click', function() {
-            document.getElementById('leftSidebar').classList.toggle('collapsed');
-        });
-        
-        document.getElementById('rightToggle').addEventListener('click', function() {
-            document.getElementById('rightSidebar').classList.toggle('collapsed');
-        });
-        
-        // Simple AI assistant functionality
-        document.getElementById('assistantSend').addEventListener('click', function() {
-            const input = document.getElementById('assistantInput');
-            const message = input.value.trim();
-            if (message) {
-                addAssistantMessage(message, 'user');
-                input.value = '';
-                
-                // Simple response simulation
-                setTimeout(() => {
-                    addAssistantMessage('Das ist eine interessante Frage! Für detaillierte AI-Unterstützung besuchen Sie bitte unser Chat Interface.', 'assistant');
-                }, 1000);
-            }
-        });
-        
-        document.getElementById('assistantInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.getElementById('assistantSend').click();
-            }
-        });
-        
-        function addAssistantMessage(content, type) {
-            const messagesContainer = document.getElementById('assistantMessages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${type}-message`;
-            messageDiv.innerHTML = `
-                <div class="message-content">${content}</div>
-                <div class="message-time">Jetzt</div>
-            `;
-            messagesContainer.appendChild(messageDiv);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
 
-        // Page transition effect
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('a[href$=".html"]');
-            
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (this.href !== window.location.href && !this.getAttribute('target')) {
-                        e.preventDefault();
-                        document.body.style.opacity = '0';
-                        document.body.style.transition = 'opacity 0.5s';
-                        
-                        setTimeout(() => {
-                            window.location.href = this.href;
-                        }, 500);
-                    }
-                });
-            });
-        });
-    </script>
+            <div class="audioui">
+              <span id="tcur" class="time">00:00</span>
+              <div id="progress" class="progress" aria-label="Seekbar" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div id="bar" class="bar"></div>
+                <div id="knob" class="knob"></div>
+              </div>
+              <span id="tdur" class="time">00:00</span>
+            </div>
+
+            <div class="viz"><svg id="bars" viewBox="0 0 1200 200" preserveAspectRatio="none" role="img" aria-label="Audio Visualizer"></svg></div>
+          </div>
+        </section>
+      </div>
+
+      <section class="flash">
+        <article class="f"><h3>⚡ Live Sets</h3><p>Pulsierende Techno‑Energie, kuratiert von AUDIOREWORKVISIONS &amp; LENOX.</p></article>
+        <article class="f"><h3>🌀 Neon‑Tunnel</h3><p>GPU‑leichter Three.js‑Wireframe‑Tunnel mit Audio‑Reaktion.</p></article>
+        <article class="f"><h3>🎚️ Live Visualizer</h3><p>SVG‑Bars reagieren auf Frequenzen (mit CORS‑Fallback‑Pulse).</p></article>
+      </section>
+
+      <section class="community">
+        <div class="panel">
+          <h3>📧 New Releases – Abo</h3>
+          <p class="note">Trag deine E‑Mail ein und erhalte neue Sets &amp; Releases. (Speichert lokal. Optionaler Server‑Endpoint möglich.)</p>
+          <div class="stack">
+            <input id="subEmail" class="input" type="email" placeholder="deine@email.ch" aria-label="E‑Mail"/>
+            <button id="subBtn" class="btn primary">Abonnieren</button>
+          </div>
+          <div id="subMsg" class="note" style="margin-top:8px"></div>
+        </div>
+
+        <div class="panel">
+          <h3>💬 Kommentare</h3>
+          <div class="stack" style="margin-bottom:10px">
+            <input id="cName" class="input" type="text" placeholder="Name (optional)"/>
+            <input id="cText" class="input" type="text" placeholder="Dein Kommentar … (max. 500 Zeichen)"/>
+            <button id="cSend" class="btn">Senden</button>
+          </div>
+          <div id="cWarn" class="note" style="margin-bottom:8px"></div>
+          <div id="cList" class="list" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© Audioreworkvisions &amp; Lenox</span>
+      <div class="social"><a href="https://facebook.com/lenocmarco" target="_blank" rel="noopener">Facebook</a></div>
+      <span>Made with SVG · Three.js · WebAudio</span>
+    </footer>
+  </div>
+
+  <audio id="player" crossorigin="anonymous"></audio>
+
+  <script type="module">
+    import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+    const NEWSLETTER_ENDPOINT = ''; const COUNTER_ENDPOINT = '';
+
+    const themeBtn = document.getElementById('themeToggle');
+    const applyTheme = (t)=>{ document.documentElement.setAttribute('data-theme', t); localStorage.setItem('theme', t); };
+    const saved = localStorage.getItem('theme'); if(saved){ applyTheme(saved); }
+    themeBtn?.addEventListener('click', ()=>{ const cur = document.documentElement.getAttribute('data-theme') || 'auto'; const next = cur==='dark' ? 'light' : cur==='light' ? 'auto' : 'dark'; applyTheme(next); themeBtn.textContent = next==='dark'?'🌙 Dark': next==='light'?'☀️ Light':'🌗 Auto'; });
+
+    const visitEl = document.getElementById('visit');
+    function localVisit(){ const today = new Date().toISOString().slice(0,10); const last = localStorage.getItem('visit:last'); let n = parseInt(localStorage.getItem('visit:count')||'0',10); if(last!==today){ n++; localStorage.setItem('visit:count', String(n)); localStorage.setItem('visit:last', today); } return n; }
+    async function updateVisit(){ if(!visitEl) return; let n = localVisit(); if(COUNTER_ENDPOINT){ try{ await fetch(COUNTER_ENDPOINT,{method:'POST'}); }catch{} } visitEl.textContent = 'Besuche (lokal): ' + n; } if(visitEl) updateVisit();
+
+    const wrap = document.getElementById('three-wrap'); const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true }); renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.setSize(innerWidth, innerHeight); wrap.appendChild(renderer.domElement);
+    const scene = new THREE.Scene(); const camera = new THREE.PerspectiveCamera(70, innerWidth/innerHeight, 0.1, 2000); camera.position.set(0,0,9);
+    const group = new THREE.Group(); scene.add(group);
+    const ringCount = 70, segments = 64; for(let i=0;i<ringCount;i++){ const geo = new THREE.TorusGeometry(6, 0.02, 6, segments); const mat = new THREE.MeshBasicMaterial({ color:0x00e5ff, wireframe:true, transparent:true, opacity:0.7 }); const mesh = new THREE.Mesh(geo, mat); mesh.position.z = -i*1.8; mesh.rotation.x = Math.PI/2; group.add(mesh); }
+    scene.fog = new THREE.FogExp2(0x05070c, .06); addEventListener('resize', ()=>{ camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+
+    const audio = document.getElementById('player'); const barsSvg = document.getElementById('bars'); const statusNode = document.getElementById('status'); const vol = document.getElementById('vol'); const sens = document.getElementById('sens'); const btnPlay = document.getElementById('btnPlay'); const btnPause = document.getElementById('btnPause'); const btnLoad = document.getElementById('btnLoad'); const btnDrop = document.getElementById('btnDrop'); const filePick = document.getElementById('filePick'); const audioUrl = document.getElementById('audioUrl');
+    const progress = document.getElementById('progress'); const bar = document.getElementById('bar'); const knob = document.getElementById('knob'); const tcur = document.getElementById('tcur'); const tdur = document.getElementById('tdur');
+
+    let ctx, analyser, dataArr, sourceNode, dragging=false;
+    function ensureCtx(){ if(!ctx){ ctx = new (window.AudioContext || window.webkitAudioContext)(); analyser = ctx.createAnalyser(); analyser.fftSize = 1024; dataArr = new Uint8Array(analyser.frequencyBinCount); } }
+    function connectAudio(){ try{ ensureCtx(); if(sourceNode) sourceNode.disconnect(); sourceNode = ctx.createMediaElementSource(audio); sourceNode.connect(analyser); analyser.connect(ctx.destination); statusNode.textContent = 'Visualizer aktiv'; } catch(e){ statusNode.textContent = 'CORS Hinweis: Visualizer ggf. limitiert – Style‑Fallback aktiv.'; } }
+
+    const barCount = 72; function buildBars(){ const w = 1200, h = 200; barsSvg.setAttribute('viewBox', '0 0 '+w+' '+h); barsSvg.innerHTML = ''; for(let i=0;i<barCount;i++){ const x = (i+0.5) * (w/barCount); const line = document.createElementNS('http://www.w3.org/2000/svg','line'); line.setAttribute('x1', x); line.setAttribute('x2', x); line.setAttribute('y1', h/2); line.setAttribute('y2', h/2); line.setAttribute('stroke', 'url(#grad)'); line.setAttribute('stroke-width','3'); barsSvg.appendChild(line);} const defs = document.createElementNS('http://www.w3.org/2000/svg','defs'); const grad = document.createElementNS('http://www.w3.org/2000/svg','linearGradient'); grad.id = 'grad'; grad.setAttribute('x1','0'); grad.setAttribute('x2','1'); const s1 = document.createElementNS('http://www.w3.org/2000/svg','stop'); s1.setAttribute('offset','0'); s1.setAttribute('stop-color','var(--brand2)'); const s2 = document.createElementNS('http://www.w3.org/2000/svg','stop'); s2.setAttribute('offset','1'); s2.setAttribute('stop-color','var(--brand)'); grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad); barsSvg.prepend(defs);} buildBars();
+
+    const fmt = s=>{ if(!isFinite(s)) return '00:00'; const m=Math.floor(s/60); const ss=Math.floor(s%60); return (m<10?'0':'')+m+':' + (ss<10?'0':'')+ss; };
+    function setAudioUrl(url){ audio.src = url; audio.crossOrigin='anonymous'; audio.load(); audio.play().catch(()=>{}); connectAudio(); statusNode.textContent = 'Lade Stream …'; }
+
+    vol.addEventListener('input', ()=> audio.volume = parseFloat(vol.value)); btnPlay.addEventListener('click', async ()=>{ ensureCtx(); try{ await ctx.resume(); }catch{} if(audio.src){ audio.play(); }}); btnPause.addEventListener('click', ()=> audio.pause()); btnLoad.addEventListener('click', ()=>{ const url = audioUrl.value.trim(); if(!url){ statusNode.textContent = 'Bitte Stream/MP3‑URL einfügen.'; return;} setAudioUrl(url); }); btnDrop?.addEventListener('click', ()=> filePick.click());
+    filePick.addEventListener('change', e=>{ const f=e.target.files&&e.target.files[0]; if(!f) return; const url=URL.createObjectURL(f); setAudioUrl(url); audioUrl.value=f.name; });
+    for(const el of [document.querySelector('.hero'), document.getElementById('player-card')]){ el.addEventListener('dragover', e=>{ e.preventDefault(); el.style.outline='2px dashed var(--brand)';}); el.addEventListener('dragleave', ()=> el.style.outline='none'); el.addEventListener('drop', e=>{ e.preventDefault(); el.style.outline='none'; const f=e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]; if(f){ const url=URL.createObjectURL(f); setAudioUrl(url); audioUrl.value=f.name; }}); }
+
+    function updateProgress(){ const ratio = audio.duration? audio.currentTime / audio.duration : 0; bar.style.transform = 'scaleX(' + ratio + ')'; knob.style.left = (ratio*100)+'%'; progress.setAttribute('aria-valuenow', Math.round(ratio*100)); tcur.textContent = fmt(audio.currentTime); tdur.textContent = fmt(audio.duration); }
+    audio.addEventListener('timeupdate', updateProgress); audio.addEventListener('loadedmetadata', updateProgress);
+    const seek = (clientX)=>{ const r = progress.getBoundingClientRect(); const x = Math.min(Math.max(clientX - r.left, 0), r.width); const ratio = x / r.width; audio.currentTime = (audio.duration||0) * ratio; updateProgress(); };
+    progress.addEventListener('pointerdown', e=>{ dragging=true; progress.setPointerCapture(e.pointerId); seek(e.clientX); }); progress.addEventListener('pointermove', e=>{ if(dragging) seek(e.clientX); }); progress.addEventListener('pointerup', ()=> dragging=false); progress.addEventListener('keydown', e=>{ if(e.key==='ArrowRight'){ audio.currentTime=Math.min(audio.currentTime+5,audio.duration||0); } if(e.key==='ArrowLeft'){ audio.currentTime=Math.max(audio.currentTime-5,0); } updateProgress(); });
+    addEventListener('keydown', e=>{ if(e.target instanceof HTMLInputElement) return; if(e.code==='Space'){ e.preventDefault(); audio.paused?audio.play():audio.pause(); } if(e.key==='m'){ audio.muted=!audio.muted; } if(e.key==='ArrowUp'){ e.preventDefault(); audio.volume=Math.min(1, audio.volume+0.05); vol.value=String(audio.volume); } if(e.key==='ArrowDown'){ e.preventDefault(); audio.volume=Math.max(0, audio.volume-0.05); vol.value=String(audio.volume); } if(e.key==='ArrowRight'){ audio.currentTime+=5; } if(e.key==='ArrowLeft'){ audio.currentTime=Math.max(0,audio.currentTime-5); } });
+
+    const subEmail = document.getElementById('subEmail'); const subBtn = document.getElementById('subBtn'); const subMsg = document.getElementById('subMsg');
+    subBtn.addEventListener('click', async ()=>{ const email = (subEmail.value||'').trim(); if(!(email.includes('@') && email.includes('.'))){ subMsg.textContent='Bitte gültige E‑Mail eingeben.'; return; } const list = JSON.parse(localStorage.getItem('subs')||'[]'); if(!list.includes(email)){ list.push(email); localStorage.setItem('subs', JSON.stringify(list)); } subMsg.textContent='Danke! Du bist lokal vorgemerkt.'; if(NEWSLETTER_ENDPOINT){ try{ await fetch(NEWSLETTER_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})}); subMsg.textContent += ' (Server bestätigt)'; }catch{ subMsg.textContent += ' (Server nicht erreichbar)'; } }});
+
+    const cName = document.getElementById('cName'); const cText = document.getElementById('cText'); const cSend = document.getElementById('cSend'); const cList = document.getElementById('cList'); const cWarn = document.getElementById('cWarn'); const key = 'comments:v1';
+    function sanitize(s){ return s.replace(/[<>]/g,'').trim(); }
+    function loadComments(){ return JSON.parse(localStorage.getItem(key)||'[]'); }
+    function saveComments(arr){ localStorage.setItem(key, JSON.stringify(arr)); }
+    function renderComments(){ cList.innerHTML=''; const arr = loadComments().slice().reverse(); for(const c of arr){ const div = document.createElement('div'); div.className='comment'; div.innerHTML = '<strong>'+(c.name||'Anon')+'</strong> <small>· '+ new Date(c.ts).toLocaleString() +'</small><br>'+ c.text; cList.appendChild(div);} }
+    renderComments();
+    cSend.addEventListener('click', ()=>{ const name = sanitize(cName.value).slice(0,40); const text = sanitize(cText.value).slice(0,500); if(!text){ cWarn.textContent='Bitte einen Kommentar eingeben.'; return; } const arr = loadComments(); arr.push({name, text, ts: Date.now()}); saveComments(arr); cText.value=''; cWarn.textContent='Kommentar gespeichert (lokal).'; renderComments(); });
+
+    let t=0; const lineEls = ()=> barsSvg.querySelectorAll('line');
+    function animate(){ requestAnimationFrame(animate); t += 0.008; group.children.forEach((ring, idx)=>{ ring.position.z += 0.12; if(ring.position.z > 2) ring.position.z = -ringCount*1.8; ring.material.opacity = 0.45 + 0.35*Math.sin(t + idx*0.15); ring.material.color.setHSL( (0.62 + 0.12*Math.sin(t*0.7 + idx*0.03)) % 1, 1, 0.5 ); }); let energy = 0; if(analyser){ analyser.getByteFrequencyData(dataArr); const n = dataArr.length; for(let i=0;i<n;i++) energy += dataArr[i]; energy = (energy/n)/255; } else { energy = (Math.sin(t*1.5)+1)/4 + 0.25; } const s = parseFloat(sens.value || '1.6'); const intensity = Math.min(1.6, Math.max(0.2, energy * s)); group.rotation.z += 0.001 + 0.003*intensity; camera.position.z = 9 - intensity*1.1; const h = 200; const arr = lineEls(); const len = arr.length; for(let i=0;i<len;i++){ const k = dataArr ? Math.floor((i/len)*dataArr.length) : 0; const v = dataArr ? dataArr[k]/255 : (0.5 + 0.5*Math.sin(t*2 + i*0.2)); const amp = 20 + v*90*intensity; const y1 = h/2 - amp, y2 = h/2 + amp; const ln = arr[i]; ln.setAttribute('y1', y1); ln.setAttribute('y2', y2); ln.setAttribute('opacity', 0.55 + v*0.45); } renderer.render(scene, camera); }
+    animate();
+
+    audio.volume = parseFloat(vol.value);
+  </script>
 </body>
 </html>
