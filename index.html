@@ -180,41 +180,60 @@
     const barCount = 72; function buildBars(){ const w = 1200, h = 200; barsSvg.setAttribute('viewBox', '0 0 '+w+' '+h); barsSvg.innerHTML = ''; for(let i=0;i<barCount;i++){ const x = (i+0.5) * (w/barCount); const line = document.createElementNS('http://www.w3.org/2000/svg','line'); line.setAttribute('x1', x); line.setAttribute('x2', x); line.setAttribute('y1', h/2); line.setAttribute('y2', h/2); line.setAttribute('stroke', 'url(#grad)'); line.setAttribute('stroke-width','3'); barsSvg.appendChild(line);} const defs = document.createElementNS('http://www.w3.org/2000/svg','defs'); const grad = document.createElementNS('http://www.w3.org/2000/svg','linearGradient'); grad.id = 'grad'; grad.setAttribute('x1','0'); grad.setAttribute('x2','1'); const s1 = document.createElementNS('http://www.w3.org/2000/svg','stop'); s1.setAttribute('offset','0'); s1.setAttribute('stop-color','var(--brand2)'); const s2 = document.createElementNS('http://www.w3.org/2000/svg','stop'); s2.setAttribute('offset','1'); s2.setAttribute('stop-color','var(--brand)'); grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad); barsSvg.prepend(defs);} buildBars();
 
     const fmt = s=>{ if(!isFinite(s)) return '00:00'; const m=Math.floor(s/60); const ss=Math.floor(s%60); return (m<10?'0':'')+m+':' + (ss<10?'0':'')+ss; };
-  // GitHub Pages lädt LFS-Dateien NICHT direkt (Pointer statt Audio). Fallback: Release-Asset.
-  const RELEASE_FALLBACK_URL = 'https://github.com/audioreworkvisions/audioreworkvisions/releases/latest/download/panicroom_on_air_2019-12-12_320k.mp3';
+  // Audio Source Handling: GitHub Pages + LFS
+  // Problem: LFS Dateien werden über raw.githubusercontent.com -> media.githubusercontent.com ausgeliefert (Redirect).
+  // Für reine Wiedergabe reicht das, aber wegen fehlender CORS Header funktioniert der WebAudio Analyser nur bei gleicher Origin / lokal.
+  const RAW_BRANCH_URL = 'https://raw.githubusercontent.com/audioreworkvisions/audioreworkvisions/main/panicroom_on_air_2019-12-12_320k.mp3';
+  // Optional: falls du später eine Version taggst, ist ein stabiler Tag besser (Cache).
+  // const RAW_TAG_URL = 'https://raw.githubusercontent.com/audioreworkvisions/audioreworkvisions/v0.1.0/panicroom_on_air_2019-12-12_320k.mp3';
+
   let currentSourceAttempt = 0;
   let sourceCandidates = [];
   function buildSourceCandidates(){
-    sourceCandidates = [
-      './panicroom_on_air_2019-12-12_320k.mp3', // relativer Pfad (lokal / dev)
-      RELEASE_FALLBACK_URL // Release Asset (funktioniert auf Pages / prod)
-    ];
+    const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    const rel = './panicroom_on_air_2019-12-12_320k.mp3';
+    // Reihenfolge: lokal zuerst im Dev, dann Raw CDN. Im Prod (Pages / Custom Domain) direkt Raw CDN.
+    sourceCandidates = isLocal ? [ rel, RAW_BRANCH_URL ] : [ RAW_BRANCH_URL, rel ];
   }
   buildSourceCandidates();
+
+  function applyCrossOrigin(url){
+    // Nur bei relativen / same-origin Pfaden CORS für Analyser setzen.
+    if(/^(\.|\/)/.test(url) || url.startsWith(location.origin)){
+      audio.removeAttribute('crossorigin'); // nicht nötig same-origin
+    } else {
+      // Fremddomain -> Analyser wird scheitern; wir versuchen es dennoch mit anonymous und zeigen Hinweis bei Fehler
+      audio.crossOrigin = 'anonymous';
+    }
+  }
+
   function setAudioUrl(url){
     statusNode.textContent = 'Lade Track …';
-    audio.src = url + (url.includes('?')?'':'?ts=' + Date.now()); // Cache-Bust
-    audio.crossOrigin = 'anonymous';
+    applyCrossOrigin(url);
+    const withBust = url + (url.includes('?') ? '' : ('?v=' + Date.now()));
+    audio.src = withBust;
     audio.load();
+    // Autoplay Versuch leise (Browser Autoplay Policies können blocken)
     audio.play().catch(()=>{});
-    connectAudio();
+    try { connectAudio(); } catch {}
     if(currentTrack){ currentTrack.textContent = 'Track: ' + decodeURIComponent(url.split('/').pop()); }
   }
+
   function tryNextSource(){
     if(currentSourceAttempt >= sourceCandidates.length){
-      statusNode.textContent = 'Fehler: Keine funktionierende Audioquelle (LFS Pointer?).';
+      statusNode.textContent = 'Keine funktionierende Quelle gefunden.';
       return;
     }
     const url = sourceCandidates[currentSourceAttempt++];
     setAudioUrl(url);
   }
+
   audio.addEventListener('error', ()=>{
-    // Wenn es ein LFS Pointer statt Audio ist, oder 404 -> nächsten Kandidaten versuchen
     if(currentSourceAttempt < sourceCandidates.length){
-      statusNode.textContent = 'Quell-Fehler – versuche Alternative …';
+      statusNode.textContent = 'Quelle fehlgeschlagen – versuche Alternative …';
       tryNextSource();
     } else {
-      statusNode.textContent = 'Audio konnte nicht geladen werden.';
+      statusNode.textContent = 'Audio Fehler (evt. LFS/CORS)';
     }
   });
   audio.addEventListener('canplay', ()=>{ statusNode.textContent = 'Bereit – Play drücken'; });
