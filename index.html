@@ -15,17 +15,17 @@
     .app{min-height:100dvh;display:flex;flex-direction:column} main{flex:1;position:relative;z-index:2}
     #three-wrap{position:fixed;inset:0;z-index:0} canvas{display:block}
     .scanlines{pointer-events:none;position:fixed;inset:0;z-index:1;background:repeating-linear-gradient(180deg,rgba(255,255,255,.05) 0 1px,transparent 1px 3px);mix-blend-mode:overlay;opacity:.1}
-    .hero{position:relative;padding:56px 24px 12px;display:grid;place-items:center;text-align:center;overflow:hidden}
+    .hero{position:relative;padding:40px 24px 12px;overflow:hidden}
     .hero::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 180deg at 50% 50%, color-mix(in oklab, var(--brand) 30%, transparent), color-mix(in oklab, var(--brand2) 30%, transparent), color-mix(in oklab, var(--brand) 30%, transparent));filter:blur(60px);z-index:0;animation:spin 18s linear infinite}
     @keyframes spin{to{transform:rotate(360deg)}}
-    .hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:14px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand img{width:88px;height:88px;object-fit:contain;filter:drop-shadow(0 0 18px color-mix(in oklab, var(--brand) 65%, transparent));border-radius:18px}
-    .h1{margin:0;font-weight:900;letter-spacing:.5px;font-size:clamp(28px,4.5vw,46px)} .sub{color:var(--muted);font-size:clamp(13px,2.3vw,16px)}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:18px}
+    .brand-left{display:flex;align-items:center;justify-content:flex-start}
+    .brand-left img{width:120px;height:120px;object-fit:contain;border-radius:50%;filter:drop-shadow(0 0 22px color-mix(in oklab, var(--brand) 70%, transparent))}
+    .brand-right{display:flex;align-items:center;justify-content:flex-end}
+    .title-awr{margin:0;line-height:0.95;text-align:right;font-weight:900;letter-spacing:1.5px;font-size:clamp(32px,10vw,120px);background:linear-gradient(90deg,var(--brand2),var(--brand),var(--brand2));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:glow 6s linear infinite}
+    @keyframes glow{0%{background-position:0% 50%; text-shadow:0 0 14px color-mix(in oklab, var(--brand) 45%, transparent);}50%{background-position:100% 50%; text-shadow:0 0 24px color-mix(in oklab, var(--brand2) 60%, transparent);}100%{background-position:0% 50%; text-shadow:0 0 14px color-mix(in oklab, var(--brand) 45%, transparent);}}
     .btn{appearance:none;border:1px solid var(--border);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(0,0,0,.12));color:var(--fg);padding:10px 14px;border-radius:14px;cursor:pointer;transition:.2s;user-select:none}
     .btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.25)} .btn.primary{border-color:transparent;background:linear-gradient(90deg,var(--brand2),var(--brand));color:#081017;font-weight:800} .btn.ghost{background:transparent}
-    .visit{margin-top:6px;color:var(--muted);font-size:12px}
     .wrap{display:grid;place-items:center;padding:0 24px 32px}
     .card{width:min(1100px,96vw);backdrop-filter:saturate(1.4) blur(12px);background:var(--card);border:1px solid var(--border);border-radius:22px;box-shadow:0 20px 80px rgba(0,0,0,.45);overflow:hidden}
     .header{padding:16px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;justify-content:space-between} .header small{color:var(--muted)}
@@ -56,18 +56,12 @@
     <main>
       <section class="hero">
         <div class="hero-inner">
-          <div class="brand">
-            <img src="./public/assets/logo-glow.png" alt="AUDIOREWORKVISIONS · Logo" onerror="this.src='';this.style.display='none'">
-            <h1 class="h1">AUDIOREWORKVISIONS &amp; LENOX</h1>
+          <div class="brand-left">
+            <img src="./public/assets/logo-rund-horus.png" alt="AUDIOREWORKVISIONS · Logo">
           </div>
-          <p class="sub">Hypnotic energy. Neon visuals. Techno sets, tracks & streams.</p>
-          <div class="cta">
-            <a href="#player-card" class="btn primary">▶ Direkt abspielen</a>
-            <button id="btnDrop" class="btn ghost" title="Lokale Datei abspielen (Drag & Drop)">Lokale Datei</button>
-            <button id="themeToggle" class="btn" title="Theme umschalten">🌗 Theme</button>
-            <a class="btn ghost" href="https://facebook.com/lenocmarco" target="_blank" rel="noopener">📘 Facebook</a>
+          <div class="brand-right">
+            <h1 class="title-awr">AUDIOREWORKVISIONS</h1>
           </div>
-          <div id="visit" class="visit">Besuche: —</div>
         </div>
       </section>
 
@@ -171,7 +165,7 @@
 
     const visitEl = document.getElementById('visit');
     function localVisit(){ const today = new Date().toISOString().slice(0,10); const last = localStorage.getItem('visit:last'); let n = parseInt(localStorage.getItem('visit:count')||'0',10); if(last!==today){ n++; localStorage.setItem('visit:count', String(n)); localStorage.setItem('visit:last', today); } return n; }
-    async function updateVisit(){ let n = localVisit(); if(COUNTER_ENDPOINT){ try{ await fetch(COUNTER_ENDPOINT,{method:'POST'}); }catch{} } visitEl.textContent = 'Besuche (lokal): ' + n; } updateVisit();
+    async function updateVisit(){ if(!visitEl) return; let n = localVisit(); if(COUNTER_ENDPOINT){ try{ await fetch(COUNTER_ENDPOINT,{method:'POST'}); }catch{} } visitEl.textContent = 'Besuche (lokal): ' + n; } if(visitEl) updateVisit();
 
     const wrap = document.getElementById('three-wrap'); const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true }); renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.setSize(innerWidth, innerHeight); wrap.appendChild(renderer.domElement);
     const scene = new THREE.Scene(); const camera = new THREE.PerspectiveCamera(70, innerWidth/innerHeight, 0.1, 2000); camera.position.set(0,0,9);
@@ -191,7 +185,7 @@
     const fmt = s=>{ if(!isFinite(s)) return '00:00'; const m=Math.floor(s/60); const ss=Math.floor(s%60); return (m<10?'0':'')+m+':' + (ss<10?'0':'')+ss; };
     function setAudioUrl(url){ audio.src = url; audio.crossOrigin='anonymous'; audio.load(); audio.play().catch(()=>{}); connectAudio(); statusNode.textContent = 'Lade Stream …'; }
 
-    vol.addEventListener('input', ()=> audio.volume = parseFloat(vol.value)); btnPlay.addEventListener('click', async ()=>{ ensureCtx(); try{ await ctx.resume(); }catch{} if(audio.src){ audio.play(); }}); btnPause.addEventListener('click', ()=> audio.pause()); btnLoad.addEventListener('click', ()=>{ const url = audioUrl.value.trim(); if(!url){ statusNode.textContent = 'Bitte Stream/MP3‑URL einfügen.'; return;} setAudioUrl(url); }); btnDrop.addEventListener('click', ()=> filePick.click());
+    vol.addEventListener('input', ()=> audio.volume = parseFloat(vol.value)); btnPlay.addEventListener('click', async ()=>{ ensureCtx(); try{ await ctx.resume(); }catch{} if(audio.src){ audio.play(); }}); btnPause.addEventListener('click', ()=> audio.pause()); btnLoad.addEventListener('click', ()=>{ const url = audioUrl.value.trim(); if(!url){ statusNode.textContent = 'Bitte Stream/MP3‑URL einfügen.'; return;} setAudioUrl(url); }); btnDrop?.addEventListener('click', ()=> filePick.click());
     filePick.addEventListener('change', e=>{ const f=e.target.files&&e.target.files[0]; if(!f) return; const url=URL.createObjectURL(f); setAudioUrl(url); audioUrl.value=f.name; });
     for(const el of [document.querySelector('.hero'), document.getElementById('player-card')]){ el.addEventListener('dragover', e=>{ e.preventDefault(); el.style.outline='2px dashed var(--brand)';}); el.addEventListener('dragleave', ()=> el.style.outline='none'); el.addEventListener('drop', e=>{ e.preventDefault(); el.style.outline='none'; const f=e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]; if(f){ const url=URL.createObjectURL(f); setAudioUrl(url); audioUrl.value=f.name; }}); }
 
