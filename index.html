@@ -182,8 +182,8 @@
     const fmt = s=>{ if(!isFinite(s)) return '00:00'; const m=Math.floor(s/60); const ss=Math.floor(s%60); return (m<10?'0':'')+m+':' + (ss<10?'0':'')+ss; };
   // Audio Source Handling (rein statisch unter 100MB)
   // Wir nutzen eine heruntergerechnete 96k MP3 direkt aus dem Repo (keine LFS / kein Backend nötig).
-  const FILE_NAME = 'panicroom_on_air_2019-12-12_96k.mp3';
-  const RELATIVE_PATH = './public/audio/' + FILE_NAME; // Statische Quelle (GitHub Pages)
+  // Direkt festgelegter Pfad (Variable FILE_NAME entfällt um ReferenceError zu vermeiden)
+  const RELATIVE_PATH = './public/audio/panicroom_on_air_2019-12-12_96k.mp3'; // Statische Quelle (GitHub Pages)
   let currentSourceAttempt = 0;
   let sourceCandidates = [RELATIVE_PATH];
 
