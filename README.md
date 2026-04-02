@@ -8,35 +8,28 @@
    ██║   ██╔══╝  ██║     ██║╚██╗██║ ██║╚██╗██║██║   ██║
    ██║   ███████╗╚██████╗██║ ╚████║ ██║ ╚████║╚██████╔╝
    ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═══╝ ╚═╝  ╚═══╝ ╚═════╝ 
-       A U D I O R E W O R K V I S I O N S  •  O I M M
+          A U D I O R E W O R K V I S I O N S
 </pre>
 </p>
 
-<h1 align="center">🌌 Lenox — <em>Audioreworkvisions</em></h1>
+<h1 align="center"> Lenox aka <em>Audioreworkvisions</em></h1>
 
 <p align="center">
   <strong>Autodidact • Developer • Visionary</strong><br>
   <em>Building where curiosity meets code — deep in the tunnel, where real creation lives.</em>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Identity-Autodidact-0b1220?style=for-the-badge&labelColor=111827&logo=visualstudiocode&logoColor=00E5FF&color=0EA5E9" />
-  <img src="https://img.shields.io/badge/Focus-Local--First%20AI-0b1220?style=for-the-badge&labelColor=111827&logo=electron&logoColor=7dd3fc&color=7C3AED" />
-  <img src="https://img.shields.io/badge/Languages-Python%20%7C%20TypeScript-0b1220?style=for-the-badge&labelColor=111827&logo=python&logoColor=facc15&color=0EA5E9" />
-  <img src="https://img.shields.io/badge/Platform-Electron%20%2B%20FastAPI-0b1220?style=for-the-badge&labelColor=111827&logo=fastapi&logoColor=22c55e&color=22C55E" />
-  <img src="https://img.shields.io/badge/Mindset-Innovation%20Through%20Focus-0b1220?style=for-the-badge&labelColor=111827&color=F43F5E" />
-</p>
 
 ---
 
-## 🧠 About Me
+## About Me
 
 I’m not a product of formal education — I’m the result of curiosity, persistence, and nights that turned into mornings.  
 I build systems where **human intention** meets **machine intelligence**: tools that think, remember, and evolve.
 
 ---
 
-## ⚙️ OIMM Ecosystem
+## Ecosystem
 
 <p align="center">
   <img src="https://img.shields.io/badge/OIMM-Ecosystem-0b1220?style=for-the-badge&labelColor=111827&logo=github&logoColor=ffffff&color=8B5CF6" />
@@ -45,7 +38,7 @@ I build systems where **human intention** meets **machine intelligence**: tools 
   <img src="https://img.shields.io/badge/Backend-FastAPI%20%2B%20Python-0b1220?style=for-the-badge&labelColor=111827&logo=python&logoColor=facc15&color=22C55E" />
 </p>
 
-### 🧩 Core Projects
+### Projects
 
 - **[LexOIMM](https://github.com/audioreworkvisions/oimm)** — Swiss-Law-AI desktop app (Electron client) bridging legal data, reasoning agents & document intelligence.  
 - **[AVA-App](https://github.com/audioreworkvisions/AVA-App)** — Experimental AI Music & Visual Performance Environment built with Electron, Python & OBS integration.  
@@ -55,7 +48,7 @@ I build systems where **human intention** meets **machine intelligence**: tools 
 
 ---
 
-## 📊 GitHub Stats
+## GitHub Stats
 
 <p align="center">
   <img height="165" src="https://github-readme-stats.vercel.app/api?username=audioreworkvisions&show_icons=true&theme=tokyonight&hide_border=true" />
@@ -68,50 +61,8 @@ I build systems where **human intention** meets **machine intelligence**: tools 
 
 ---
 
-## 📦 Repo Spotlight
 
-<!-- OIMM -->
-<p>
-  <a href="https://github.com/audioreworkvisions/oimm">
-    <img src="https://img.shields.io/github/stars/audioreworkvisions/oimm?style=for-the-badge&labelColor=111827&color=0EA5E9" />
-  </a>
-  <a href="https://github.com/audioreworkvisions/oimm/issues">
-    <img src="https://img.shields.io/github/issues/audioreworkvisions/oimm?style=for-the-badge&labelColor=111827&color=7C3AED" />
-  </a>
-  <a href="https://github.com/audioreworkvisions/oimm/commits/main">
-    <img src="https://img.shields.io/github/last-commit/audioreworkvisions/oimm?style=for-the-badge&labelColor=111827&color=22C55E" />
-  </a>
-</p>
-
-<!-- AVA-App -->
-<p>
-  <a href="https://github.com/audioreworkvisions/AVA-App">
-    <img src="https://img.shields.io/github/stars/audioreworkvisions/AVA-App?style=for-the-badge&labelColor=111827&color=0EA5E9" />
-  </a>
-  <a href="https://github.com/audioreworkvisions/AVA-App/issues">
-    <img src="https://img.shields.io/github/issues/audioreworkvisions/AVA-App?style=for-the-badge&labelColor=111827&color=7C3AED" />
-  </a>
-  <a href="https://github.com/audioreworkvisions/AVA-App/commits/main">
-    <img src="https://img.shields.io/github/last-commit/audioreworkvisions/AVA-App?style=for-the-badge&labelColor=111827&color=22C55E" />
-  </a>
-</p>
-
-<!-- JustitiaAI -->
-<p>
-  <a href="https://github.com/audioreworkvisions/JustitiaAI">
-    <img src="https://img.shields.io/github/stars/audioreworkvisions/JustitiaAI?style=for-the-badge&labelColor=111827&color=0EA5E9" />
-  </a>
-  <a href="https://github.com/audioreworkvisions/JustitiaAI/issues">
-    <img src="https://img.shields.io/github/issues/audioreworkvisions/JustitiaAI?style=for-the-badge&labelColor=111827&color=7C3AED" />
-  </a>
-  <a href="https://github.com/audioreworkvisions/JustitiaAI/commits/main">
-    <img src="https://img.shields.io/github/last-commit/audioreworkvisions/JustitiaAI?style=for-the-badge&labelColor=111827&color=22C55E" />
-  </a>
-</p>
-
----
-
-## 🧩 Tech Stack
+## Tech Stack
 
 <p align="center">
   <img src="https://img.shields.io/badge/Frontend-Electron%20%7C%20React%20%7C%20Vite-0b1220?style=for-the-badge&labelColor=111827&logo=react&logoColor=61dafb&color=0EA5E9" />
@@ -123,7 +74,7 @@ I build systems where **human intention** meets **machine intelligence**: tools 
 
 ---
 
-## 📡 Connect
+## Connect
 
 <p align="center">
   <a href="https://x.com/audioreworks">
@@ -144,7 +95,7 @@ I build systems where **human intention** meets **machine intelligence**: tools 
   <a href="https://github.com/audioreworkvisions">
     <img src="https://img.shields.io/badge/GitHub-audioreworkvisions-0b1220?style=for-the-badge&labelColor=111827&logo=github&logoColor=ffffff&color=111827" />
   </a>
-  <a href="https://gpt.audioreworkvisions.com/">
+  <a href="https://www.audioreworkvisions.ch/">
     <img src="https://img.shields.io/badge/Website-gpt.audioreworkvisions.com-0b1220?style=for-the-badge&labelColor=111827&logo=vercel&logoColor=00E5FF&color=111827" />
   </a>
   <a href="https://medium.com/@audioreworkvisions.net">
@@ -159,7 +110,7 @@ I build systems where **human intention** meets **machine intelligence**: tools 
   <a href="https://dev.to/audioreworkvisions">
     <img src="https://img.shields.io/badge/DEV.to-audioreworkvisions-0b1220?style=for-the-badge&labelColor=111827&logo=dev.to&logoColor=ffffff&color=111827" />
   </a>
-  <a href="https://www.facebook.com/lenoxmarco">
+  <a href="https://www.facebook.com/luckylennoxll">
     <img src="https://img.shields.io/badge/Facebook-lenoxmarco-0b1220?style=for-the-badge&labelColor=111827&logo=facebook&logoColor=3b82f6&color=111827" />
   </a>
 </p>
@@ -167,5 +118,5 @@ I build systems where **human intention** meets **machine intelligence**: tools 
 ---
 
 ### 🖤 Motto
-> _“Stay curious. Stay in the tunnel. Keep building.”_ — Lenox
+> _“Stay curious. Stay in the tunnel. Keep building.”_ — Lenox aka Audioreworkvisions
 
