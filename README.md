@@ -51,13 +51,9 @@ I build systems where **human intention** meets **machine intelligence**: tools 
 ## GitHub Stats
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=audioreworkvisions&show_icons=true&theme=tokyonight&hide_border=true" />
   <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=audioreworkvisions&theme=tokyonight&hide_border=true" />
 </p>
 
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=audioreworkvisions&layout=compact&theme=tokyonight&hide_border=true" />
-</p>
 
 ---
 
