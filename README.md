@@ -6,7 +6,7 @@
   />
 </p>
 
-<h1 align="center">Lenox <sub>aka Audioreworkvisions</sub></h1>
+<h1 align="center">Audioreworkvisions</h1>
 
 <p align="center">
   <strong>Autodidact Software Developer · Generative AI Builder · Audio-Visual Creator</strong>
@@ -705,9 +705,9 @@ Generative Media
 ---
 
 <p align="center">
-  <strong>Stay curious. Stay in the tunnel. Keep building.</strong>
+  <strong>Stay curious & Keep building.</strong>
 </p>
 
 <p align="center">
-  <sub>Lenox aka Audioreworkvisions · Switzerland</sub>
+  <sub>Audioreworkvisions · Switzerland</sub>
 </p>
